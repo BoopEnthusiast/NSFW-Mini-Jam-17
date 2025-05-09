@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://lf0rtr4mv7pb"]
+
+[ext_resource type="Script" uid="uid://lbbfepe47j17" path="res://core/main.gd" id="1_xiose"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xiose"]
+
+[sub_resource type="Sky" id="Sky_r77kf"]
+sky_material = SubResource("ProceduralSkyMaterial_xiose")
+
+[sub_resource type="Environment" id="Environment_xiose"]
+background_mode = 2
+sky = SubResource("Sky_r77kf")
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_r77kf"]
+
+[sub_resource type="Compositor" id="Compositor_3gdo0"]
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_xiose")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xiose")
+camera_attributes = SubResource("CameraAttributesPractical_r77kf")
+compositor = SubResource("Compositor_3gdo0")
+
+[node name="DirectionalLight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.810645, 0.518939, -0.271214, 0, 0.463188, 0.88626, 0.585538, -0.718442, 0.375481, 0, 12.8357, 0)
+directional_shadow_mode = 1

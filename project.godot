@@ -11,5 +11,6 @@ config_version=5
 [application]
 
 config/name="NSFW Mini Jam 17"
+run/main_scene="uid://cg61b7so1tymk"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"

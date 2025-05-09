@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cg61b7so1tymk"]
+
+[ext_resource type="Script" uid="uid://b4ruc1loxn3j1" path="res://core/game_manager.gd" id="1_xjh8w"]
+[ext_resource type="PackedScene" uid="uid://culr1068gs7qi" path="res://gui/main_menu.tscn" id="2_ulge3"]
+[ext_resource type="PackedScene" uid="uid://lf0rtr4mv7pb" path="res://core/main.tscn" id="3_ulge3"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_xjh8w")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MainMenu" parent="CanvasLayer" instance=ExtResource("2_ulge3")]
+
+[node name="Main" parent="." instance=ExtResource("3_ulge3")]
+visible = false
+
+[connection signal="play_game" from="CanvasLayer/MainMenu" to="." method="_on_main_menu_play_game"]
