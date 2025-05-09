@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b4ruc1loxn3j1" path="res://core/game_manager.gd" id="1_xjh8w"]
 [ext_resource type="PackedScene" uid="uid://culr1068gs7qi" path="res://gui/main_menu.tscn" id="2_ulge3"]
-[ext_resource type="Texture2D" uid="uid://bbhcjyoq1vcaw" path="res://Dragu Grafit.png" id="3_8prga"]
+[ext_resource type="Texture2D" uid="uid://bbhcjyoq1vcaw" path="res://art/Dragu Grafit.png" id="3_8prga"]
 [ext_resource type="PackedScene" uid="uid://lf0rtr4mv7pb" path="res://core/main.tscn" id="3_ulge3"]
 
 [node name="GameManager" type="Node"]
