@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://lf0rtr4mv7pb"]
+[gd_scene load_steps=10 format=3 uid="uid://lf0rtr4mv7pb"]
 
 [ext_resource type="Script" uid="uid://lbbfepe47j17" path="res://core/main.gd" id="1_xiose"]
+[ext_resource type="PackedScene" uid="uid://c6hw8imjbic3" path="res://core/player.tscn" id="2_r77kf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xiose"]
 
@@ -15,6 +16,12 @@ sky = SubResource("Sky_r77kf")
 
 [sub_resource type="Compositor" id="Compositor_3gdo0"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_xiose"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xiose"]
+size = Vector3(100, 1, 100)
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_xiose")
 
@@ -26,3 +33,15 @@ compositor = SubResource("Compositor_3gdo0")
 [node name="DirectionalLight" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.810645, 0.518939, -0.271214, 0, 0.463188, 0.88626, 0.585538, -0.718442, 0.375481, 0, 12.8357, 0)
 directional_shadow_mode = 1
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("BoxMesh_xiose")
+
+[node name="Collider" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_xiose")
+
+[node name="Player" parent="." instance=ExtResource("2_r77kf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)

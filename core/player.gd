@@ -1,0 +1,33 @@
+class_name Player
+extends VehicleBody3D
+
+
+const ENGINE_FORCE = 2000
+const BRAKE_FORCE = 100
+
+var reversing: bool = false
+
+@onready var wheel_fl: VehicleWheel3D = $WheelFL
+@onready var wheel_fr: VehicleWheel3D = $WheelFR
+
+
+func _physics_process(_delta: float) -> void:
+	# Stop reversing if moving forward
+	if Input.is_action_pressed("forward"):
+		reversing = false
+	
+	# Calculate engine force and steering
+	engine_force = ENGINE_FORCE * Input.get_action_strength("forward")
+	steering = Input.get_axis("right", "left")
+	
+	# If not reversing, brake
+	if not reversing:
+		brake = BRAKE_FORCE * Input.get_action_strength("backward")
+	
+	# If stopped moving and trying to reverse, start reversing
+	if linear_velocity.length_squared() < 0.01 and Input.is_action_pressed("backward"):
+		reversing = true
+	
+	# If reversing, move backward
+	if reversing:
+		engine_force = -ENGINE_FORCE * Input.get_action_strength("backward")
