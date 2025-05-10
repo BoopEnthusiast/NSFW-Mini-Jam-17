@@ -7,6 +7,32 @@
 [ext_resource type="CameraAttributesPractical" uid="uid://3qco8r1xm8x4" path="res://core/camera_attributes.tres" id="5_xa854"]
 [ext_resource type="LightmapGIData" uid="uid://bf8ilrsqxhejc" path="res://core/main.lmbake" id="6_kagtj"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_csopv"]
+sky_top_color = Color(0.0481838, 0.122106, 0.195294, 1)
+sky_horizon_color = Color(0.186086, 0.0963336, 0.0873901, 1)
+sky_curve = 0.135188
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.186086, 0.0963336, 0.0873901, 1)
+ground_curve = 0.139289
+sun_angle_max = 1.0
+sun_curve = 1.883
+
+[sub_resource type="Sky" id="Sky_xa854"]
+sky_material = SubResource("ProceduralSkyMaterial_csopv")
+
+[sub_resource type="Environment" id="Environment_kagtj"]
+background_mode = 2
+sky = SubResource("Sky_xa854")
+reflected_light_source = 2
+ssao_enabled = true
+fog_light_energy = 0.44
+fog_density = 0.005
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.005
+volumetric_fog_sky_affect = 0.8
+
+[sub_resource type="Compositor" id="Compositor_brq4u"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_csopv"]
 albedo_color = Color(0.99176, 0.867628, 0.711223, 1)
 
@@ -19,23 +45,21 @@ size = Vector3(1000, 1, 1000)
 [sub_resource type="BoxShape3D" id="BoxShape3D_xiose"]
 size = Vector3(1000, 1, 1000)
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_csopv"]
-
-[sub_resource type="Sky" id="Sky_xa854"]
-sky_material = SubResource("ProceduralSkyMaterial_csopv")
-
-[sub_resource type="Environment" id="Environment_kagtj"]
-background_mode = 2
-sky = SubResource("Sky_xa854")
-
-[sub_resource type="Compositor" id="Compositor_brq4u"]
-
 [node name="Main" type="Node3D"]
 script = ExtResource("1_xiose")
 
 [node name="DirectionalLight" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.810645, 0.518939, -0.271214, 0, 0.463188, 0.88626, 0.585538, -0.718442, 0.375481, 0, 12.8357, 0)
+light_energy = 0.3
+light_indirect_energy = 3.0
+light_volumetric_fog_energy = 8.0
+shadow_enabled = true
 directional_shadow_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kagtj")
+camera_attributes = ExtResource("5_xa854")
+compositor = SubResource("Compositor_brq4u")
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
@@ -80,11 +104,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110, 3, -57)
 
 [node name="PatrolPoint2" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114, 6, 44)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_kagtj")
-camera_attributes = ExtResource("5_xa854")
-compositor = SubResource("Compositor_brq4u")
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
 quality = 2

@@ -7,11 +7,14 @@ enum Modes {
 	PATROL,
 }
 enum CollisionResponse {
-	LEFT,
-	RIGHT,
-	BOTH,
+	CLOSE_LEFT,
+	CLOSE_RIGHT,
+	FAR_LEFT,
+	FAR_RIGHT,
+	CLOSE_BOTH,
+	FAR_BOTH,
 	NONE,
-	PLAYER
+	PLAYER,
 }
 
 const DISTANCE_SQUARED_TO_GOTTEN_PATROL_POINT = 300
@@ -21,8 +24,10 @@ const DISTANCE_SQUARED_TO_GOTTEN_PATROL_POINT = 300
 var _mode: Modes = Modes.PATROL
 var _next_patrol_point_index: int = 0
 
-@onready var ray_1: RayCast3D = $CollisionTest/Ray1
-@onready var ray_2: RayCast3D = $CollisionTest/Ray2
+@onready var ray_1_close: RayCast3D = $CollisionTestClose/Ray1
+@onready var ray_2_close: RayCast3D = $CollisionTestClose/Ray2
+@onready var ray_1_far: RayCast3D = $CollisionTestFar/Ray1
+@onready var ray_2_far: RayCast3D = $CollisionTestFar/Ray2
 
 
 func _physics_process(_delta: float) -> void:
@@ -34,45 +39,50 @@ func _physics_process(_delta: float) -> void:
 			if patrol_points[_next_patrol_point_index].global_position.distance_squared_to(global_position) < DISTANCE_SQUARED_TO_GOTTEN_PATROL_POINT:
 				_next_patrol_point_index = (_next_patrol_point_index + 1) % patrol_points.size()
 			
-			_steer_toward(patrol_points[_next_patrol_point_index].global_position)
+			steering = 0
+			var colliding = false
+			# Move away from wall
+			if ray_1_close.is_colliding():
+				steering += 1
+				engine_force = -100
+				colliding = true
+			if ray_2_close.is_colliding():
+				steering -= 1
+				engine_force = -100
+				colliding = true
 			
-			var collision_test = _test_collision()
-			if get_tree().get_frame() % 60 == 0: print(collision_test)
-			match collision_test:
-				CollisionResponse.NONE:
-					if position.normalized().dot(to_local(patrol_points[_next_patrol_point_index].global_position).normalized()) > 0:
-						engine_force = 100
-					else:
-						engine_force = -50
-						steering = 1
-				CollisionResponse.BOTH:
-					engine_force = -100
-				CollisionResponse.LEFT:
+			if not colliding:
+				# Steer toward next patrol point
+				_steer_toward(patrol_points[_next_patrol_point_index].global_position)
+				
+				if position.normalized().dot(to_local(patrol_points[_next_patrol_point_index].global_position).normalized()) > 0:
+					engine_force = 100
+				else:
+					engine_force = -50
 					steering = 1
-				CollisionResponse.RIGHT:
-					steering = -1
-				CollisionResponse.PLAYER:
-					engine_force = 150
+			
+			
+			#
+			#if get_tree().get_frame() % 60 == 0: print(collision_test)
+			#match collision_test:
+				#CollisionResponse.NONE:
+					#if position.normalized().dot(to_local(patrol_points[_next_patrol_point_index].global_position).normalized()) > 0:
+						#engine_force = 100
+					#else:
+						#engine_force = -50
+						#steering = 1
+				#CollisionResponse.BOTH:
+					#engine_force = -100
+				#CollisionResponse.CLOSE_LEFT:
+					#steering = 1
+					#engine_force = -100
+				#CollisionResponse.CLOSE_RIGHT:
+					#steering = -1
+					#engine_force = -100
+				#CollisionResponse.PLAYER:
+					#engine_force = 150
 
 
 func _steer_toward(global_pos: Vector3) -> void:
 	var dot = position.normalized().dot(to_local(global_pos).rotated(Vector3.UP, PI / 2).normalized())
 	steering = clampf(-1 * dot, -PI / 2, PI / 2)
-
-
-func _test_collision() -> CollisionResponse:
-	if ray_1.get_collider() is Player or ray_2.get_collider() is Player:
-		return CollisionResponse.PLAYER
-	
-	var ray_1_collision: bool = ray_1.is_colliding()
-	var ray_2_collision: bool = ray_2.is_colliding()
-	
-	if not ray_1_collision and not ray_2_collision:
-		return CollisionResponse.NONE
-	elif ray_1_collision and ray_2_collision:
-		return CollisionResponse.BOTH
-	elif ray_1_collision and not ray_2_collision:
-		return CollisionResponse.LEFT
-	elif not ray_1_collision and ray_2_collision:
-		return CollisionResponse.RIGHT
-	return CollisionResponse.NONE

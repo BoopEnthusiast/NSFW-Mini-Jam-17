@@ -25,6 +25,7 @@ script = ExtResource("1_3x74s")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+gi_mode = 2
 mesh = SubResource("BoxMesh_r77kf")
 
 [node name="Collider" type="CollisionShape3D" parent="."]
@@ -49,6 +50,7 @@ damping_relaxation = 0.5
 
 [node name="Mesh" type="MeshInstance3D" parent="WheelFL"]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 1, -4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 0, 0, 0)
+gi_mode = 2
 mesh = SubResource("CylinderMesh_3x74s")
 
 [node name="WheelFR" type="VehicleWheel3D" parent="."]
@@ -64,6 +66,7 @@ damping_relaxation = 0.5
 
 [node name="Mesh" type="MeshInstance3D" parent="WheelFR"]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 1, -4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 0, 0, 0)
+gi_mode = 2
 mesh = SubResource("CylinderMesh_3x74s")
 
 [node name="WheelBL" type="VehicleWheel3D" parent="."]
@@ -78,6 +81,7 @@ damping_relaxation = 0.5
 
 [node name="Mesh" type="MeshInstance3D" parent="WheelBL"]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 1, -4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 0, 0, 0)
+gi_mode = 2
 mesh = SubResource("CylinderMesh_3x74s")
 
 [node name="WheelBR" type="VehicleWheel3D" parent="."]
@@ -92,4 +96,5 @@ damping_relaxation = 0.5
 
 [node name="Mesh" type="MeshInstance3D" parent="WheelBR"]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 1, -4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 0, 0, 0)
+gi_mode = 2
 mesh = SubResource("CylinderMesh_3x74s")

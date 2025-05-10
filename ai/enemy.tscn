@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhey3pdq2wnl"]
+[gd_scene load_steps=8 format=3 uid="uid://dhey3pdq2wnl"]
 
 [ext_resource type="Script" uid="uid://d0kyrkrqhk78r" path="res://ai/enemy.gd" id="1_2qiy5"]
 
@@ -11,11 +11,21 @@ size = Vector3(10, 2.5, 5)
 [sub_resource type="CylinderMesh" id="CylinderMesh_xa854"]
 height = 0.5
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_2qiy5"]
+size = Vector3(15, 37, 11)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1rl65"]
+size = Vector3(15, 22, 15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oki72"]
+size = Vector3(16, 45, 18)
+
 [node name="Enemy" type="VehicleBody3D"]
 script = ExtResource("1_2qiy5")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+gi_mode = 2
 mesh = SubResource("BoxMesh_3gdo0")
 
 [node name="Collider" type="CollisionShape3D" parent="."]
@@ -35,6 +45,7 @@ damping_relaxation = 0.5
 
 [node name="Mesh" type="MeshInstance3D" parent="WheelFL"]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 1, -4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 0, 0, 0)
+gi_mode = 2
 mesh = SubResource("CylinderMesh_xa854")
 
 [node name="WheelFR" type="VehicleWheel3D" parent="."]
@@ -50,6 +61,7 @@ damping_relaxation = 0.5
 
 [node name="Mesh" type="MeshInstance3D" parent="WheelFR"]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 1, -4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 0, 0, 0)
+gi_mode = 2
 mesh = SubResource("CylinderMesh_xa854")
 
 [node name="WheelBL" type="VehicleWheel3D" parent="."]
@@ -64,6 +76,7 @@ damping_relaxation = 0.5
 
 [node name="Mesh" type="MeshInstance3D" parent="WheelBL"]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 1, -4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 0, 0, 0)
+gi_mode = 2
 mesh = SubResource("CylinderMesh_xa854")
 
 [node name="WheelBR" type="VehicleWheel3D" parent="."]
@@ -78,15 +91,48 @@ damping_relaxation = 0.5
 
 [node name="Mesh" type="MeshInstance3D" parent="WheelBR"]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 1, -4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 0, 0, 0)
+gi_mode = 2
 mesh = SubResource("CylinderMesh_xa854")
 
-[node name="CollisionTest" type="Node3D" parent="."]
+[node name="CollisionTestClose" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 0)
 
-[node name="Ray1" type="RayCast3D" parent="CollisionTest"]
+[node name="Ray1" type="RayCast3D" parent="CollisionTestClose"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
-target_position = Vector3(15, 0, 0)
+target_position = Vector3(10, 0, 0)
 
-[node name="Ray2" type="RayCast3D" parent="CollisionTest"]
+[node name="Ray2" type="RayCast3D" parent="CollisionTestClose"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
-target_position = Vector3(15, 0, 0)
+target_position = Vector3(10, 0, 0)
+
+[node name="VisionLight" type="SpotLight3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, 0, 0)
+spot_range = 50.0
+spot_attenuation = -1.0
+spot_angle = 36.7412
+
+[node name="VisionCone" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 0)
+
+[node name="Collider" type="CollisionShape3D" parent="VisionCone"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_2qiy5")
+
+[node name="Collider2" type="CollisionShape3D" parent="VisionCone"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_1rl65")
+
+[node name="Collider3" type="CollisionShape3D" parent="VisionCone"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 15, 0, 0)
+shape = SubResource("BoxShape3D_oki72")
+
+[node name="CollisionTestFar" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 0)
+
+[node name="Ray1" type="RayCast3D" parent="CollisionTestFar"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+target_position = Vector3(25, 0, 0)
+
+[node name="Ray2" type="RayCast3D" parent="CollisionTestFar"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+target_position = Vector3(25, 0, 0)
