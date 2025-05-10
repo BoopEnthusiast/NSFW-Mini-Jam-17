@@ -1,24 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://lf0rtr4mv7pb"]
+[gd_scene load_steps=15 format=3 uid="uid://lf0rtr4mv7pb"]
 
 [ext_resource type="Script" uid="uid://lbbfepe47j17" path="res://core/main.gd" id="1_xiose"]
 [ext_resource type="PackedScene" uid="uid://c6hw8imjbic3" path="res://core/player.tscn" id="2_r77kf"]
 [ext_resource type="PackedScene" uid="uid://tmb7k1hhbqhy" path="res://level/building.tscn" id="3_3gdo0"]
-[ext_resource type="PackedScene" path="res://ai/enemy.tscn" id="4_csopv"]
+[ext_resource type="PackedScene" uid="uid://dhey3pdq2wnl" path="res://ai/enemy.tscn" id="4_csopv"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xiose"]
-
-[sub_resource type="Sky" id="Sky_r77kf"]
-sky_material = SubResource("ProceduralSkyMaterial_xiose")
-
-[sub_resource type="Environment" id="Environment_xiose"]
-background_mode = 2
-sky = SubResource("Sky_r77kf")
-
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_r77kf"]
-
-[sub_resource type="Compositor" id="Compositor_3gdo0"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_csopv"]
+albedo_color = Color(0.99176, 0.867628, 0.711223, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_xiose"]
+material = SubResource("StandardMaterial3D_csopv")
 size = Vector3(1000, 1, 1000)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xiose"]
@@ -28,13 +19,21 @@ size = Vector3(1000, 1, 1000)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_csopv"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_csopv"]
+
+[sub_resource type="Sky" id="Sky_xa854"]
+sky_material = SubResource("ProceduralSkyMaterial_csopv")
+
+[sub_resource type="Environment" id="Environment_kagtj"]
+background_mode = 2
+sky = SubResource("Sky_xa854")
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_cus2n"]
+
+[sub_resource type="Compositor" id="Compositor_brq4u"]
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_xiose")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_xiose")
-camera_attributes = SubResource("CameraAttributesPractical_r77kf")
-compositor = SubResource("Compositor_3gdo0")
 
 [node name="DirectionalLight" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.810645, 0.518939, -0.271214, 0, 0.463188, 0.88626, 0.585538, -0.718442, 0.375481, 0, 12.8357, 0)
@@ -49,8 +48,9 @@ mesh = SubResource("BoxMesh_xiose")
 [node name="Collider" type="CollisionShape3D" parent="Floor"]
 shape = SubResource("BoxShape3D_xiose")
 
-[node name="Player" parent="." instance=ExtResource("2_r77kf")]
+[node name="Player" parent="." node_paths=PackedStringArray("enemy") instance=ExtResource("2_r77kf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+enemy = NodePath("../Enemy")
 
 [node name="Building2" parent="." instance=ExtResource("3_3gdo0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 64)
@@ -78,5 +78,17 @@ mesh_library = SubResource("MeshLibrary_3gdo0")
 physics_material = SubResource("PhysicsMaterial_csopv")
 cell_size = Vector3(10, 10, 10)
 
-[node name="Enemy" parent="." instance=ExtResource("4_csopv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, 2, 0)
+[node name="Enemy" parent="." node_paths=PackedStringArray("patrol_points") instance=ExtResource("4_csopv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 2, 0)
+patrol_points = [NodePath("../PatrolPoint1"), NodePath("../PatrolPoint2")]
+
+[node name="PatrolPoint1" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110, 3, -57)
+
+[node name="PatrolPoint2" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114, 6, 44)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kagtj")
+camera_attributes = SubResource("CameraAttributesPractical_cus2n")
+compositor = SubResource("Compositor_brq4u")

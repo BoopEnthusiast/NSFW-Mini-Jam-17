@@ -5,10 +5,16 @@ extends VehicleBody3D
 const ENGINE_FORCE = 300
 const BRAKE_FORCE = 100
 
+@export var enemy: Enemy
+
 var reversing: bool = false
 
 @onready var wheel_fl: VehicleWheel3D = $WheelFL
 @onready var wheel_fr: VehicleWheel3D = $WheelFR
+
+
+func _enter_tree() -> void:
+	Nodes.player = self
 
 
 func _physics_process(_delta: float) -> void:

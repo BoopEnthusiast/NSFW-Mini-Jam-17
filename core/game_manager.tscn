@@ -6,18 +6,21 @@
 [ext_resource type="PackedScene" uid="uid://lf0rtr4mv7pb" path="res://core/main.tscn" id="3_ulge3"]
 
 [node name="GameManager" type="Node"]
+process_mode = 3
 script = ExtResource("1_xjh8w")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="WhenPausedLayer" type="CanvasLayer" parent="."]
+process_mode = 2
 
-[node name="MainMenu" parent="CanvasLayer" instance=ExtResource("2_ulge3")]
+[node name="MainMenu" parent="WhenPausedLayer" instance=ExtResource("2_ulge3")]
 
-[node name="DraguGrafit" type="Sprite2D" parent="CanvasLayer/MainMenu"]
+[node name="DraguGrafit" type="Sprite2D" parent="WhenPausedLayer/MainMenu"]
 position = Vector2(133, 137)
 scale = Vector2(0.347656, 0.347656)
 texture = ExtResource("3_8prga")
 
 [node name="Main" parent="." instance=ExtResource("3_ulge3")]
+process_mode = 1
 visible = false
 
-[connection signal="play_game" from="CanvasLayer/MainMenu" to="." method="_on_main_menu_play_game"]
+[connection signal="play_game" from="WhenPausedLayer/MainMenu" to="." method="_on_main_menu_play_game"]
