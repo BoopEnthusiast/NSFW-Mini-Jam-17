@@ -5,12 +5,16 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3x74s"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_r77kf"]
+lightmap_size_hint = Vector2i(79, 81)
+add_uv2 = true
 size = Vector3(10, 2.5, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r77kf"]
 size = Vector3(10, 2.5, 5)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_3x74s"]
+lightmap_size_hint = Vector2i(17, 11)
+add_uv2 = true
 height = 0.5
 
 [node name="Player" type="VehicleBody3D"]

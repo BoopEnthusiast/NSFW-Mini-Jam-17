@@ -4,6 +4,8 @@
 size = Vector3(20, 40, 20)
 
 [sub_resource type="BoxMesh" id="BoxMesh_tmt06"]
+lightmap_size_hint = Vector2i(204, 506)
+add_uv2 = true
 size = Vector3(20, 40, 20)
 
 [node name="Building" type="StaticBody3D"]

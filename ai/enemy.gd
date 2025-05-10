@@ -33,11 +33,11 @@ func _physics_process(_delta: float) -> void:
 			# Move to next patrol point if close enough to next patrol point
 			if patrol_points[_next_patrol_point_index].global_position.distance_squared_to(global_position) < DISTANCE_SQUARED_TO_GOTTEN_PATROL_POINT:
 				_next_patrol_point_index = (_next_patrol_point_index + 1) % patrol_points.size()
-			if get_tree().get_frame() % 60 == 0: 
-				print(patrol_points[_next_patrol_point_index].global_position)
+			
 			_steer_toward(patrol_points[_next_patrol_point_index].global_position)
 			
 			var collision_test = _test_collision()
+			if get_tree().get_frame() % 60 == 0: print(collision_test)
 			match collision_test:
 				CollisionResponse.NONE:
 					if position.normalized().dot(to_local(patrol_points[_next_patrol_point_index].global_position).normalized()) > 0:
@@ -53,13 +53,11 @@ func _physics_process(_delta: float) -> void:
 					steering = -1
 				CollisionResponse.PLAYER:
 					engine_force = 150
-			
-			if get_tree().get_frame() % 60 == 0: print(engine_force)
 
 
 func _steer_toward(global_pos: Vector3) -> void:
 	var dot = position.normalized().dot(to_local(global_pos).rotated(Vector3.UP, PI / 2).normalized())
-	steering = clampf(-1 * dot, -PI, PI)
+	steering = clampf(-1 * dot, -PI / 2, PI / 2)
 
 
 func _test_collision() -> CollisionResponse:
