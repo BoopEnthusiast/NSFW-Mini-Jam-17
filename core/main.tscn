@@ -87,5 +87,7 @@ camera_attributes = ExtResource("5_xa854")
 compositor = SubResource("Compositor_brq4u")
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
+quality = 2
 camera_attributes = ExtResource("5_xa854")
+generate_probes_subdiv = 3
 light_data = ExtResource("6_kagtj")
