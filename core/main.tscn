@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://lf0rtr4mv7pb"]
+[gd_scene load_steps=14 format=3 uid="uid://lf0rtr4mv7pb"]
 
 [ext_resource type="Script" uid="uid://lbbfepe47j17" path="res://core/main.gd" id="1_xiose"]
 [ext_resource type="PackedScene" uid="uid://c6hw8imjbic3" path="res://core/player.tscn" id="2_r77kf"]
 [ext_resource type="PackedScene" uid="uid://tmb7k1hhbqhy" path="res://level/building.tscn" id="3_3gdo0"]
+[ext_resource type="PackedScene" path="res://ai/enemy.tscn" id="4_csopv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xiose"]
 
@@ -76,3 +77,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 0)
 mesh_library = SubResource("MeshLibrary_3gdo0")
 physics_material = SubResource("PhysicsMaterial_csopv")
 cell_size = Vector3(10, 10, 10)
+
+[node name="Enemy" parent="." instance=ExtResource("4_csopv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, 2, 0)
