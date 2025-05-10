@@ -2,7 +2,7 @@ class_name Player
 extends VehicleBody3D
 
 
-const ENGINE_FORCE = 2000
+const ENGINE_FORCE = 300
 const BRAKE_FORCE = 100
 
 var reversing: bool = false
@@ -23,10 +23,13 @@ func _physics_process(_delta: float) -> void:
 	# If not reversing, brake
 	if not reversing:
 		brake = BRAKE_FORCE * Input.get_action_strength("backward")
+	else:
+		brake = 0
 	
 	# If stopped moving and trying to reverse, start reversing
 	if linear_velocity.length_squared() < 0.01 and Input.is_action_pressed("backward"):
 		reversing = true
+	
 	
 	# If reversing, move backward
 	if reversing:

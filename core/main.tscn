@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://lf0rtr4mv7pb"]
+[gd_scene load_steps=13 format=3 uid="uid://lf0rtr4mv7pb"]
 
 [ext_resource type="Script" uid="uid://lbbfepe47j17" path="res://core/main.gd" id="1_xiose"]
 [ext_resource type="PackedScene" uid="uid://c6hw8imjbic3" path="res://core/player.tscn" id="2_r77kf"]
+[ext_resource type="PackedScene" uid="uid://tmb7k1hhbqhy" path="res://level/building.tscn" id="3_3gdo0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xiose"]
 
@@ -17,10 +18,14 @@ sky = SubResource("Sky_r77kf")
 [sub_resource type="Compositor" id="Compositor_3gdo0"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xiose"]
-size = Vector3(100, 1, 100)
+size = Vector3(1000, 1, 1000)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xiose"]
-size = Vector3(100, 1, 100)
+size = Vector3(1000, 1, 1000)
+
+[sub_resource type="MeshLibrary" id="MeshLibrary_3gdo0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_csopv"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_xiose")
@@ -45,3 +50,29 @@ shape = SubResource("BoxShape3D_xiose")
 
 [node name="Player" parent="." instance=ExtResource("2_r77kf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="Building2" parent="." instance=ExtResource("3_3gdo0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 64)
+
+[node name="Building3" parent="." instance=ExtResource("3_3gdo0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 64)
+
+[node name="Building4" parent="." instance=ExtResource("3_3gdo0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 64)
+
+[node name="Building6" parent="." instance=ExtResource("3_3gdo0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -64)
+
+[node name="Building7" parent="." instance=ExtResource("3_3gdo0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -64)
+
+[node name="Building8" parent="." instance=ExtResource("3_3gdo0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -64)
+
+[node name="Building5" parent="." instance=ExtResource("3_3gdo0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 0)
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = SubResource("MeshLibrary_3gdo0")
+physics_material = SubResource("PhysicsMaterial_csopv")
+cell_size = Vector3(10, 10, 10)
