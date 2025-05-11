@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c6hw8imjbic3" path="res://core/player.tscn" id="2_r77kf"]
 [ext_resource type="PackedScene" uid="uid://dhey3pdq2wnl" path="res://ai/enemy.tscn" id="4_csopv"]
 [ext_resource type="CameraAttributesPractical" uid="uid://3qco8r1xm8x4" path="res://core/camera_attributes.tres" id="5_xa854"]
-[ext_resource type="MeshLibrary" uid="uid://b7jxd62m4hppm" path="res://level/library.tres" id="6_cus2n"]
+[ext_resource type="MeshLibrary" uid="uid://c25glnvsce40c" path="res://level/library.tres" id="6_cus2n"]
 [ext_resource type="LightmapGIData" uid="uid://bf8ilrsqxhejc" path="res://core/main.lmbake" id="6_kagtj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_csopv"]

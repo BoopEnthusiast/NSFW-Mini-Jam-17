@@ -1,4 +1,4 @@
-[gd_resource type="MeshLibrary" load_steps=15 format=3 uid="uid://b7jxd62m4hppm"]
+[gd_resource type="MeshLibrary" load_steps=15 format=3 uid="uid://c25glnvsce40c"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_le7k1"]
 lightmap_size_hint = Vector2i(204, 506)

@@ -37,6 +37,7 @@ config/icon="res://art/icon.svg"
 
 Nodes="*res://globals/nodes.gd"
 FmodManager="*res://addons/fmod/FmodManager.gd"
+StateManager="*res://globals/state_manager.gd"
 
 [editor_plugins]
 
