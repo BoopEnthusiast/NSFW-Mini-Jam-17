@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dhey3pdq2wnl"]
+[gd_scene load_steps=8 format=3 uid="uid://dhey3pdq2wnl"]
 
 [ext_resource type="Script" uid="uid://d0kyrkrqhk78r" path="res://ai/enemy.gd" id="1_2qiy5"]
 
@@ -19,16 +19,6 @@ size = Vector3(15, 22, 15)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oki72"]
 size = Vector3(16, 45, 18)
-
-[sub_resource type="BoxMesh" id="BoxMesh_2qiy5"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2qiy5"]
-albedo_color = Color(1, 0, 1, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_1rl65"]
-material = SubResource("StandardMaterial3D_2qiy5")
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_2qiy5"]
 
 [node name="Enemy" type="VehicleBody3D"]
 script = ExtResource("1_2qiy5")
@@ -149,21 +139,3 @@ target_position = Vector3(25, 0, 0)
 [node name="Ray2" type="RayCast3D" parent="CollisionTestFar"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 target_position = Vector3(25, 0, 0)
-
-[node name="Debug" type="Node3D" parent="."]
-
-[node name="DebugTurningMesh" type="MeshInstance3D" parent="Debug"]
-transform = Transform3D(21.8, 0, 0, 0, 1, 0, 0, 0, 1, 11, 9, 0)
-mesh = SubResource("BoxMesh_2qiy5")
-skeleton = NodePath("../..")
-
-[node name="Debug2" type="Node3D" parent="."]
-
-[node name="DebugTurningMesh" type="MeshInstance3D" parent="Debug2"]
-transform = Transform3D(21.8, 0, 0, 0, 1, 0, 0, 0, 1, 11, 12, 0)
-mesh = SubResource("BoxMesh_1rl65")
-skeleton = NodePath("../..")
-
-[node name="DebugGoalMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(8.7, 0, 0, 0, 8.7, 0, 0, 0, 8.7, 0, 0, 0)
-mesh = SubResource("CapsuleMesh_2qiy5")

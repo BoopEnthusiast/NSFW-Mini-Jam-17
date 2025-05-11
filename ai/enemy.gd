@@ -14,10 +14,6 @@ var _next_patrol_point_index: int = 0
 @onready var ray_2_far: RayCast3D = $CollisionTestFar/Ray2
 @onready var center_ray: RayCast3D = $CollisionTestClose/CenterRay
 
-@onready var debug: Node3D = $Debug
-@onready var debug_2: Node3D = $Debug2
-@onready var debug_goal_mesh: MeshInstance3D = $DebugGoalMesh
-
 
 func _physics_process(_delta: float) -> void:
 	# Move to next patrol point if close enough to next patrol point
@@ -26,10 +22,6 @@ func _physics_process(_delta: float) -> void:
 	
 	# Steer toward next patrol point
 	_steer_toward(patrol_points[_next_patrol_point_index].global_position)
-	
-	debug_goal_mesh.global_position = patrol_points[_next_patrol_point_index].global_position
-	
-	debug_2.rotation.y = steering
 	
 	var target_direction = (patrol_points[_next_patrol_point_index].global_position - global_position)
 	var angle_to_target = (-global_basis.z).angle_to(target_direction.rotated(Vector3.UP, PI / 2))
@@ -59,8 +51,6 @@ func _physics_process(_delta: float) -> void:
 	if center_ray.is_colliding():
 		steering = 0
 		engine_force = -300
-	
-	debug.rotation.y = steering
 
 
 func _steer_toward(global_pos: Vector3) -> void:
