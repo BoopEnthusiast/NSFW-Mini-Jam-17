@@ -23,4 +23,7 @@ texture = ExtResource("3_8prga")
 process_mode = 1
 visible = false
 
+[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://fmodBanks/Desktop/Master.bank"]
+
 [connection signal="play_game" from="WhenPausedLayer/MainMenu" to="." method="_on_main_menu_play_game"]
