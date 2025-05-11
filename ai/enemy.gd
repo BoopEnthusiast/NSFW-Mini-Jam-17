@@ -54,9 +54,6 @@ func _physics_process(_delta: float) -> void:
 			var target_direction = (patrol_points[_next_patrol_point_index].global_position - global_position)
 			var angle_to_target = (-global_basis.z).angle_to(target_direction.rotated(Vector3.UP, PI / 2))
 			
-			if get_tree().get_frame() % 20 == 0: print(angle_to_target < PI * 0.2)
-			if get_tree().get_frame() % 20 == 0: print(angle_to_target)
-			
 			# Drive toward patrol point, else try turning around towards it
 			if angle_to_target < PI * 0.2:
 				engine_force = 100
@@ -93,12 +90,3 @@ func _steer_toward(global_pos: Vector3) -> void:
 	var target_direction = to_target.normalized()
 	var angle_to_target = current_direction.signed_angle_to(target_direction, Vector3.UP)
 	steering = angle_to_target + PI / 2
-	
-	#var target_vector = global_position.direction_to(global_pos)
-	#var target_basis = Basis.looking_at(target_vector)
-	#steering = basis.slerp(target_basis, 1.0).z.
-	
-	#var direction_to = global_position.angle_to(global_pos)
-	#var dot = position.normalized().dot(to_local(global_pos).rotated(Vector3.UP, PI / 2).normalized())
-	#steering = clampf(-1.5 * dot, -PI * 0.8, PI * 0.8)
-	#steering = clampf(-direction_to, -PI * 0.8, PI * 0.8)
