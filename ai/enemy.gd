@@ -2,17 +2,6 @@ class_name Enemy
 extends VehicleBody3D
 
 
-enum CollisionResponse {
-	CLOSE_LEFT,
-	CLOSE_RIGHT,
-	FAR_LEFT,
-	FAR_RIGHT,
-	CLOSE_BOTH,
-	FAR_BOTH,
-	NONE,
-	PLAYER,
-}
-
 const DISTANCE_SQUARED_TO_GOTTEN_PATROL_POINT = 300
 
 @export var patrol_points: Array[Marker3D]
