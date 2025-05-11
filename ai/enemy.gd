@@ -28,6 +28,11 @@ var _next_patrol_point_index: int = 0
 @onready var ray_2_close: RayCast3D = $CollisionTestClose/Ray2
 @onready var ray_1_far: RayCast3D = $CollisionTestFar/Ray1
 @onready var ray_2_far: RayCast3D = $CollisionTestFar/Ray2
+@onready var center_ray: RayCast3D = $CollisionTestClose/CenterRay
+
+@onready var debug: Node3D = $Debug
+@onready var debug_2: Node3D = $Debug2
+@onready var debug_goal_mesh: MeshInstance3D = $DebugGoalMesh
 
 
 func _physics_process(_delta: float) -> void:
@@ -39,50 +44,61 @@ func _physics_process(_delta: float) -> void:
 			if patrol_points[_next_patrol_point_index].global_position.distance_squared_to(global_position) < DISTANCE_SQUARED_TO_GOTTEN_PATROL_POINT:
 				_next_patrol_point_index = (_next_patrol_point_index + 1) % patrol_points.size()
 			
-			steering = 0
-			var colliding = false
-			# Move away from wall
+			# Steer toward next patrol point
+			_steer_toward(patrol_points[_next_patrol_point_index].global_position)
+			
+			debug_goal_mesh.global_position = patrol_points[_next_patrol_point_index].global_position
+			
+			debug_2.rotation.y = steering
+			
+			var target_direction = (patrol_points[_next_patrol_point_index].global_position - global_position)
+			var angle_to_target = (-global_basis.z).angle_to(target_direction.rotated(Vector3.UP, PI / 2))
+			
+			if get_tree().get_frame() % 20 == 0: print(angle_to_target < PI * 0.2)
+			if get_tree().get_frame() % 20 == 0: print(angle_to_target)
+			
+			# Drive toward patrol point, else try turning around towards it
+			if angle_to_target < PI * 0.2:
+				engine_force = 100
+			else:
+				engine_force = -50
+				steering = 1
+			
+			# Steer away from far away walls
+			if ray_1_far.is_colliding():
+				steering += PI / 2
+			if ray_2_far.is_colliding():
+				steering += -PI / 2
+			
+			
+			# Move away from close up walls
 			if ray_1_close.is_colliding():
-				steering += 1
+				steering = 1
 				engine_force = -100
-				colliding = true
 			if ray_2_close.is_colliding():
-				steering -= 1
+				steering = -1
 				engine_force = -100
-				colliding = true
 			
-			if not colliding:
-				# Steer toward next patrol point
-				_steer_toward(patrol_points[_next_patrol_point_index].global_position)
-				
-				if position.normalized().dot(to_local(patrol_points[_next_patrol_point_index].global_position).normalized()) > 0:
-					engine_force = 100
-				else:
-					engine_force = -50
-					steering = 1
+			if center_ray.is_colliding():
+				steering = 0
+				engine_force = -300
 			
-			
-			#
-			#if get_tree().get_frame() % 60 == 0: print(collision_test)
-			#match collision_test:
-				#CollisionResponse.NONE:
-					#if position.normalized().dot(to_local(patrol_points[_next_patrol_point_index].global_position).normalized()) > 0:
-						#engine_force = 100
-					#else:
-						#engine_force = -50
-						#steering = 1
-				#CollisionResponse.BOTH:
-					#engine_force = -100
-				#CollisionResponse.CLOSE_LEFT:
-					#steering = 1
-					#engine_force = -100
-				#CollisionResponse.CLOSE_RIGHT:
-					#steering = -1
-					#engine_force = -100
-				#CollisionResponse.PLAYER:
-					#engine_force = 150
+			debug.rotation.y = steering
 
 
 func _steer_toward(global_pos: Vector3) -> void:
-	var dot = position.normalized().dot(to_local(global_pos).rotated(Vector3.UP, PI / 2).normalized())
-	steering = clampf(-1 * dot, -PI / 2, PI / 2)
+	var current_direction = -global_transform.basis.z
+	var to_target = global_pos - global_position
+	to_target.y = 0
+	var target_direction = to_target.normalized()
+	var angle_to_target = current_direction.signed_angle_to(target_direction, Vector3.UP)
+	steering = angle_to_target + PI / 2
+	
+	#var target_vector = global_position.direction_to(global_pos)
+	#var target_basis = Basis.looking_at(target_vector)
+	#steering = basis.slerp(target_basis, 1.0).z.
+	
+	#var direction_to = global_position.angle_to(global_pos)
+	#var dot = position.normalized().dot(to_local(global_pos).rotated(Vector3.UP, PI / 2).normalized())
+	#steering = clampf(-1.5 * dot, -PI * 0.8, PI * 0.8)
+	#steering = clampf(-direction_to, -PI * 0.8, PI * 0.8)
