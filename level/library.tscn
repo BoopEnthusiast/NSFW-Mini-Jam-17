@@ -1,12 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://6fvhd7cksmt5"]
+[gd_scene load_steps=5 format=3 uid="uid://6fvhd7cksmt5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tmt06"]
-lightmap_size_hint = Vector2i(204, 506)
+lightmap_size_hint = Vector2i(204, 206)
 add_uv2 = true
-size = Vector3(20, 40, 20)
+size = Vector3(20, 10, 20)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mcmj2"]
-size = Vector3(20, 40, 20)
+size = Vector3(20, 10, 20)
 
 [sub_resource type="BoxMesh" id="BoxMesh_sm4lb"]
 lightmap_size_hint = Vector2i(129, 206)
@@ -16,26 +16,16 @@ size = Vector3(5, 10, 20)
 [sub_resource type="BoxShape3D" id="BoxShape3D_tmt06"]
 size = Vector3(5, 10, 20)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_sm4lb"]
-lightmap_size_hint = Vector2i(102, 102)
-add_uv2 = true
-size = Vector2(20, 20)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_sm4lb"]
-size = Vector3(20, 1, 20)
-
 [node name="Library" type="Node3D"]
 
 [node name="Building" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 20, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 10)
 mesh = SubResource("BoxMesh_tmt06")
 skeleton = NodePath("StaticBody")
 
 [node name="StaticBody" type="StaticBody3D" parent="Building"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20, 0)
 
 [node name="Collider" type="CollisionShape3D" parent="Building/StaticBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
 shape = SubResource("BoxShape3D_mcmj2")
 
 [node name="Wall" type="MeshInstance3D" parent="."]
@@ -47,23 +37,3 @@ skeleton = NodePath("StaticBody")
 
 [node name="Collider" type="CollisionShape3D" parent="Wall/StaticBody"]
 shape = SubResource("BoxShape3D_tmt06")
-
-[node name="Wall2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 5, -10)
-mesh = SubResource("BoxMesh_sm4lb")
-skeleton = NodePath("StaticBody")
-
-[node name="StaticBody" type="StaticBody3D" parent="Wall2"]
-
-[node name="Collider" type="CollisionShape3D" parent="Wall2/StaticBody"]
-shape = SubResource("BoxShape3D_tmt06")
-
-[node name="Floor" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
-mesh = SubResource("PlaneMesh_sm4lb")
-
-[node name="StaticBody" type="StaticBody3D" parent="Floor"]
-
-[node name="Collider" type="CollisionShape3D" parent="Floor/StaticBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-shape = SubResource("BoxShape3D_sm4lb")

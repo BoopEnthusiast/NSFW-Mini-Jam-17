@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c6hw8imjbic3" path="res://core/player.tscn" id="2_r77kf"]
 [ext_resource type="PackedScene" uid="uid://dhey3pdq2wnl" path="res://ai/enemy.tscn" id="4_csopv"]
 [ext_resource type="CameraAttributesPractical" uid="uid://3qco8r1xm8x4" path="res://core/camera_attributes.tres" id="5_xa854"]
-[ext_resource type="MeshLibrary" uid="uid://c25glnvsce40c" path="res://level/library.tres" id="6_cus2n"]
+[ext_resource type="MeshLibrary" uid="uid://bkruwtu83wjw1" path="res://level/20_10_20.tres" id="6_cus2n"]
 [ext_resource type="LightmapGIData" uid="uid://bf8ilrsqxhejc" path="res://core/main.lmbake" id="6_kagtj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_csopv"]
@@ -75,14 +75,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 enemy = NodePath("../Enemy")
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("patrol_points") instance=ExtResource("4_csopv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -175, 2, 6)
 patrol_points = [NodePath("../PatrolPoint1"), NodePath("../PatrolPoint2")]
 
 [node name="PatrolPoint1" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131, 3, -57)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -172.3, 3, -57)
 
 [node name="PatrolPoint2" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114, 4, 44)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -166.634, 4, 87.6619)
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
 quality = 2
@@ -92,4 +92,8 @@ light_data = ExtResource("6_kagtj")
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("6_cus2n")
-cell_size = Vector3(20, 20, 20)
+cell_size = Vector3(20, 10, 20)
+data = {
+"cells": PackedInt32Array(65534, 1, 1, 65534, 0, 0, 65534, 65535, 1, 131070, 0, 0, 196606, 0, 0, 65534, 65534, 0, 65534, 2, 0, 131070, 2, 0, 131070, 65534, 0, 65538, 65535, 0, 65538, 0, 0, 65538, 1, 0, 65538, 2, 0, 131074, 65535, 0, 131074, 1, 0, 131074, 2, 0, 196610, 2, 0, 131074, 3, 0, 65538, 3, 0, 65534, 3, 0, 131070, 3, 0, 2, 65535, 0, 2, 0, 0, 2, 1, 0, 2, 2, 0, 2, 3, 0, 2, 65534, 0, 3, 65534, 0, 4, 65534, 0, 5, 65534, 0, 6, 65534, 0, 3, 65535, 0, 3, 0, 0, 3, 1, 0, 3, 2, 0, 3, 3, 0, 4, 3, 0, 4, 2, 0, 4, 1, 0, 4, 0, 0, 4, 65535, 0, 5, 65535, 0, 5, 0, 0, 5, 1, 0, 5, 2, 0, 5, 3, 0, 6, 3, 0, 6, 2, 0, 6, 1, 0, 6, 0, 0, 6, 65535, 0, 65539, 65535, 0, 65539, 0, 0, 65539, 1, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65541, 1, 0, 65541, 0, 0, 65541, 65535, 0, 65540, 65535, 0, 65540, 0, 0, 65540, 1, 0, 131076, 1, 0, 131076, 0, 0, 131077, 65534, 0, 65541, 65534, 0, 65540, 65534, 0, 65542, 0, 0, 65542, 1, 0, 65540, 3, 0, 65539, 3, 0, 131076, 3, 0, 131078, 0, 0, 131078, 65534, 0, 65542, 65534, 0, 196601, 3, 0, 262137, 3, 0, 196603, 3, 0, 196605, 3, 0, 65533, 3, 0, 65532, 3, 0, 65531, 3, 0, 65530, 3, 0, 65529, 3, 0, 131065, 3, 0, 131066, 3, 0, 131067, 3, 0, 131068, 3, 0, 131069, 3, 0, 65529, 2, 1, 65529, 1, 1, 65529, 0, 1, 65529, 65535, 1, 65530, 65534, 1441793, 65531, 65534, 1441793, 65532, 65534, 1441793, 65533, 65534, 1441793, 65529, 65534, 1441792, 131065, 65534, 1441792, 196601, 65534, 1441792)
+}
+metadata/_editor_floor_ = Vector3(0, 1, 0)
