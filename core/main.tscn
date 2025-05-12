@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://lf0rtr4mv7pb"]
+[gd_scene load_steps=23 format=3 uid="uid://lf0rtr4mv7pb"]
 
 [ext_resource type="Script" uid="uid://lbbfepe47j17" path="res://core/main.gd" id="1_xiose"]
 [ext_resource type="PackedScene" uid="uid://c6hw8imjbic3" path="res://core/player.tscn" id="2_r77kf"]
@@ -70,6 +70,18 @@ point_count = 2
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xhu5d"]
 shader = ExtResource("7_jsmgm")
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_jsmgm"]
+
+[sub_resource type="GDScript" id="GDScript_jsmgm"]
+script/source = "extends Camera3D
+
+
+
+func _process(_delta: float) -> void:
+	global_position = Nodes.player.global_position + Vector3.UP * 200
+	global_rotation.y = Nodes.player.global_rotation.y - PI / 2
+"
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_xiose")
@@ -485,5 +497,26 @@ offset_bottom = 269.0
 texture = ExtResource("7_cus2n")
 expand_mode = 1
 script = ExtResource("8_brq4u")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HUDLayer/Control/Minimap"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="HUDLayer/Control/Minimap/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(269, 269)
+render_target_update_mode = 4
+
+[node name="MinimapCamera" type="Camera3D" parent="HUDLayer/Control/Minimap/SubViewportContainer/SubViewport"]
+transform = Transform3D(-4.37114e-08, 1, -1.31134e-07, 0, 1.31134e-07, 1, 1, 4.37114e-08, -5.73206e-15, 0, 194, 0)
+attributes = SubResource("CameraAttributesPractical_jsmgm")
+projection = 1
+size = 924.964
+script = SubResource("GDScript_jsmgm")
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

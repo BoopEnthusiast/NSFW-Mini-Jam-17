@@ -9,7 +9,7 @@ const MARKER = preload("res://gui/marker.tscn")
 
 func _process(_delta: float) -> void:
 	# Child going through right now
-	var i: int = 0
+	var i: int = 1
 	
 	# Player
 	var player_child: Marker = get_child(i) if get_child_count() > i else null
@@ -46,6 +46,9 @@ func _process(_delta: float) -> void:
 		position_to_player = Nodes.player.to_local(person.global_position).rotated(Vector3.UP, PI / 2) / MAP_SCALE
 		person_child.position = Vector2(position_to_player.x, position_to_player.z) + size / 2
 		i += 1
+	
+	while i > get_child_count():
+		remove_child(get_child(i))
 
 
 func make_new_marker() -> Marker:

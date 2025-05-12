@@ -41,6 +41,10 @@ func _physics_process(_delta: float) -> void:
 	# If reversing, move backward
 	if reversing:
 		engine_force = -ENGINE_FORCE * Input.get_action_strength("backward")
+	
+	# Flip back over
+	if rotation.z > PI / 2 or rotation.z < -PI / 2:
+		rotation.z = 0
 
 
 func _on_collect_area_body_entered(body: Node3D) -> void:
