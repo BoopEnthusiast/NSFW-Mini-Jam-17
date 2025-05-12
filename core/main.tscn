@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://lf0rtr4mv7pb"]
+[gd_scene load_steps=21 format=3 uid="uid://lf0rtr4mv7pb"]
 
 [ext_resource type="Script" uid="uid://lbbfepe47j17" path="res://core/main.gd" id="1_xiose"]
 [ext_resource type="PackedScene" uid="uid://c6hw8imjbic3" path="res://core/player.tscn" id="2_r77kf"]
@@ -7,6 +7,7 @@
 [ext_resource type="MeshLibrary" uid="uid://bkruwtu83wjw1" path="res://level/20_10_20.tres" id="6_cus2n"]
 [ext_resource type="LightmapGIData" uid="uid://bf8ilrsqxhejc" path="res://core/main.lmbake" id="6_kagtj"]
 [ext_resource type="Texture2D" uid="uid://cx3tb3fr7e0t6" path="res://art/circle.png" id="7_cus2n"]
+[ext_resource type="Shader" uid="uid://wc1p5p4lggyo" path="res://gui/minimap.gdshader" id="7_jsmgm"]
 [ext_resource type="Script" uid="uid://cjp7mdc76b5ql" path="res://gui/minimap.gd" id="8_brq4u"]
 
 [sub_resource type="Curve" id="Curve_cus2n"]
@@ -66,6 +67,9 @@ _data = {
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xhu5d"]
+shader = ExtResource("7_jsmgm")
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_xiose")
@@ -473,6 +477,7 @@ grow_vertical = 2
 
 [node name="Minimap" type="TextureRect" parent="HUDLayer/Control"]
 clip_children = 2
+material = SubResource("ShaderMaterial_xhu5d")
 clip_contents = true
 layout_mode = 0
 offset_right = 269.0
