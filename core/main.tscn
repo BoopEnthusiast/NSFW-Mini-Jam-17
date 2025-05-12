@@ -471,15 +471,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MinimapBackground" type="TextureRect" parent="HUDLayer/Control"]
-layout_mode = 1
-offset_right = 269.0
-offset_bottom = 269.0
-texture = ExtResource("7_cus2n")
-expand_mode = 1
-
 [node name="Minimap" type="TextureRect" parent="HUDLayer/Control"]
-clip_children = 1
+clip_children = 2
+clip_contents = true
 layout_mode = 0
 offset_right = 269.0
 offset_bottom = 269.0
