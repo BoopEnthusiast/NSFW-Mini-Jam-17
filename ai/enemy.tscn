@@ -157,3 +157,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Reset" type="Timer" parent="."]
+process_callback = 0
+wait_time = 10.0
+autostart = true
+
+[node name="Brake" type="Timer" parent="."]
+process_callback = 0
+wait_time = 4.0
+one_shot = true
+
+[connection signal="timeout" from="Reset" to="." method="_on_reset_timer_timeout"]
+[connection signal="timeout" from="Brake" to="." method="_on_brake_timeout"]

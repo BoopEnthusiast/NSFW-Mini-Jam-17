@@ -24,16 +24,6 @@ process_mode = 1
 visible = false
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
 bank_paths = ["res://fmodBanks/Desktop/Master.bank"]
-script = null
 
 [connection signal="play_game" from="WhenPausedLayer/MainMenu" to="." method="_on_main_menu_play_game"]

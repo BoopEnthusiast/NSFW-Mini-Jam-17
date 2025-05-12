@@ -16,6 +16,8 @@ const TIME_TO_STOP_CHASING = 0.5
 var _mode: Modes
 var _next_patrol_point_index: int = 0
 var _caught_player_progress: float = 0.0
+var _previous_location: Vector3
+var _reset_location: Vector3
 
 @onready var ray_1_close: RayCast3D = $CollisionTestClose/Ray1
 @onready var ray_2_close: RayCast3D = $CollisionTestClose/Ray2
@@ -26,8 +28,12 @@ var _caught_player_progress: float = 0.0
 @onready var vision_bar: ProgressBar = $SubViewport/VisionBar
 @onready var vision_cone: Area3D = $VisionCone
 
+@onready var brake_timer: Timer = $Brake
+
 
 func _ready() -> void:
+	_reset_location = global_position
+	_previous_location = global_position
 	vision_bar.max_value = SECONDS_TO_CATCH_PLAYER
 
 
@@ -63,6 +69,7 @@ func _physics_process(delta: float) -> void:
 			# Move to next patrol point if close enough to next patrol point
 			if patrol_points[_next_patrol_point_index].global_position.distance_squared_to(global_position) < DISTANCE_SQUARED_TO_GOTTEN_PATROL_POINT:
 				_next_patrol_point_index = (_next_patrol_point_index + 1) % patrol_points.size()
+				_brake()
 			
 			# Steer toward next patrol point
 			_steer_toward(patrol_points[_next_patrol_point_index].global_position)
@@ -71,8 +78,8 @@ func _physics_process(delta: float) -> void:
 			var angle_to_target = (-global_basis.z).angle_to(target_direction.rotated(Vector3.UP, PI / 2))
 			
 			# Drive toward patrol point, else try turning around towards it
-			if angle_to_target < PI * 0.2:
-				engine_force = 100
+			if angle_to_target < PI * 0.5:
+				engine_force = 75
 			else:
 				engine_force = -50
 				steering = 1
@@ -105,3 +112,23 @@ func _steer_toward(global_pos: Vector3) -> void:
 	var target_direction = to_target.normalized()
 	var angle_to_target = current_direction.signed_angle_to(target_direction, Vector3.UP)
 	steering = angle_to_target + PI / 2
+
+
+func _on_reset_timer_timeout() -> void:
+	if global_position.distance_to(_previous_location) < 10:
+		_reset_position()
+	_previous_location = global_position
+
+
+func _reset_position() -> void:
+	global_position = _reset_location
+
+
+func _brake() -> void:
+	brake_timer.start()
+	brake = 1000
+	engine_force = -500
+
+
+func _on_brake_timeout() -> void:
+	brake = 0
