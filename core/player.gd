@@ -9,8 +9,9 @@ const BRAKE_FORCE = 100
 
 var reversing: bool = false
 
-@onready var wheel_fl: VehicleWheel3D = $WheelFL
-@onready var wheel_fr: VehicleWheel3D = $WheelFR
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+var collected_people: Array[Person.Gender] = []
 
 
 func _enter_tree() -> void:
@@ -40,3 +41,10 @@ func _physics_process(_delta: float) -> void:
 	# If reversing, move backward
 	if reversing:
 		engine_force = -ENGINE_FORCE * Input.get_action_strength("backward")
+
+
+func _on_collect_area_body_entered(body: Node3D) -> void:
+	if body is Person:
+		if collected_people.size() < 2:
+			collected_people.append(body.gender)
+			body.queue_free()

@@ -6,7 +6,10 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cus2n"]
 
-[node name="Person" type="StaticBody3D" groups=["person"]]
+[node name="Person" type="RigidBody3D" groups=["person"]]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 script = ExtResource("1_8lcsn")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]

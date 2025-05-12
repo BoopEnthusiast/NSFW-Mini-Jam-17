@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6hw8imjbic3"]
+[gd_scene load_steps=10 format=3 uid="uid://c6hw8imjbic3"]
 
 [ext_resource type="Script" uid="uid://bojv5u257jpkw" path="res://core/player.gd" id="1_3x74s"]
 
@@ -16,6 +16,153 @@ size = Vector3(10, 2.5, 5)
 lightmap_size_hint = Vector2i(17, 11)
 add_uv2 = true
 height = 0.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3x74s"]
+radius = 12.932
+
+[sub_resource type="Animation" id="Animation_3x74s"]
+resource_name = "bump"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.23079, 0.7, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mesh:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.23079, 0.7, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mesh:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.177684, -0.25, 0, 0.25, 0, 0.0962551, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.23079, 0.7, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Mesh:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.23079, 0.7, 1)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Mesh:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1.095, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.23079, 0.7, 1)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Mesh:position:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.23079, 0.7, 1)
+}
+
+[sub_resource type="Animation" id="Animation_ptdtg"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mesh:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mesh:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Mesh:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Mesh:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Mesh:position:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ae0v"]
+_data = {
+&"RESET": SubResource("Animation_ptdtg"),
+&"bump": SubResource("Animation_3x74s")
+}
 
 [node name="Player" type="VehicleBody3D"]
 physics_material_override = SubResource("PhysicsMaterial_3x74s")
@@ -41,7 +188,7 @@ current = true
 transform = Transform3D(-1.2252e-07, 0, 2.80294, 0, 2.80294, 0, -2.80294, 0, -1.2252e-07, 4, 0, -3)
 use_as_traction = true
 use_as_steering = true
-wheel_roll_influence = 0.8
+wheel_roll_influence = 0.9
 suspension_travel = 0.5
 suspension_stiffness = 10.0
 suspension_max_force = 60.0
@@ -57,7 +204,7 @@ mesh = SubResource("CylinderMesh_3x74s")
 transform = Transform3D(-5.96046e-08, 0, 2.80294, 0, 2.80294, 0, -2.80294, 0, -5.96046e-08, 4, 0, 3)
 use_as_traction = true
 use_as_steering = true
-wheel_roll_influence = 0.8
+wheel_roll_influence = 0.9
 suspension_travel = 0.5
 suspension_stiffness = 10.0
 suspension_max_force = 60.0
@@ -72,7 +219,7 @@ mesh = SubResource("CylinderMesh_3x74s")
 [node name="WheelBL" type="VehicleWheel3D" parent="."]
 transform = Transform3D(3.67561e-07, 0, 2.80294, 0, 2.80294, 0, -2.80294, 0, 3.67561e-07, -4, 0, -3)
 use_as_traction = true
-wheel_roll_influence = 0.8
+wheel_roll_influence = 0.9
 suspension_travel = 0.5
 suspension_stiffness = 10.0
 suspension_max_force = 60.0
@@ -87,7 +234,7 @@ mesh = SubResource("CylinderMesh_3x74s")
 [node name="WheelBR" type="VehicleWheel3D" parent="."]
 transform = Transform3D(3.67561e-07, 0, 2.80294, 0, 2.80294, 0, -2.80294, 0, 3.67561e-07, -4, 0, 3)
 use_as_traction = true
-wheel_roll_influence = 0.8
+wheel_roll_influence = 0.9
 suspension_travel = 0.5
 suspension_stiffness = 10.0
 suspension_max_force = 60.0
@@ -98,3 +245,15 @@ damping_relaxation = 0.5
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 1, -4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 0, 0, 0)
 gi_mode = 2
 mesh = SubResource("CylinderMesh_3x74s")
+
+[node name="CollectArea" type="Area3D" parent="."]
+
+[node name="Collider" type="CollisionShape3D" parent="CollectArea"]
+shape = SubResource("SphereShape3D_3x74s")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4ae0v")
+}
+
+[connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]

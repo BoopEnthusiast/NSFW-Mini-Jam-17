@@ -12,7 +12,7 @@ func _process(_delta: float) -> void:
 	var i: int = 0
 	
 	# Player
-	var player_child: Marker = get_child(i) if get_child_count() >= i else null
+	var player_child: Marker = get_child(i) if get_child_count() > i else null
 	# Make new marker if there is none 
 	if not is_instance_valid(player_child):
 		player_child = make_new_marker()
@@ -34,7 +34,7 @@ func _process(_delta: float) -> void:
 	
 	# People
 	for person: Person in get_tree().get_nodes_in_group("person"):
-		var person_child: Marker = get_child(i) if get_child_count() >= i else null
+		var person_child: Marker = get_child(i) if get_child_count() > i else null
 		# Make new marker if there is none
 		if not is_instance_valid(person_child):
 			person_child = make_new_marker()

@@ -1,5 +1,5 @@
 class_name Person
-extends StaticBody3D
+extends RigidBody3D
 
 
 enum Gender {
@@ -14,3 +14,7 @@ var gender: Gender
 
 func _ready() -> void:
 	gender = GENDERS.pick_random()
+
+
+func _physics_process(_delta: float) -> void:
+	global_position.y = 0
