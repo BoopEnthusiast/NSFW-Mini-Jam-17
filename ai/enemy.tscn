@@ -23,7 +23,7 @@ size = Vector3(16, 45, 18)
 [sub_resource type="ViewportTexture" id="ViewportTexture_2qiy5"]
 viewport_path = NodePath("SubViewport")
 
-[node name="Enemy" type="VehicleBody3D"]
+[node name="Enemy" type="VehicleBody3D" groups=["enemy"]]
 script = ExtResource("1_2qiy5")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]

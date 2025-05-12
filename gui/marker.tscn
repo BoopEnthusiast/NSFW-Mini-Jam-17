@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://b62dcdqyb72jx"]
+
+[ext_resource type="Texture2D" uid="uid://cx3tb3fr7e0t6" path="res://art/circle.png" id="1_ynscl"]
+[ext_resource type="Script" uid="uid://d1ounuhll5fib" path="res://gui/marker.gd" id="2_tefdn"]
+
+[node name="Marker" type="TextureRect"]
+clip_children = 1
+custom_minimum_size = Vector2(10, 10)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ynscl")
+expand_mode = 1
+script = ExtResource("2_tefdn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

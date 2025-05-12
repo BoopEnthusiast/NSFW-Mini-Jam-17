@@ -11,6 +11,7 @@ script = ExtResource("1_xjh8w")
 
 [node name="WhenPausedLayer" type="CanvasLayer" parent="."]
 process_mode = 2
+layer = 2
 
 [node name="MainMenu" parent="WhenPausedLayer" instance=ExtResource("2_ulge3")]
 

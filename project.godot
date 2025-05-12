@@ -43,6 +43,11 @@ StateManager="*res://globals/state_manager.gd"
 
 enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
 
+[global_group]
+
+enemy=""
+person=""
+
 [input]
 
 forward={
