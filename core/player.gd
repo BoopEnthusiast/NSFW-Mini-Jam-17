@@ -10,6 +10,7 @@ const BRAKE_FORCE = 100
 var reversing: bool = false
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var fmod_event_emitter_3d: FmodEventEmitter3D = $FmodEventEmitter3D
 
 var collected_people: Array[Person.Gender] = []
 
@@ -45,6 +46,10 @@ func _physics_process(_delta: float) -> void:
 	# Flip back over
 	if rotation.z > PI / 2 or rotation.z < -PI / 2:
 		rotation.z = 0
+	
+	# Fmod events
+	fmod_event_emitter_3d.set_parameter("speed", linear_velocity.length())
+	fmod_event_emitter_3d.set_parameter("engine_force", engine_force)
 
 
 func _on_collect_area_body_entered(body: Node3D) -> void:

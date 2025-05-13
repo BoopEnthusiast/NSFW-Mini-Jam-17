@@ -256,4 +256,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_4ae0v")
 }
 
+[node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="."]
+event_guid = "{00000000-0000-0000-0000-000000000000}"
+
 [connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]
