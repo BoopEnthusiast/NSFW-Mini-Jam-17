@@ -25,6 +25,6 @@ process_mode = 1
 visible = false
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
-bank_paths = ["res://fmodBanks/Desktop/Master.bank"]
+bank_paths = ["res://fmodBanks/Desktop/main game.bank", "res://fmodBanks/Desktop/Master.strings.bank", "res://fmodBanks/Desktop/Master.bank"]
 
 [connection signal="play_game" from="WhenPausedLayer/MainMenu" to="." method="_on_main_menu_play_game"]
