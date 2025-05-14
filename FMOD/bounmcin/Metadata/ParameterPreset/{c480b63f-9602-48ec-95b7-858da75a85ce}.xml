@@ -12,6 +12,9 @@
 		</relationship>
 	</object>
 	<object class="GameParameter" id="{4b0fb030-a958-4fef-8c0c-a193734d7b10}">
+		<property name="maximum">
+			<value>130</value>
+		</property>
 		<property name="initialValue">
 			<value>0</value>
 		</property>

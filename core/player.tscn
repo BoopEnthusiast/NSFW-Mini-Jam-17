@@ -184,6 +184,8 @@ transform = Transform3D(2.87868e-08, 0.258819, -0.965926, -7.71341e-09, 0.965926
 doppler_tracking = 1
 current = true
 
+[node name="FmodListener3D" type="FmodListener3D" parent="Camera"]
+
 [node name="WheelFL" type="VehicleWheel3D" parent="."]
 transform = Transform3D(-1.2252e-07, 0, 2.80294, 0, 2.80294, 0, -2.80294, 0, -1.2252e-07, 4, 0, -3)
 use_as_traction = true
@@ -256,14 +258,12 @@ libraries = {
 &"": SubResource("AnimationLibrary_4ae0v")
 }
 
-[node name="EngineForce" type="FmodEventEmitter3D" parent="."]
+[node name="speed_emitter" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/engine"
 event_guid = "{8b87688f-3532-45e6-bb62-6ccb5353fc6f}"
-fmod_parameters/engine_force/id = 9125978122728573934
-fmod_parameters/engine_force = 0.0
-fmod_parameters/engine_force/variant_type = 3
-
-[node name="Speed" type="FmodEventEmitter3D" parent="."]
-event_guid = "{00000000-0000-0000-0000-000000000000}"
+autoplay = true
+fmod_parameters/speed/id = -4529772816331744994
+fmod_parameters/speed = 0.0
+fmod_parameters/speed/variant_type = 3
 
 [connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]

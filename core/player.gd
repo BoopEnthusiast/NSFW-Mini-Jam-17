@@ -24,7 +24,7 @@ func _physics_process(_delta: float) -> void:
 	# Stop reversing if moving forward
 	if Input.is_action_pressed("forward"):
 		reversing = false
-		#$FmodEventEmitter3D/femHey.play()
+		
 	
 	# Calculate engine force and steering
 	engine_force = ENGINE_FORCE * Input.get_action_strength("forward")
@@ -50,8 +50,8 @@ func _physics_process(_delta: float) -> void:
 		rotation.z = 0
 	
 	# Fmod events
-	speed_emitter.set_parameter("speed", linear_velocity.length())
-	engine_force_emitter.set_parameter("engine_force", engine_force)
+	$speed_emitter.set_parameter("speed", linear_velocity.length())
+	#engine_force_emitter.set_parameter("engine_force", engine_force)
 	
 	
 
