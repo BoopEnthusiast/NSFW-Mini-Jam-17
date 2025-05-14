@@ -27,9 +27,11 @@ event_guid = "{9a2b5604-a5ab-42e4-a0a6-9e39e4524a76}"
 
 [node name="Masc Base Model" parent="." instance=ExtResource("2_sxyxf")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+visible = false
 
 [node name="Fem Base Model" parent="." instance=ExtResource("3_mgl7n")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+visible = false
 
 [node name="RayCasts" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.61355, 0)
