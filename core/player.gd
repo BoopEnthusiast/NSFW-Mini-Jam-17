@@ -64,10 +64,3 @@ func _physics_process(_delta: float) -> void:
 					Person.Gender.FEMALE:
 						fem_greeting.play()
 				body.queue_free()
-
-
-func _on_collect_area_body_entered(body: Node3D) -> void:
-	if body is Person:
-		if collected_people.size() < 2:
-			collected_people.append(body.gender)
-			body.queue_free()
