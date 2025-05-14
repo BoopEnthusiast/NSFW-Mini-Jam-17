@@ -50,7 +50,7 @@ func _physics_process(_delta: float) -> void:
 	
 	# Fmod events
 	##fmod_event_emitter_3d.set_parameter("speed", linear_velocity.length())
-	fmod_event_emitter_3d.set_parameter("engine_force", engine_force)
+	#fmod_event_emitter_3d.set_parameter("engine_force", engine_force)
 	
 	
 

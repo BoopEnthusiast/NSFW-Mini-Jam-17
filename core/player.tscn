@@ -256,22 +256,4 @@ libraries = {
 &"": SubResource("AnimationLibrary_4ae0v")
 }
 
-[node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-event_name = "event:/engine"
-event_guid = "{8b87688f-3532-45e6-bb62-6ccb5353fc6f}"
-autoplay = true
-fmod_parameters/engine_force/id = 9125978122728573934
-fmod_parameters/engine_force = 0.0
-fmod_parameters/engine_force/variant_type = 3
-script = null
-
 [connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]
