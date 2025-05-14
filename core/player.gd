@@ -51,7 +51,7 @@ func _physics_process(_delta: float) -> void:
 	
 	# Fmod events
 	$speed_emitter.set_parameter("speed", linear_velocity.length())
-	print(linear_velocity.length())
+	#print(linear_velocity.length())
 	#engine_force_emitter.set_parameter("engine_force", engine_force)
 	
 	if Input.is_action_just_pressed("bump"):

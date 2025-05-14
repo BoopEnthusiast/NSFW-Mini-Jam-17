@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckrp3uphauwft"]
+[gd_scene load_steps=5 format=3 uid="uid://ckrp3uphauwft"]
 
 [ext_resource type="Script" uid="uid://iyctjw0t3acy" path="res://ai/person.gd" id="1_8lcsn"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_cus2n"]
+[ext_resource type="PackedScene" uid="uid://c7xvt6lk5ilnc" path="res://art/human/masc_base_model.tscn" id="2_sxyxf"]
+[ext_resource type="PackedScene" uid="uid://brr0w0o7xtiyp" path="res://art/human/fem_base_model.tscn" id="3_mgl7n"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cus2n"]
+height = 3.0
 
 [node name="Person" type="RigidBody3D" groups=["person"]]
 axis_lock_angular_x = true
@@ -12,12 +13,8 @@ axis_lock_angular_y = true
 axis_lock_angular_z = true
 script = ExtResource("1_8lcsn")
 
-[node name="Mesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_cus2n")
-
 [node name="Collider" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("CapsuleShape3D_cus2n")
 
 [node name="MascHey" type="FmodEventEmitter3D" parent="."]
@@ -27,3 +24,32 @@ event_guid = "{a0eec650-147c-4443-80e9-dfb11baeb004}"
 [node name="FemHey" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/femHey"
 event_guid = "{9a2b5604-a5ab-42e4-a0a6-9e39e4524a76}"
+
+[node name="Masc Base Model" parent="." instance=ExtResource("2_sxyxf")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+
+[node name="Fem Base Model" parent="." instance=ExtResource("3_mgl7n")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="RayCasts" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.61355, 0)
+
+[node name="Ray" type="RayCast3D" parent="RayCasts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+target_position = Vector3(10, 0, 0)
+
+[node name="Ray2" type="RayCast3D" parent="RayCasts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+target_position = Vector3(0, 0, 10)
+
+[node name="Ray3" type="RayCast3D" parent="RayCasts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+target_position = Vector3(-10, 0, 0)
+
+[node name="Ray4" type="RayCast3D" parent="RayCasts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+target_position = Vector3(0, 0, -10)
