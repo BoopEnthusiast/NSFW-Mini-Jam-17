@@ -8,13 +8,14 @@ const BRAKE_FORCE = 100
 @export var enemy: Enemy
 
 var reversing: bool = false
+var collected_people: Array[Person.Gender] = []
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var collect_area: Area3D = $CollectArea
 @onready var masc_greeting: FmodEventEmitter3D = $MascGreeting
 @onready var fem_greeting: FmodEventEmitter3D = $FemGreeting
-
-var collected_people: Array[Person.Gender] = []
+@onready var sitting_fem: FemBaseModel = $SittingPeople/SittingFem
+@onready var sitting_masc: MascBaseModel = $SittingPeople/SittingMasc
 
 
 func _enter_tree() -> void:
@@ -68,6 +69,16 @@ func _physics_process(_delta: float) -> void:
 					Person.Gender.FEMALE:
 						fem_greeting.play()
 				body.queue_free()
+				if collected_people.size() == 1:
+					match body.gender:
+						Person.Gender.MALE:
+							sitting_masc.visible = true
+							sitting_masc.animation_player.play("M Sit")
+						Person.Gender.FEMALE:
+							sitting_fem.visible = true
+							sitting_fem.animation_player.play("F Sit")
+				else:
+					pass
 
 
 func _on_collect_area_body_entered(body: Node3D) -> void:
