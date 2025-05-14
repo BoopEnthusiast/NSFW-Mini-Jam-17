@@ -10,6 +10,9 @@ const BRAKE_FORCE = 100
 var reversing: bool = false
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var collect_area: Area3D = $CollectArea
+@onready var masc_greeting: FmodEventEmitter3D = $MascGreeting
+@onready var fem_greeting: FmodEventEmitter3D = $FemGreeting
 
 var collected_people: Array[Person.Gender] = []
 
@@ -51,7 +54,16 @@ func _physics_process(_delta: float) -> void:
 	print(linear_velocity.length())
 	#engine_force_emitter.set_parameter("engine_force", engine_force)
 	
-	
+	if Input.is_action_just_pressed("collect"):
+		for body in collect_area.get_overlapping_bodies():
+			if body is Person and collected_people.size() < 2:
+				collected_people.append(body.gender)
+				match body.gender:
+					Person.Gender.MALE:
+						masc_greeting.play()
+					Person.Gender.FEMALE:
+						fem_greeting.play()
+				body.queue_free()
 
 
 func _on_collect_area_body_entered(body: Node3D) -> void:

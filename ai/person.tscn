@@ -19,3 +19,11 @@ mesh = SubResource("CapsuleMesh_cus2n")
 [node name="Collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_cus2n")
+
+[node name="MascHey" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/mascHey"
+event_guid = "{a0eec650-147c-4443-80e9-dfb11baeb004}"
+
+[node name="FemHey" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/femHey"
+event_guid = "{9a2b5604-a5ab-42e4-a0a6-9e39e4524a76}"
