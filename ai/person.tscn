@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://brr0w0o7xtiyp" path="res://art/human/fem_base_model.tscn" id="3_mgl7n"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cus2n"]
-height = 3.0
+height = 4.0
 
 [node name="Person" type="RigidBody3D" groups=["person"]]
 axis_lock_angular_x = true
@@ -14,7 +14,7 @@ axis_lock_angular_z = true
 script = ExtResource("1_8lcsn")
 
 [node name="Collider" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("CapsuleShape3D_cus2n")
 
 [node name="MascHey" type="FmodEventEmitter3D" parent="."]
