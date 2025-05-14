@@ -16,6 +16,10 @@ var collected_people: Array[Person.Gender] = []
 @onready var fem_greeting: FmodEventEmitter3D = $FemGreeting
 @onready var sitting_fem: FemBaseModel = $Mesh/SittingPeople/SittingFem
 @onready var sitting_masc: MascBaseModel = $Mesh/SittingPeople/SittingMasc
+@onready var fucking_fem: FemBaseModel = $Mesh/FuckingPeople/FuckingFem
+@onready var fucking_masc: MascBaseModel = $Mesh/FuckingPeople/FuckingMasc
+@onready var fucking_fem_2: FemBaseModel = $Mesh/FuckingPeople/FuckingFem2
+@onready var fucking_masc_2: MascBaseModel = $Mesh/FuckingPeople/FuckingMasc2
 
 
 func _enter_tree() -> void:
@@ -78,7 +82,23 @@ func _physics_process(_delta: float) -> void:
 							sitting_fem.visible = true
 							sitting_fem.animation_player.play("F Sit")
 				else:
-					pass
+					sitting_fem.visible = false
+					sitting_masc.visible = false
+					if collected_people[0] == Person.Gender.MALE and collected_people[1] == Person.Gender.MALE:
+						fucking_masc.visible = true
+						fucking_masc.animation_player.play("MM TOP")
+						fucking_masc_2.visible = true
+						fucking_masc_2.animation_player.play("MM BOT")
+					elif (collected_people[0] == Person.Gender.MALE and collected_people[1] == Person.Gender.FEMALE) or (collected_people[1] == Person.Gender.MALE and collected_people[0] == Person.Gender.FEMALE):
+						fucking_masc.visible = true
+						fucking_masc.animation_player.play("MF TOP")
+						fucking_fem.visible = true
+						fucking_fem.animation_player.play("MF BOT")
+					else:
+						fucking_fem.visible = true
+						fucking_fem.animation_player.play("FF TOP")
+						fucking_fem_2.visible = true
+						fucking_fem_2.animation_player.play("FF BOT")
 
 
 func _on_collect_area_body_entered(body: Node3D) -> void:
