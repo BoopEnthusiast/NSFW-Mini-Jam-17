@@ -269,9 +269,11 @@ fmod_parameters/speed = 0.0
 fmod_parameters/speed/variant_type = 3
 
 [node name="MascGreeting" type="FmodEventEmitter3D" parent="."]
-event_guid = "{00000000-0000-0000-0000-000000000000}"
+event_name = "event:/mascGreeting"
+event_guid = "{d4d68558-e3bb-4525-89c8-e1b3c6655794}"
 
 [node name="FemGreeting" type="FmodEventEmitter3D" parent="."]
-event_guid = "{00000000-0000-0000-0000-000000000000}"
+event_name = "event:/femGreeting"
+event_guid = "{8dad5bda-c38f-4bec-aa16-7a1d84133612}"
 
 [connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]
