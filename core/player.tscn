@@ -259,9 +259,11 @@ libraries = {
 }
 
 [node name="speed_emitter" type="FmodEventEmitter3D" parent="."]
-event_name = "event:/engine"
-event_guid = "{8b87688f-3532-45e6-bb62-6ccb5353fc6f}"
+event_name = "event:/engine 2"
+event_guid = "{c46a5861-4b2b-4df4-a853-784aff898ff8}"
 autoplay = true
+auto_release = true
+volume = 0.275
 fmod_parameters/speed/id = -4529772816331744994
 fmod_parameters/speed = 0.0
 fmod_parameters/speed/variant_type = 3
