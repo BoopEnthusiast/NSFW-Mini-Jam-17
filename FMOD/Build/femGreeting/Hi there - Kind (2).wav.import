@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c1rux7u4v0wgp"
+path="res://.godot/imported/Hi there - Kind (2).wav-520c0c74e5bdd09f602a2b511425e6a6.sample"
+
+[deps]
+
+source_file="res://FMOD/Build/femGreeting/Hi there - Kind (2).wav"
+dest_files=["res://.godot/imported/Hi there - Kind (2).wav-520c0c74e5bdd09f602a2b511425e6a6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
