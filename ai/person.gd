@@ -47,7 +47,6 @@ func say_hey() -> void:
 func rotate_away_from_wall() -> bool:
 	for ray: RayCast3D in raycasts:
 		if ray.is_colliding():
-			print((-basis.z).angle_to(ray.target_position))
 			rotate(Vector3.UP, (-basis.z).angle_to(ray.target_position))
 			return true
 	return false
