@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ngqg1dfc7ntk"
+path="res://.godot/imported/Wall Break Stone D.wav-15bb18da914e7711fd1138a10d13171a.sample"
+
+[deps]
+
+source_file="res://FMOD/Build/crashWall/Wall Break Stone D.wav"
+dest_files=["res://.godot/imported/Wall Break Stone D.wav-15bb18da914e7711fd1138a10d13171a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

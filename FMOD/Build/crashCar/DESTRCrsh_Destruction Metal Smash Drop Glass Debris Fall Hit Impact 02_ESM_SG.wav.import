@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://00cbdu5dgpw6"
+path="res://.godot/imported/DESTRCrsh_Destruction Metal Smash Drop Glass Debris Fall Hit Impact 02_ESM_SG.wav-088f263395529d2dd775a2307b1fc77a.sample"
+
+[deps]
+
+source_file="res://FMOD/Build/crashCar/DESTRCrsh_Destruction Metal Smash Drop Glass Debris Fall Hit Impact 02_ESM_SG.wav"
+dest_files=["res://.godot/imported/DESTRCrsh_Destruction Metal Smash Drop Glass Debris Fall Hit Impact 02_ESM_SG.wav-088f263395529d2dd775a2307b1fc77a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

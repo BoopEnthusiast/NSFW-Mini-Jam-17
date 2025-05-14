@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ct0ahqae4yaqe"
+path="res://.godot/imported/Wall Break Wood E.wav-c338dc60c7554809dd7447e4887aad7c.sample"
+
+[deps]
+
+source_file="res://FMOD/Build/crashWall/Wall Break Wood E.wav"
+dest_files=["res://.godot/imported/Wall Break Wood E.wav-c338dc60c7554809dd7447e4887aad7c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

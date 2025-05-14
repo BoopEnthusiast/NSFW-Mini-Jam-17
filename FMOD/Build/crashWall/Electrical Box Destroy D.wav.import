@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bwkpgse1drawm"
+path="res://.godot/imported/Electrical Box Destroy D.wav-b8871eb3b8d12d4c27dc5a2c166cf29a.sample"
+
+[deps]
+
+source_file="res://FMOD/Build/crashWall/Electrical Box Destroy D.wav"
+dest_files=["res://.godot/imported/Electrical Box Destroy D.wav-b8871eb3b8d12d4c27dc5a2c166cf29a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
