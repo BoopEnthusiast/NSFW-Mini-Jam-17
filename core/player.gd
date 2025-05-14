@@ -54,6 +54,10 @@ func _physics_process(_delta: float) -> void:
 	print(linear_velocity.length())
 	#engine_force_emitter.set_parameter("engine_force", engine_force)
 	
+	if Input.is_action_just_pressed("bump"):
+		animation_player.play("bump")
+	
+	# Collect people
 	if Input.is_action_just_pressed("collect"):
 		for body in collect_area.get_overlapping_bodies():
 			if body is Person and collected_people.size() < 2:
