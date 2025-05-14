@@ -10,8 +10,6 @@ const BRAKE_FORCE = 100
 var reversing: bool = false
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var engine_force_emitter: FmodEventEmitter3D = $EngineForce
-@onready var speed_emitter: FmodEventEmitter3D = $Speed
 
 var collected_people: Array[Person.Gender] = []
 
