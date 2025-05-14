@@ -14,8 +14,8 @@ var collected_people: Array[Person.Gender] = []
 @onready var collect_area: Area3D = $CollectArea
 @onready var masc_greeting: FmodEventEmitter3D = $MascGreeting
 @onready var fem_greeting: FmodEventEmitter3D = $FemGreeting
-@onready var sitting_fem: FemBaseModel = $SittingPeople/SittingFem
-@onready var sitting_masc: MascBaseModel = $SittingPeople/SittingMasc
+@onready var sitting_fem: FemBaseModel = $Mesh/SittingPeople/SittingFem
+@onready var sitting_masc: MascBaseModel = $Mesh/SittingPeople/SittingMasc
 
 
 func _enter_tree() -> void:

@@ -177,6 +177,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 gi_mode = 2
 mesh = SubResource("BoxMesh_r77kf")
 
+[node name="SittingPeople" type="Node3D" parent="Mesh"]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -4.62473, 1.35257, -9.53674e-07)
+
+[node name="SittingFem" parent="Mesh/SittingPeople" instance=ExtResource("2_4ae0v")]
+visible = false
+
+[node name="SittingMasc" parent="Mesh/SittingPeople" instance=ExtResource("3_y0177")]
+visible = false
+
 [node name="Collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_r77kf")
@@ -278,13 +287,6 @@ event_guid = "{d4d68558-e3bb-4525-89c8-e1b3c6655794}"
 event_name = "event:/femGreeting"
 event_guid = "{8dad5bda-c38f-4bec-aa16-7a1d84133612}"
 
-[node name="SittingPeople" type="Node3D" parent="."]
-transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -4.62473, 2.35257, -9.53674e-07)
-
-[node name="SittingFem" parent="SittingPeople" instance=ExtResource("2_4ae0v")]
-visible = false
-
-[node name="SittingMasc" parent="SittingPeople" instance=ExtResource("3_y0177")]
-visible = false
+[node name="FuckingPeople" type="Node3D" parent="."]
 
 [connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]
