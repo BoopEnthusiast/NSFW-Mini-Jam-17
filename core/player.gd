@@ -12,14 +12,17 @@ var collected_people: Array[Person.Gender] = []
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var collect_area: Area3D = $CollectArea
+
 @onready var masc_greeting: FmodEventEmitter3D = $MascGreeting
 @onready var fem_greeting: FmodEventEmitter3D = $FemGreeting
-@onready var sitting_fem: FemBaseModel = $Mesh/SittingPeople/SittingFem
-@onready var sitting_masc: MascBaseModel = $Mesh/SittingPeople/SittingMasc
-@onready var fucking_fem: FemBaseModel = $Mesh/FuckingPeople/FuckingFem
-@onready var fucking_masc: MascBaseModel = $Mesh/FuckingPeople/FuckingMasc
-@onready var fucking_fem_2: FemBaseModel = $Mesh/FuckingPeople/FuckingFem2
-@onready var fucking_masc_2: MascBaseModel = $Mesh/FuckingPeople/FuckingMasc2
+
+@onready var sitting_fem: FemBaseModel = $"Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Passenger Seat 1 Pos/SittingFem"
+@onready var sitting_masc: MascBaseModel = $"Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Passenger Seat 2 Pos/SittingMasc"
+
+@onready var fucking_fem_2: FemBaseModel = $"Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Passenger Sex Pos/FuckingFem2"
+@onready var fucking_fem: FemBaseModel = $"Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Passenger Sex Pos/FuckingFem"
+@onready var fucking_masc: MascBaseModel = $"Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Passenger Sex Pos/FuckingMasc"
+@onready var fucking_masc_2: MascBaseModel = $"Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Passenger Sex Pos/FuckingMasc2"
 
 
 func _enter_tree() -> void:
