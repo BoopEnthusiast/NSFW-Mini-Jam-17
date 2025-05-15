@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=4 uid="uid://c6hw8imjbic3"]
+[gd_scene load_steps=22 format=4 uid="uid://c6hw8imjbic3"]
 
 [ext_resource type="Script" uid="uid://bojv5u257jpkw" path="res://core/player.gd" id="1_3x74s"]
 [ext_resource type="PackedScene" uid="uid://brr0w0o7xtiyp" path="res://art/human/fem_base_model.tscn" id="2_4ae0v"]
 [ext_resource type="PackedScene" uid="uid://c7xvt6lk5ilnc" path="res://art/human/masc_base_model.tscn" id="3_y0177"]
+[ext_resource type="PackedScene" uid="uid://drfbltgal56qq" path="res://art/cars/cat_car.tscn" id="4_y0177"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3x74s"]
 
@@ -302,6 +303,7 @@ visible = false
 
 [node name="Car Body" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+visible = false
 
 [node name="Cat Car Body" type="MeshInstance3D" parent="Car Body"]
 mesh = SubResource("ArrayMesh_4ae0v")
@@ -314,6 +316,9 @@ skeleton = NodePath("")
 [node name="Cat Car Tires" type="MeshInstance3D" parent="Car Body"]
 mesh = SubResource("ArrayMesh_20ww2")
 skeleton = NodePath("")
+
+[node name="Cat Car2" parent="." instance=ExtResource("4_y0177")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -432,3 +437,5 @@ spot_range = 100.0
 spot_angle = 43.4473
 
 [connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]
+
+[editable path="Cat Car2"]
