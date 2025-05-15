@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{0dfe60b5-0452-4adf-922b-70f01b45678e}">
+		<property name="name">
+			<value>copAlerted</value>
+		</property>
+		<relationship name="folder">
+			<destination>{25b591eb-dffe-46e4-8c67-3a84e1faaadf}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{13f09003-cd5e-46d5-afbc-e4ca93e763c8}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{13f09003-cd5e-46d5-afbc-e4ca93e763c8}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>false</value>
+			<value>ture</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

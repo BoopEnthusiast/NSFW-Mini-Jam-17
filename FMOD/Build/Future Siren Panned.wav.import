@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://0v1h3numhvkl"
+path="res://.godot/imported/Future Siren Panned.wav-6495b70163b594666a81fa23b4d8e91c.sample"
+
+[deps]
+
+source_file="res://FMOD/Build/Future Siren Panned.wav"
+dest_files=["res://.godot/imported/Future Siren Panned.wav-6495b70163b594666a81fa23b4d8e91c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
