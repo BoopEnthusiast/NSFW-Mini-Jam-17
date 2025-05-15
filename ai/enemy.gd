@@ -30,6 +30,8 @@ var _reset_location: Vector3
 
 @onready var brake_timer: Timer = $Brake
 
+@onready var cop_siren: FmodEventEmitter3D = $CopSiren
+
 
 func _ready() -> void:
 	_reset_location = global_position
@@ -46,6 +48,9 @@ func _physics_process(delta: float) -> void:
 			break
 	
 	if is_seeing_player:
+		if _mode == Modes.PATROL:
+			cop_siren.set_parameter("copAlerted", true)
+			cop_siren.play()
 		_mode = Modes.CHASE
 		_caught_player_progress += delta
 		vision_bar.value = _caught_player_progress
@@ -53,6 +58,9 @@ func _physics_process(delta: float) -> void:
 		_caught_player_progress -= delta
 		vision_bar.value = _caught_player_progress
 		if _caught_player_progress < TIME_TO_STOP_CHASING:
+			if _mode == Modes.CHASE:
+				cop_siren.set_parameter("copAlerted", false)
+				cop_siren.play()
 			_mode = Modes.PATROL
 	
 	if _caught_player_progress >= SECONDS_TO_CATCH_PLAYER:
