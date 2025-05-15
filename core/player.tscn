@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://c6hw8imjbic3"]
+[gd_scene load_steps=38 format=4 uid="uid://c6hw8imjbic3"]
 
 [ext_resource type="Script" uid="uid://bojv5u257jpkw" path="res://core/player.gd" id="1_3x74s"]
 [ext_resource type="PackedScene" uid="uid://brr0w0o7xtiyp" path="res://art/human/fem_base_model.tscn" id="2_4ae0v"]
@@ -1006,6 +1006,9 @@ _data = {
 &"bump": SubResource("Animation_3x74s")
 }
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_4ae0v"]
+radius = 49.4039
+
 [node name="Player" type="VehicleBody3D"]
 physics_material_override = SubResource("PhysicsMaterial_3x74s")
 center_of_mass_mode = 1
@@ -1181,4 +1184,10 @@ distance_fade_begin = 1.0
 spot_range = 100.0
 spot_angle = 43.4473
 
+[node name="HeyArea" type="Area3D" parent="."]
+
+[node name="Collider" type="CollisionShape3D" parent="HeyArea"]
+shape = SubResource("SphereShape3D_4ae0v")
+
 [connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]
+[connection signal="body_entered" from="HeyArea" to="." method="_on_hey_area_body_entered"]

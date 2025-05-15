@@ -73,14 +73,9 @@ func _physics_process(_delta: float) -> void:
 		for body in collect_area.get_overlapping_bodies():
 			if body is Person and collected_people.size() < 2:
 				collected_people.append(body.gender)
-				match body.gender:
-					Person.Gender.MALE:
-						masc_greeting.play()
-					Person.Gender.FEMALE:
-						fem_greeting.play()
 				body.queue_free()
 				
-				# Make them sit
+				# Make them sit if there's one collected person
 				if collected_people.size() == 1:
 					match body.gender:
 						Person.Gender.MALE:
@@ -89,7 +84,7 @@ func _physics_process(_delta: float) -> void:
 						Person.Gender.FEMALE:
 							sitting_fem.visible = true
 							sitting_fem.animation_player.play("F Sit")
-				# Make them fuck
+				# Make them fuck if there's two collected people
 				else:
 					car_back_half_hideable.visible = false
 					sitting_fem.visible = false
@@ -112,6 +107,16 @@ func _physics_process(_delta: float) -> void:
 
 
 func _on_collect_area_body_entered(body: Node3D) -> void:
+	if body is Person:
+		if collected_people.size() < 2:
+			match body.gender:
+				Person.Gender.MALE:
+					masc_greeting.play()
+				Person.Gender.FEMALE:
+					fem_greeting.play()
+
+
+func _on_hey_area_body_entered(body: Node3D) -> void:
 	if body is Person:
 		if collected_people.size() < 2:
 			body.say_hey()
