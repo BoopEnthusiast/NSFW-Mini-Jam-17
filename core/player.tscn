@@ -509,7 +509,7 @@ add_uv2 = true
 size = Vector3(10, 2.5, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r77kf"]
-size = Vector3(6.3252, 1.74988, 2.92993)
+size = Vector3(6.3252, 1.74988, 4.47168)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_unb8n"]
 resource_name = "Gold"
@@ -1029,36 +1029,36 @@ mesh = SubResource("ArrayMesh_r4oeu")
 skeleton = NodePath("")
 
 [node name="Passenger Seat 1 Pos" type="Node3D" parent="Cat Car2/Cat Car Game Obj Origin/Car Body Origin"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.302264, 0.153594, -0.449874)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.302264, 0.153594, -0.449874)
 
 [node name="SittingFem" parent="Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Passenger Seat 1 Pos" instance=ExtResource("2_4ae0v")]
-transform = Transform3D(0.55, 0, -1.24345e-14, 0, 0.55, 0, 1.24345e-14, 0, 0.55, 0.302264, -0.165561, 0.122948)
+transform = Transform3D(0.55, 0, -1.24345e-14, 0, 0.55, 0, 1.24345e-14, 0, 0.55, 0, 0, 0)
 visible = false
 
 [node name="Passenger Seat 2 Pos" type="Node3D" parent="Cat Car2/Cat Car Game Obj Origin/Car Body Origin"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.312045, 0.153594, -0.449874)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.312045, 0.153594, -0.449874)
 
 [node name="SittingMasc" parent="Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Passenger Seat 2 Pos" instance=ExtResource("3_y0177")]
-transform = Transform3D(0.55, 0, -1.24345e-14, 0, 0.55, 0, 1.24345e-14, 0, 0.55, -0.312045, -0.165561, 0.122948)
+transform = Transform3D(0.55, 0, -1.24345e-14, 0, 0.55, 0, 1.24345e-14, 0, 0.55, 0, 0, 0)
 visible = false
 
 [node name="Passenger Sex Pos" type="Node3D" parent="Cat Car2/Cat Car Game Obj Origin/Car Body Origin"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.153594, -0.468477)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.153594, -0.468477)
 
 [node name="FuckingFem2" parent="Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Passenger Sex Pos" instance=ExtResource("2_4ae0v")]
-transform = Transform3D(0.5, 0, 5.32907e-15, 0, 0.5, 0, -5.32907e-15, 0, 0.5, 1.42904e-08, -0.165561, 0.141551)
+transform = Transform3D(0.5, 0, 5.32907e-15, 0, 0.5, 0, -5.32907e-15, 0, 0.5, 0, 0, 0)
 visible = false
 
 [node name="FuckingFem" parent="Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Passenger Sex Pos" instance=ExtResource("2_4ae0v")]
-transform = Transform3D(0.5, 0, 5.32907e-15, 0, 0.5, 0, -5.32907e-15, 0, 0.5, 1.42904e-08, -0.165561, 0.141551)
+transform = Transform3D(0.5, 0, 5.32907e-15, 0, 0.5, 0, -5.32907e-15, 0, 0.5, 0, 0, 0)
 visible = false
 
 [node name="FuckingMasc" parent="Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Passenger Sex Pos" instance=ExtResource("3_y0177")]
-transform = Transform3D(0.5, 0, 5.32907e-15, 0, 0.5, 0, -5.32907e-15, 0, 0.5, 1.42904e-08, -0.165561, 0.141551)
+transform = Transform3D(0.5, 0, 5.32907e-15, 0, 0.5, 0, -5.32907e-15, 0, 0.5, 0, 0, 0)
 visible = false
 
 [node name="FuckingMasc2" parent="Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Passenger Sex Pos" instance=ExtResource("3_y0177")]
-transform = Transform3D(0.5, 0, 5.32907e-15, 0, 0.5, 0, -5.32907e-15, 0, 0.5, 1.42904e-08, -0.165561, 0.141551)
+transform = Transform3D(0.5, 0, 5.32907e-15, 0, 0.5, 0, -5.32907e-15, 0, 0.5, 0, 0, 0)
 visible = false
 
 [node name="Mesh" type="MeshInstance3D" parent="."]

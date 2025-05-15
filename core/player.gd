@@ -24,6 +24,8 @@ var collected_people: Array[Person.Gender] = []
 @onready var fucking_masc: MascBaseModel = $"Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Passenger Sex Pos/FuckingMasc"
 @onready var fucking_masc_2: MascBaseModel = $"Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Passenger Sex Pos/FuckingMasc2"
 
+@onready var car_back_half_hideable: MeshInstance3D = $"Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Car Back Half (Hideable)"
+
 
 func _enter_tree() -> void:
 	Nodes.player = self
@@ -67,6 +69,7 @@ func _physics_process(_delta: float) -> void:
 	
 	# Collect people
 	if Input.is_action_just_pressed("collect"):
+		# Collect the person
 		for body in collect_area.get_overlapping_bodies():
 			if body is Person and collected_people.size() < 2:
 				collected_people.append(body.gender)
@@ -76,6 +79,8 @@ func _physics_process(_delta: float) -> void:
 					Person.Gender.FEMALE:
 						fem_greeting.play()
 				body.queue_free()
+				
+				# Make them sit
 				if collected_people.size() == 1:
 					match body.gender:
 						Person.Gender.MALE:
@@ -84,7 +89,9 @@ func _physics_process(_delta: float) -> void:
 						Person.Gender.FEMALE:
 							sitting_fem.visible = true
 							sitting_fem.animation_player.play("F Sit")
+				# Make them fuck
 				else:
+					car_back_half_hideable.visible = false
 					sitting_fem.visible = false
 					sitting_masc.visible = false
 					if collected_people[0] == Person.Gender.MALE and collected_people[1] == Person.Gender.MALE:
