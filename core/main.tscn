@@ -116,7 +116,7 @@ mesh = SubResource("BoxMesh_xiose")
 shape = SubResource("BoxShape3D_xiose")
 
 [node name="Player" parent="." node_paths=PackedStringArray("enemy") instance=ExtResource("2_r77kf")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 89.6703, 3, -52.4122)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 89.67, 2, -52.412)
 enemy = NodePath("../Enemies/Enemy")
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
