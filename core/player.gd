@@ -10,7 +10,10 @@ const BRAKE_FORCE = 100
 var reversing: bool = false
 var collected_people: Array[Person.Gender] = []
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var camera: Camera3D = $Camera
+@onready var camera_animator: AnimationPlayer = $CameraAnimator
+
+@onready var bump_animator: AnimationPlayer = $BumpAnimator
 @onready var collect_area: Area3D = $CollectArea
 
 @onready var masc_greeting: FmodEventEmitter3D = $MascGreeting
@@ -65,7 +68,7 @@ func _physics_process(_delta: float) -> void:
 	#engine_force_emitter.set_parameter("engine_force", engine_force)
 	
 	if Input.is_action_just_pressed("bump"):
-		animation_player.play("bump")
+		bump_animator.play("bump")
 	
 	# Collect people
 	if Input.is_action_just_pressed("collect"):

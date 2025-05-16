@@ -7,6 +7,7 @@ extends Node
 
 
 func _ready() -> void:
+	Nodes.player.camera_animator.play("swing_to_behind")
 	get_tree().paused = true
 
 
