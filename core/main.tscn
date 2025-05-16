@@ -527,6 +527,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="RoadTiles" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.275, 0)
 mesh_library = ExtResource("11_rayt5")
 cell_size = Vector3(10, 1, 10)
 data = {
