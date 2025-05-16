@@ -20,7 +20,7 @@
 		</property>
 		<property name="enumerationLabels">
 			<value>false</value>
-			<value>ture</value>
+			<value>true</value>
 		</property>
 		<property name="initialValue">
 			<value>1</value>
