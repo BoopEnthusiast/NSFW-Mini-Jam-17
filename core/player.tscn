@@ -1009,6 +1009,75 @@ _data = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_4ae0v"]
 radius = 49.4039
 
+[sub_resource type="Animation" id="Animation_y0177"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(6.61919, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(3.3401, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-3, -0.25, 0, 1.73333, -5.69148),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.435303, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(2.13237, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.45072e-08, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
 [sub_resource type="Animation" id="Animation_4ae0v"]
 resource_name = "swing_to_behind"
 length = 3.0
@@ -1079,75 +1148,6 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0, 3)
 }
 
-[sub_resource type="Animation" id="Animation_y0177"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(6.61919, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(3.3401, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Camera:position:z")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-3, -0.25, 0, 1.73333, -5.69148),
-"times": PackedFloat32Array(0)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Camera:rotation:x")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-0.435303, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Camera:rotation:y")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(2.13237, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Camera:rotation:z")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-1.45072e-08, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_20ww2"]
 _data = {
 &"RESET": SubResource("Animation_y0177"),
@@ -1157,7 +1157,7 @@ _data = {
 [node name="Player" type="VehicleBody3D"]
 physics_material_override = SubResource("PhysicsMaterial_3x74s")
 center_of_mass_mode = 1
-center_of_mass = Vector3(2, 0, 0)
+center_of_mass = Vector3(0, -0.1, 0)
 script = ExtResource("1_3x74s")
 
 [node name="Cat Car2" type="Node3D" parent="."]
@@ -1220,75 +1220,79 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12494, 0)
 shape = SubResource("BoxShape3D_r77kf")
 
 [node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(-0.532522, -0.356921, 0.767481, -1.31543e-08, 0.906742, 0.421685, -0.846416, 0.224556, -0.48286, 6.61919, 3.3401, -3)
+transform = Transform3D(-0.532519, -0.356922, 0.767483, -1.31543e-08, 0.906742, 0.421685, -0.846418, 0.224555, -0.482857, 6.61919, 3.3401, -3)
 doppler_tracking = 1
 current = true
 
 [node name="FmodListener3D" type="FmodListener3D" parent="Camera"]
 
 [node name="WheelFL" type="VehicleWheel3D" parent="."]
-transform = Transform3D(-1.2252e-07, 0, 2.80294, 0, 2.80294, 0, -2.80294, 0, -1.2252e-07, 2.39129, 0.0711031, -2.2033)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.39129, 0.360298, -2.2033)
 use_as_traction = true
 use_as_steering = true
-wheel_roll_influence = 0.9
-wheel_radius = 0.25
-suspension_travel = 0.5
-suspension_stiffness = 10.0
-suspension_max_force = 60.0
-damping_compression = 0.3
+wheel_roll_influence = 0.5
+wheel_radius = 0.75
+wheel_rest_length = 0.5
+suspension_travel = 2.0
+suspension_stiffness = 40.0
+suspension_max_force = 20.0
+damping_compression = 3.46
 damping_relaxation = 0.5
 
 [node name="Wheel LF" type="MeshInstance3D" parent="WheelFL"]
-transform = Transform3D(0.713537, 0, 9.9476e-14, 0, 0.713537, 0, -9.9476e-14, 0, 0.713537, -0.16205, 0.00152962, -0.00157565)
+transform = Transform3D(1.824, 0, 2.55795e-13, 0, 1.824, 0, -2.55795e-13, 0, 1.824, 0, 0, 0)
 mesh = SubResource("ArrayMesh_8gp0t")
 skeleton = NodePath("")
 
 [node name="WheelFR" type="VehicleWheel3D" parent="."]
-transform = Transform3D(-5.96046e-08, 0, 2.80294, 0, 2.80294, 0, -2.80294, 0, -5.96046e-08, 2.391, 0.0713342, 2.203)
+transform = Transform3D(7.54979e-08, 0, 1, 0, 1, 0, -1, 0, 7.54979e-08, 2.391, 0.360529, 2.203)
 use_as_traction = true
 use_as_steering = true
-wheel_roll_influence = 0.9
-wheel_radius = 0.25
-suspension_travel = 0.5
-suspension_stiffness = 10.0
-suspension_max_force = 60.0
-damping_compression = 0.3
+wheel_roll_influence = 0.5
+wheel_radius = 0.75
+wheel_rest_length = 0.5
+suspension_travel = 2.0
+suspension_stiffness = 40.0
+suspension_max_force = 20.0
+damping_compression = 3.46
 damping_relaxation = 0.5
 
 [node name="Wheel RF" type="MeshInstance3D" parent="WheelFR"]
-transform = Transform3D(0.713537, 0, 1.60163e-08, 0, 0.713537, 0, -1.60163e-08, 0, 0.713537, 0.157026, 0.00144717, -0.00147164)
+transform = Transform3D(1.824, 0, 4.09421e-08, 0, 1.824, 0, -4.09421e-08, 0, 1.824, 0, 0, 0)
 mesh = SubResource("ArrayMesh_u814o")
 skeleton = NodePath("")
 
 [node name="WheelBL" type="VehicleWheel3D" parent="."]
-transform = Transform3D(3.67561e-07, 0, 2.80294, 0, 2.80294, 0, -2.80294, 0, 3.67561e-07, -2.391, 0.0713342, -2.203)
+transform = Transform3D(7.54979e-08, 0, 1, 0, 1, 0, -1, 0, 7.54979e-08, -2.391, 0.360529, -2.203)
 use_as_traction = true
-wheel_roll_influence = 0.9
-wheel_radius = 0.25
-suspension_travel = 0.5
-suspension_stiffness = 10.0
-suspension_max_force = 60.0
-damping_compression = 0.3
+wheel_roll_influence = 0.5
+wheel_radius = 0.75
+wheel_rest_length = 0.5
+suspension_travel = 2.0
+suspension_stiffness = 40.0
+suspension_max_force = 20.0
+damping_compression = 3.46
 damping_relaxation = 0.5
 
 [node name="Wheel LB" type="MeshInstance3D" parent="WheelBL"]
-transform = Transform3D(0.713537, 0, 1.24759e-07, 0, 0.713537, 0, -1.24759e-07, 0, 0.713537, -0.159485, 0.00144717, -0.0136583)
+transform = Transform3D(1.824, 0, 3.18919e-07, 0, 1.824, 0, -3.18919e-07, 0, 1.824, 0, 0, 0)
 mesh = SubResource("ArrayMesh_riapx")
 skeleton = NodePath("")
 
 [node name="WheelBR" type="VehicleWheel3D" parent="."]
-transform = Transform3D(3.67561e-07, 0, 2.80294, 0, 2.80294, 0, -2.80294, 0, 3.67561e-07, -2.391, 0.0713342, 2.203)
+transform = Transform3D(7.54979e-08, 0, 1, 0, 1, 0, -1, 0, 7.54979e-08, -2.391, 0.360529, 2.203)
 use_as_traction = true
-wheel_roll_influence = 0.9
-wheel_radius = 0.25
-suspension_travel = 0.5
-suspension_stiffness = 10.0
-suspension_max_force = 60.0
-damping_compression = 0.3
+wheel_roll_influence = 0.5
+wheel_radius = 0.75
+wheel_rest_length = 0.5
+suspension_travel = 2.0
+suspension_stiffness = 40.0
+suspension_max_force = 20.0
+damping_compression = 3.46
 damping_relaxation = 0.5
 
 [node name="Wheel RB" type="MeshInstance3D" parent="WheelBR"]
-transform = Transform3D(0.713537, 0, 1.24759e-07, 0, 0.713537, 0, -1.24759e-07, 0, 0.713537, 0.159484, 0.00144717, -0.0136583)
+transform = Transform3D(1.824, 0, 3.18919e-07, 0, 1.824, 0, -3.18919e-07, 0, 1.824, 0, 0, 0)
 mesh = SubResource("ArrayMesh_a2ua6")
 skeleton = NodePath("")
 

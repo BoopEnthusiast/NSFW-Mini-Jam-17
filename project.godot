@@ -87,6 +87,10 @@ collect={
 ]
 }
 
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
 [rendering]
 
 anti_aliasing/quality/msaa_3d=2
