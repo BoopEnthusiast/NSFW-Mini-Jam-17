@@ -4,6 +4,7 @@ extends VehicleBody3D
 
 const ENGINE_FORCE = 300
 const BRAKE_FORCE = 100
+const TURN_MULTIPLYER = 0.15
 
 const SECONDS_TO_GET_HOTEL = 3
 
@@ -53,7 +54,7 @@ func _physics_process(_delta: float) -> void:
 	
 	# Calculate engine force and steering
 	engine_force = ENGINE_FORCE * Input.get_action_strength("forward")
-	steering = Input.get_axis("right", "left") * 0.2
+	steering = Input.get_axis("right", "left") * TURN_MULTIPLYER
 	
 	# If stopped moving and trying to reverse, start reversing
 	if linear_velocity.length_squared() < 25 and Input.is_action_pressed("backward"):
