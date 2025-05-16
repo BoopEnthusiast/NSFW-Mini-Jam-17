@@ -47,7 +47,8 @@ func _physics_process(delta: float) -> void:
 	
 	if is_seeing_player:
 		if _mode == Modes.PATROL:
-			cop_siren.set_parameter("copAlerted", true)
+			print("Alerted")
+			cop_siren.set_parameter("copAlerted", "false")
 			cop_siren.play()
 		_mode = Modes.CHASE
 		_caught_player_progress += delta * 0.1
@@ -56,8 +57,9 @@ func _physics_process(delta: float) -> void:
 		_caught_player_progress -= delta * 0.1
 		if _caught_player_progress < TIME_TO_STOP_CHASING:
 			if _mode == Modes.CHASE:
-				cop_siren.set_parameter("copAlerted", false)
-				cop_siren.play()
+				print("Not alerted")
+				cop_siren.set_parameter("copAlerted", "ture")
+				cop_siren.stop()
 			_mode = Modes.PATROL
 	
 	if _caught_player_progress >= SECONDS_TO_CATCH_PLAYER:
