@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="DataFile" id="{9660f5f3-3b3a-47c4-a5e3-86d615d15c8d}">
+		<property name="assetPath">
+			<value>femTop/closed_mouth_low-intensity_low-medium01 7.wav.import</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{61aa199f-c11f-4e91-b1bc-878ec5559422}</destination>
+		</relationship>
+	</object>
+</objects>
