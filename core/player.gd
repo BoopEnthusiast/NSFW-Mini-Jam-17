@@ -7,8 +7,6 @@ const BRAKE_FORCE = 100
 
 const SECONDS_TO_GET_HOTEL = 3
 
-@export var enemy: Enemy
-
 var reversing: bool = false
 var collected_people: Array[Person.Gender] = []
 
@@ -79,7 +77,7 @@ func _physics_process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("bump"):
 		if not bump_animator.is_playing():
-			Nodes.cum_bar.value += 20.0
+			Nodes.cum_bar.value += 5.0
 		bump_animator.play("bump")
 	
 	# Collect people
@@ -106,6 +104,7 @@ func _physics_process(_delta: float) -> void:
 					sitting_masc.visible = false
 					Nodes.main.spawn_hotel()
 					Nodes.cum_bar.visible = true
+					Nodes.cum_bar.value = 0.0
 					if collected_people[0] == Person.Gender.MALE and collected_people[1] == Person.Gender.MALE:
 						fucking_masc.visible = true
 						fucking_masc.animation_player.play("MM TOP")
@@ -135,8 +134,10 @@ func _process(delta: float) -> void:
 			car_back_half_hideable.visible = true
 			hotel_bar.visible = false
 			collected_people.clear()
-			Nodes.main.time_left += Nodes.cum_bar.value
+			Nodes.main.time_left += Nodes.cum_bar.value + 10.0
 			Nodes.cum_bar.visible = false
+	else:
+		hotel_progress_bar.value = 0.0
 
 
 
@@ -164,3 +165,9 @@ func entered_hotel(hotel: Hotel) -> void:
 func exited_hotel(hotel: Hotel) -> void:
 	hotel_bar.visible = false
 	hotel_inside = hotel
+
+
+func _on_hit_area_body_entered(body: Node3D) -> void:
+	if body is GridMap:
+		print("Hit wall")
+		Nodes.cum_bar.value -= 5.0

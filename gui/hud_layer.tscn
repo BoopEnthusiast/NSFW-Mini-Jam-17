@@ -89,4 +89,5 @@ offset_top = 18.0
 offset_right = 184.0
 offset_bottom = 55.0
 grow_horizontal = 2
+max_value = 30.0
 script = ExtResource("5_6fvle")
