@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://c6hw8imjbic3"]
+[gd_scene load_steps=41 format=4 uid="uid://c6hw8imjbic3"]
 
 [ext_resource type="Script" uid="uid://bojv5u257jpkw" path="res://core/player.gd" id="1_3x74s"]
 [ext_resource type="PackedScene" uid="uid://brr0w0o7xtiyp" path="res://art/human/fem_base_model.tscn" id="2_4ae0v"]
@@ -1150,6 +1150,9 @@ _data = {
 &"swing_to_behind": SubResource("Animation_4ae0v")
 }
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_4ae0v"]
+viewport_path = NodePath("SubViewport")
+
 [node name="Player" type="VehicleBody3D"]
 physics_material_override = SubResource("PhysicsMaterial_3x74s")
 center_of_mass_mode = 1
@@ -1328,6 +1331,22 @@ shape = SubResource("SphereShape3D_4ae0v")
 libraries = {
 &"": SubResource("AnimationLibrary_20ww2")
 }
+
+[node name="HotelBar" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.02211, 0)
+visible = false
+billboard = 2
+texture = SubResource("ViewportTexture_4ae0v")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(500, 100)
+
+[node name="HotelBar" type="ProgressBar" parent="SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]
 [connection signal="body_entered" from="HeyArea" to="." method="_on_hey_area_body_entered"]

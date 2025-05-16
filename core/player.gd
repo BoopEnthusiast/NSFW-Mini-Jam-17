@@ -5,10 +5,14 @@ extends VehicleBody3D
 const ENGINE_FORCE = 300
 const BRAKE_FORCE = 100
 
+const SECONDS_TO_GET_HOTEL = 3
+
 @export var enemy: Enemy
 
 var reversing: bool = false
 var collected_people: Array[Person.Gender] = []
+
+var hotel_inside: Hotel
 
 @onready var camera: Camera3D = $Camera
 @onready var camera_animator: AnimationPlayer = $CameraAnimator
@@ -29,9 +33,16 @@ var collected_people: Array[Person.Gender] = []
 
 @onready var car_back_half_hideable: MeshInstance3D = $"Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Car Back Half (Hideable)"
 
+@onready var hotel_bar: Sprite3D = $HotelBar
+@onready var hotel_progress_bar: ProgressBar = $SubViewport/HotelBar
+
 
 func _enter_tree() -> void:
 	Nodes.player = self
+
+
+func _ready() -> void:
+	hotel_progress_bar.max_value = SECONDS_TO_GET_HOTEL
 
 
 func _physics_process(_delta: float) -> void:
@@ -109,6 +120,20 @@ func _physics_process(_delta: float) -> void:
 						fucking_fem_2.animation_player.play("FF BOT")
 
 
+func _process(delta: float) -> void:
+	if hotel_bar.visible:
+		hotel_progress_bar.value += delta
+		if hotel_progress_bar.value >= hotel_progress_bar.max_value:
+			hotel_inside.queue_free()
+			fucking_masc.visible = false
+			fucking_masc_2.visible = false
+			fucking_fem.visible = false
+			fucking_fem_2.visible = false
+			car_back_half_hideable.visible = true
+			hotel_bar.visible = false
+
+
+
 func _on_collect_area_body_entered(body: Node3D) -> void:
 	if body is Person:
 		if collected_people.size() < 2:
@@ -125,9 +150,11 @@ func _on_hey_area_body_entered(body: Node3D) -> void:
 			body.say_hey()
 
 
-func entered_hotel() -> void:
-	pass
+func entered_hotel(hotel: Hotel) -> void:
+	hotel_bar.visible = true
+	hotel_inside = hotel
 
 
-func exited_hotel() -> void:
-	pass
+func exited_hotel(hotel: Hotel) -> void:
+	hotel_bar.visible = false
+	hotel_inside = hotel
