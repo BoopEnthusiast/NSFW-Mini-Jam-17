@@ -74,6 +74,8 @@ grow_horizontal = 0
 step = 1.0
 value = 100.0
 rounded = true
+allow_greater = true
+show_percentage = false
 script = ExtResource("4_d71s4")
 
 [node name="CumBar" type="ProgressBar" parent="Control"]
