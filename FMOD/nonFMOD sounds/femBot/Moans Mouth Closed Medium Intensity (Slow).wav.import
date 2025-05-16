@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c15ajkpj0161b"
+path="res://.godot/imported/Moans Mouth Closed Medium Intensity (Slow).wav-aac3800fa3ed00ea6fd9883556a5510d.sample"
+
+[deps]
+
+source_file="res://FMOD/nonFMOD sounds/femBot/Moans Mouth Closed Medium Intensity (Slow).wav"
+dest_files=["res://.godot/imported/Moans Mouth Closed Medium Intensity (Slow).wav-aac3800fa3ed00ea6fd9883556a5510d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

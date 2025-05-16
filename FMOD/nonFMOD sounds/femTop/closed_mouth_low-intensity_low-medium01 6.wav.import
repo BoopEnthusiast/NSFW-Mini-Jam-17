@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cyw2a83cb18os"
+path="res://.godot/imported/closed_mouth_low-intensity_low-medium01 6.wav-f9ac9d660d3a8a30dc349fcd2becca2e.sample"
+
+[deps]
+
+source_file="res://FMOD/nonFMOD sounds/femTop/closed_mouth_low-intensity_low-medium01 6.wav"
+dest_files=["res://.godot/imported/closed_mouth_low-intensity_low-medium01 6.wav-f9ac9d660d3a8a30dc349fcd2becca2e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

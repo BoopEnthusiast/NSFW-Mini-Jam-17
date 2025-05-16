@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://2mdjbk4vs68"
+path="res://.godot/imported/wet06.ogg-1293be08ff2469bb050be6908541fd22.oggvorbisstr"
+
+[deps]
+
+source_file="res://FMOD/nonFMOD sounds/eating/wet06.ogg"
+dest_files=["res://.godot/imported/wet06.ogg-1293be08ff2469bb050be6908541fd22.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
