@@ -1,14 +1,12 @@
-[gd_scene load_steps=25 format=3 uid="uid://lf0rtr4mv7pb"]
+[gd_scene load_steps=20 format=3 uid="uid://lf0rtr4mv7pb"]
 
 [ext_resource type="Script" uid="uid://lbbfepe47j17" path="res://core/main.gd" id="1_xiose"]
 [ext_resource type="PackedScene" uid="uid://c6hw8imjbic3" path="res://core/player.tscn" id="2_r77kf"]
 [ext_resource type="PackedScene" uid="uid://dhey3pdq2wnl" path="res://ai/enemy.tscn" id="4_csopv"]
 [ext_resource type="CameraAttributesPractical" uid="uid://3qco8r1xm8x4" path="res://core/camera_attributes.tres" id="5_xa854"]
 [ext_resource type="MeshLibrary" uid="uid://bkruwtu83wjw1" path="res://level/20_10_20.tres" id="6_cus2n"]
+[ext_resource type="PackedScene" uid="uid://urntlnquup3n" path="res://gui/hud_layer.tscn" id="6_jsmgm"]
 [ext_resource type="LightmapGIData" uid="uid://bf8ilrsqxhejc" path="res://core/main.lmbake" id="6_kagtj"]
-[ext_resource type="Texture2D" uid="uid://cx3tb3fr7e0t6" path="res://art/circle.png" id="7_cus2n"]
-[ext_resource type="Shader" uid="uid://wc1p5p4lggyo" path="res://gui/minimap.gdshader" id="7_jsmgm"]
-[ext_resource type="Script" uid="uid://cjp7mdc76b5ql" path="res://gui/minimap.gd" id="8_brq4u"]
 [ext_resource type="MeshLibrary" uid="uid://vj5yrxgq4um7" path="res://level/building_tiles.tres" id="11_510js"]
 [ext_resource type="MeshLibrary" uid="uid://bis1guerlei1j" path="res://level/road_tiles.tres" id="11_rayt5"]
 
@@ -73,21 +71,6 @@ _data = {
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xhu5d"]
-shader = ExtResource("7_jsmgm")
-
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_jsmgm"]
-
-[sub_resource type="GDScript" id="GDScript_jsmgm"]
-script/source = "extends Camera3D
-
-
-
-func _process(_delta: float) -> void:
-	global_position = Nodes.player.global_position + Vector3.UP * 200
-	global_rotation.y = Nodes.player.global_rotation.y - PI / 2
-"
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_xiose")
@@ -475,47 +458,7 @@ patrol_points = [NodePath("../PatrolPoints/PatrolPoint19"), NodePath("../PatrolP
 wait_time = 5.0
 autostart = true
 
-[node name="HUDLayer" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="HUDLayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Minimap" type="TextureRect" parent="HUDLayer/Control"]
-clip_children = 2
-material = SubResource("ShaderMaterial_xhu5d")
-clip_contents = true
-layout_mode = 0
-offset_right = 269.0
-offset_bottom = 269.0
-texture = ExtResource("7_cus2n")
-expand_mode = 1
-script = ExtResource("8_brq4u")
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="HUDLayer/Control/Minimap"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch = true
-
-[node name="SubViewport" type="SubViewport" parent="HUDLayer/Control/Minimap/SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(269, 269)
-render_target_update_mode = 4
-
-[node name="MinimapCamera" type="Camera3D" parent="HUDLayer/Control/Minimap/SubViewportContainer/SubViewport"]
-transform = Transform3D(-4.37114e-08, 1, -1.31134e-07, 0, 1.31134e-07, 1, 1, 4.37114e-08, -5.73206e-15, 0, 194, 0)
-attributes = SubResource("CameraAttributesPractical_jsmgm")
-projection = 1
-size = 924.964
-script = SubResource("GDScript_jsmgm")
+[node name="HUDLayer" parent="." instance=ExtResource("6_jsmgm")]
 
 [node name="OldBuildingsGridMap" type="GridMap" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
