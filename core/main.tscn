@@ -401,16 +401,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.366, 4, -146.338)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.366, 4, 159.662)
 
 [node name="PatrolPoint13" type="Marker3D" parent="Enemies/PatrolPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -424.634, 4, 81.6619)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -424.634, 4, 7.6619)
 
 [node name="PatrolPoint14" type="Marker3D" parent="Enemies/PatrolPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -333.634, 4, 82.6619)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -333.634, 4, 5.6619)
 
 [node name="PatrolPoint15" type="Marker3D" parent="Enemies/PatrolPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -337.634, 4, -162.338)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -337.634, 4, -62.338)
 
 [node name="PatrolPoint16" type="Marker3D" parent="Enemies/PatrolPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -423.634, 4, -146.338)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -423.634, 4, -53.338)
 
 [node name="PatrolPoint17" type="Marker3D" parent="Enemies/PatrolPoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -416.634, 4, 265.662)
