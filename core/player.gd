@@ -41,7 +41,7 @@ func _physics_process(_delta: float) -> void:
 	
 	# Calculate engine force and steering
 	engine_force = ENGINE_FORCE * Input.get_action_strength("forward")
-	steering = Input.get_axis("right", "left")
+	steering = Input.get_axis("right", "left") * 0.3
 	
 	# If stopped moving and trying to reverse, start reversing
 	if linear_velocity.length_squared() < 25 and Input.is_action_pressed("backward"):
