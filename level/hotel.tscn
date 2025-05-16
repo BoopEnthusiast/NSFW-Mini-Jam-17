@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://1cxo47ls7w87"]
+
+[ext_resource type="Script" uid="uid://dc6lul1ubrh3y" path="res://level/hotel.gd" id="1_1g74x"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wtadh"]
+radius = 2.0019
+
+[node name="Hotel" type="Area3D" groups=["hotel"]]
+script = ExtResource("1_1g74x")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_wtadh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

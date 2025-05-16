@@ -47,6 +47,7 @@ enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
 
 enemy=""
 person=""
+hotel=""
 
 [input]
 

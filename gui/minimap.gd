@@ -47,6 +47,17 @@ func _process(_delta: float) -> void:
 		person_child.position = Vector2(position_to_player.x, position_to_player.z) + size / 2
 		i += 1
 	
+	# Hotels
+	for hotel: Hotel in get_tree().get_nodes_in_group("hotel"):
+		var hostel_child: Marker = get_child(i) if get_child_count() > i else null
+		# Make new marker if there is none 
+		if not is_instance_valid(hostel_child):
+			hostel_child = make_new_marker()
+		hostel_child.color = Color.YELLOW
+		position_to_player = Nodes.player.to_local(hotel.global_position).rotated(Vector3.UP, PI / 2) / MAP_SCALE
+		hostel_child.position = Vector2(position_to_player.x, position_to_player.z) + size / 2
+		i += 1
+	
 	while i > get_child_count():
 		remove_child(get_child(i))
 

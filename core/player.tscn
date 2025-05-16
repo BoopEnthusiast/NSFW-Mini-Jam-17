@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://c6hw8imjbic3"]
+[gd_scene load_steps=41 format=4 uid="uid://c6hw8imjbic3"]
 
 [ext_resource type="Script" uid="uid://bojv5u257jpkw" path="res://core/player.gd" id="1_3x74s"]
 [ext_resource type="PackedScene" uid="uid://brr0w0o7xtiyp" path="res://art/human/fem_base_model.tscn" id="2_4ae0v"]
@@ -937,8 +937,8 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.166667, 0.4, 0.666667, 1, 1.36667, 2)
+"points": PackedFloat32Array(0, -0.25, 0, 0.1, 8.46032e-05, 0.195267, -0.0625829, -0.0190267, 0.104084, -0.0817263, -0.0880344, -0.09, 0.0313907, 0.143333, 0.0373621, 0.0507368, -0.123333, -0.0357237, 0.0766666, -0.0178095, -0.0433539, -0.116667, 0.0225387, 0.05, 0.0135816, -0.00218162, -0.106667, -0.00967656, 0.25, 0, 0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0, 0.32925, 0.69, 1.09, 1.45, 1.74, 2)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -948,8 +948,8 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0.293569, -0.25, 0, 0.25, 0, 0.293569, -0.25, 0, 0.25, 0, 0.0684743, -0.25, 0, 0.25, 0, 0.0684743, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.166667, 0.4, 0.666667, 1, 1.36667, 2)
+"points": PackedFloat32Array(1.5708, -0.25, 0, 0.25, 0, 1.5708, -0.25, 0, 0.25, 0, 1.5708, -0.25, 0, 0.25, 0, 1.5708, -0.25, 0, 0.25, 0, 1.5708, -0.25, 0, 0.25, 0, 1.5708, -0.25, 0, 0.25, 0, 1.5708, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0, 0.32925, 0.69, 1.09, 1.45, 1.74, 2)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -959,8 +959,8 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.166667, 0.4, 0.666667, 1, 1.36667, 2)
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 8.64557e-09, -0.25, 0, 0.25, 0, -3.62045e-09, -0.25, 0, 0.25, 0, 2.43376e-09, -0.25, 0, 0.25, 0, -1.67687e-09, -0.25, 0, 0.25, 0, 1.22329e-10, -0.25, 0, 0.25, 0, 0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0, 0.32925, 0.69, 1.09, 1.45, 1.74, 2)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
@@ -970,8 +970,8 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 3.83752e-10, -0.25, 0, 0.25, 0, -7.57746e-09, -0.25, 0, 0.25, 0, 4.30626e-09, -0.25, 0, 0.25, 0, -2.00189e-09, -0.25, 0, 0.25, 0, 5.16127e-10, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.166667, 0.4, 0.666667, 1, 1.36667, 2)
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0, 0.32925, 0.69, 1.09, 1.45, 1.74, 2)
 }
 tracks/4/type = "bezier"
 tracks/4/imported = false
@@ -981,8 +981,8 @@ tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0),
-"points": PackedFloat32Array(1.5708, -0.25, 0, 0.25, 0, 1.5708, -0.25, 0, 0.25, 0, 1.5708, -0.25, 0, 0.25, 0, 1.5708, -0.25, 0, 0.25, 0, 1.5708, -0.25, 0, 0.25, 0, 1.5708, -0.25, 0, 0.25, 0, 1.5708, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.166667, 0.4, 0.666667, 1, 1.36667, 2)
+"points": PackedFloat32Array(0, -0.25, 0, 0.1, 0.0329273, 0.423246, -0.0959162, -0.0738348, 0.25, 0, 0.423246, -0.25, 0, 0.0766667, -0.0499493, 0.0788006, -0.0566667, 0.0526547, 0.11, -0.00705922, -0.0121835, -0.15, 0.0301823, 0.0833333, -0.0265459, -0.0902052, -0.0733334, 0.00967597, 0.126667, 0.0246045, 0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0, 0.32925, 0.69, 1.09, 1.45, 1.74, 2)
 }
 tracks/5/type = "bezier"
 tracks/5/imported = false
@@ -992,8 +992,8 @@ tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.00877901, -0.25, 0, 0.25, 0, -0.171653, -0.25, 0, 0.25, 0, 0.102206, -0.25, 0, 0.25, 0, -0.0424813, -0.25, 0, 0.25, 0, 0.0151495, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.166667, 0.4, 0.666667, 1, 1.36667, 2)
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0, 0.32925, 0.69, 1.09, 1.45, 1.74, 2)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4ae0v"]
@@ -1150,6 +1150,9 @@ _data = {
 &"swing_to_behind": SubResource("Animation_4ae0v")
 }
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_4ae0v"]
+viewport_path = NodePath("SubViewport")
+
 [node name="Player" type="VehicleBody3D"]
 physics_material_override = SubResource("PhysicsMaterial_3x74s")
 center_of_mass_mode = 1
@@ -1157,7 +1160,7 @@ center_of_mass = Vector3(0, -0.1, 0)
 script = ExtResource("1_3x74s")
 
 [node name="Cat Car2" type="Node3D" parent="."]
-transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0, 0, 0)
+transform = Transform3D(-7.23998e-06, 0, 2, 0, 2, 0, -2, 0, -7.23998e-06, 0, 0, 0)
 
 [node name="Cat Car Game Obj Origin" type="Node3D" parent="Cat Car2"]
 
@@ -1328,6 +1331,22 @@ shape = SubResource("SphereShape3D_4ae0v")
 libraries = {
 &"": SubResource("AnimationLibrary_20ww2")
 }
+
+[node name="HotelBar" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.02211, 0)
+visible = false
+billboard = 2
+texture = SubResource("ViewportTexture_4ae0v")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(500, 100)
+
+[node name="HotelBar" type="ProgressBar" parent="SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]
 [connection signal="body_entered" from="HeyArea" to="." method="_on_hey_area_body_entered"]
