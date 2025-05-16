@@ -1,14 +1,12 @@
-[gd_scene load_steps=25 format=3 uid="uid://lf0rtr4mv7pb"]
+[gd_scene load_steps=20 format=3 uid="uid://lf0rtr4mv7pb"]
 
 [ext_resource type="Script" uid="uid://lbbfepe47j17" path="res://core/main.gd" id="1_xiose"]
 [ext_resource type="PackedScene" uid="uid://c6hw8imjbic3" path="res://core/player.tscn" id="2_r77kf"]
 [ext_resource type="PackedScene" uid="uid://dhey3pdq2wnl" path="res://ai/enemy.tscn" id="4_csopv"]
 [ext_resource type="CameraAttributesPractical" uid="uid://3qco8r1xm8x4" path="res://core/camera_attributes.tres" id="5_xa854"]
 [ext_resource type="MeshLibrary" uid="uid://bkruwtu83wjw1" path="res://level/20_10_20.tres" id="6_cus2n"]
+[ext_resource type="PackedScene" uid="uid://urntlnquup3n" path="res://gui/hud_layer.tscn" id="6_jsmgm"]
 [ext_resource type="LightmapGIData" uid="uid://bf8ilrsqxhejc" path="res://core/main.lmbake" id="6_kagtj"]
-[ext_resource type="Texture2D" uid="uid://cx3tb3fr7e0t6" path="res://art/circle.png" id="7_cus2n"]
-[ext_resource type="Shader" uid="uid://wc1p5p4lggyo" path="res://gui/minimap.gdshader" id="7_jsmgm"]
-[ext_resource type="Script" uid="uid://cjp7mdc76b5ql" path="res://gui/minimap.gd" id="8_brq4u"]
 [ext_resource type="MeshLibrary" uid="uid://vj5yrxgq4um7" path="res://level/building_tiles.tres" id="11_510js"]
 [ext_resource type="MeshLibrary" uid="uid://bis1guerlei1j" path="res://level/road_tiles.tres" id="11_rayt5"]
 
@@ -74,21 +72,6 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xhu5d"]
-shader = ExtResource("7_jsmgm")
-
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_jsmgm"]
-
-[sub_resource type="GDScript" id="GDScript_jsmgm"]
-script/source = "extends Camera3D
-
-
-
-func _process(_delta: float) -> void:
-	global_position = Nodes.player.global_position + Vector3.UP * 200
-	global_rotation.y = Nodes.player.global_rotation.y - PI / 2
-"
-
 [node name="Main" type="Node3D"]
 script = ExtResource("1_xiose")
 time_to_spawn = SubResource("Curve_cus2n")
@@ -117,9 +100,8 @@ mesh = SubResource("BoxMesh_xiose")
 [node name="Collider" type="CollisionShape3D" parent="Floor"]
 shape = SubResource("BoxShape3D_xiose")
 
-[node name="Player" parent="." node_paths=PackedStringArray("enemy") instance=ExtResource("2_r77kf")]
+[node name="Player" parent="." instance=ExtResource("2_r77kf")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 89.67, 2, -52.412)
-enemy = NodePath("../Enemies/Enemy")
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
 quality = 2
@@ -130,215 +112,215 @@ light_data = ExtResource("6_kagtj")
 [node name="PersonSpawners" type="Node3D" parent="."]
 
 [node name="PersonSpawner" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 0)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner59" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 0)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner60" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -102, 0, -23)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -102, 0, -18)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner61" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 62, 0, 84)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 62, 0, 87)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner62" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 142, 0, 55)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 147, 0, 66)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner2" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 0, 0)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner3" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 55, 0, -24)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 55, 0, -20)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner4" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 55, 0, -76)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 55, 0, -72)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner5" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 55, 0, -184)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 55, 0, -179)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner6" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 55, 0, -236)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 66, 0, -233)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner7" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 55, 0, -344)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 67, 0, -338)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner8" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -320)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 0, -320)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner11" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143, 0, -325)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147, 0, -318)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner9" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -159)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 0, -159)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner10" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143, 0, -159)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147, 0, -159)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner12" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 216, 0, -236)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 222, 0, -233)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner13" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 216, 0, -344)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 224, 0, -340)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner14" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196, 0, -320)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 201, 0, -320)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner15" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 304, 0, -325)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 308, 0, -318)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner16" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 216, 0, -76)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 224, 0, -74)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner17" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 216, 0, -184)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 226, 0, -180)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner18" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196, 0, -160)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202, 0, -160)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner19" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 304, 0, -165)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 307, 0, -155)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner20" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -107, 0, 245)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -96, 0, 247)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner21" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -107, 0, 137)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -95, 0, 142)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner22" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -127, 0, 161)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 161)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner23" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 156)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 163)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner24" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 56, 0, 245)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 63, 0, 248)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner25" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 56, 0, 137)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 62, 0, 142)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner26" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 161)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 0, 162)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner27" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144, 0, 156)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 148, 0, 162)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner28" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 216, 0, 404)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 225, 0, 407)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner29" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 216, 0, 296)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 219, 0, 299)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner30" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196, 0, 320)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 203, 0, 321)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner31" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 304, 0, 315)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 307, 0, 323)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner32" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -265, 0, 404)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -258, 0, 407)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner33" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -265, 0, 296)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -259, 0, 301)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner34" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -285, 0, 320)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -279, 0, 320)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner35" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -177, 0, 315)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -173, 0, 322)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner36" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -265, 0, 243)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -257, 0, 247)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner37" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -265, 0, 135)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -258, 0, 143)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner38" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -285, 0, 159)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -279, 0, 170)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner39" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -177, 0, 154)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -171, 0, 167)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner40" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -425, 0, 243)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -421, 0, 248)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner41" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -425, 0, 135)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -416, 0, 141)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner42" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -445, 0, 159)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -440, 0, 166)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner43" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -337, 0, 154)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -331, 0, 166)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner44" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -318)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -314)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner45" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -285, 0, -318)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -278, 0, -318)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner46" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -259, 0, -347)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -259, 0, -339)
 curve = SubResource("Curve3D_brq4u")
 
 [node name="PersonSpawner47" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -259, 0, -234)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -259, 0, -231)
 curve = SubResource("Curve3D_brq4u")
 
 [node name="PersonSpawner48" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -201.5, 0, 85)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -194.5, 0, 89)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner49" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -201.5, 0, -186)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -187.5, 0, -178)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner50" type="Path3D" parent="PersonSpawners"]
@@ -346,35 +328,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -172.5, 0, -160)
 curve = SubResource("Curve3D_brq4u")
 
 [node name="PersonSpawner51" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -285.5, 0, -160)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -282.5, 0, -160)
 curve = SubResource("Curve3D_brq4u")
 
 [node name="PersonSpawner52" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -125.5, 0, 376.5)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -118.5, 0, 385.5)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner53" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 145.5, 0, 376.5)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 146.5, 0, 385.5)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner58" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 194.5, 0, 221.5)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 201.5, 0, 224.5)
 curve = SubResource("Curve3D_cus2n")
 
 [node name="PersonSpawner54" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 119.5, 0, 405.5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 121.5, 0, 408.5)
 curve = SubResource("Curve3D_brq4u")
 
 [node name="PersonSpawner55" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 119.5, 0, 292.5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 119.5, 0, 300.5)
 curve = SubResource("Curve3D_brq4u")
 
 [node name="PersonSpawner56" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 452.5, 0, 245.5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 454.5, 0, 248.5)
 curve = SubResource("Curve3D_brq4u")
 
 [node name="PersonSpawner57" type="Path3D" parent="PersonSpawners"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 453.5, 0, 134.5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 455.5, 0, 140.5)
 curve = SubResource("Curve3D_brq4u")
 
 [node name="Enemies" type="Node3D" parent="."]
@@ -477,47 +459,7 @@ patrol_points = [NodePath("../PatrolPoints/PatrolPoint19"), NodePath("../PatrolP
 wait_time = 5.0
 autostart = true
 
-[node name="HUDLayer" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="HUDLayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Minimap" type="TextureRect" parent="HUDLayer/Control"]
-clip_children = 2
-material = SubResource("ShaderMaterial_xhu5d")
-clip_contents = true
-layout_mode = 0
-offset_right = 269.0
-offset_bottom = 269.0
-texture = ExtResource("7_cus2n")
-expand_mode = 1
-script = ExtResource("8_brq4u")
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="HUDLayer/Control/Minimap"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch = true
-
-[node name="SubViewport" type="SubViewport" parent="HUDLayer/Control/Minimap/SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(269, 269)
-render_target_update_mode = 4
-
-[node name="MinimapCamera" type="Camera3D" parent="HUDLayer/Control/Minimap/SubViewportContainer/SubViewport"]
-transform = Transform3D(-4.37114e-08, 1, -1.31134e-07, 0, 1.31134e-07, 1, 1, 4.37114e-08, -5.73206e-15, 0, 194, 0)
-attributes = SubResource("CameraAttributesPractical_jsmgm")
-projection = 1
-size = 924.964
-script = SubResource("GDScript_jsmgm")
+[node name="HUDLayer" parent="." instance=ExtResource("6_jsmgm")]
 
 [node name="OldBuildingsGridMap" type="GridMap" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)

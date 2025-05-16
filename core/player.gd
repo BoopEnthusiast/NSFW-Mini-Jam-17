@@ -7,12 +7,12 @@ const BRAKE_FORCE = 100
 
 const SECONDS_TO_GET_HOTEL = 3
 
-@export var enemy: Enemy
-
 var reversing: bool = false
 var collected_people: Array[Person.Gender] = []
 
 var hotel_inside: Hotel
+
+var is_colliding: bool = false
 
 @onready var camera: Camera3D = $Camera
 @onready var camera_animator: AnimationPlayer = $CameraAnimator
@@ -36,6 +36,7 @@ var hotel_inside: Hotel
 @onready var hotel_bar: Sprite3D = $HotelBar
 @onready var hotel_progress_bar: ProgressBar = $SubViewport/HotelBar
 
+@onready var collision_rays: Array[RayCast3D] = [$CollisionRays/Ray, $CollisionRays/Ray2, $CollisionRays/Ray3, $CollisionRays/Ray4]
 
 func _enter_tree() -> void:
 	Nodes.player = self
@@ -52,7 +53,7 @@ func _physics_process(_delta: float) -> void:
 	
 	# Calculate engine force and steering
 	engine_force = ENGINE_FORCE * Input.get_action_strength("forward")
-	steering = Input.get_axis("right", "left") * 0.3
+	steering = Input.get_axis("right", "left") * 0.2
 	
 	# If stopped moving and trying to reverse, start reversing
 	if linear_velocity.length_squared() < 25 and Input.is_action_pressed("backward"):
@@ -78,6 +79,8 @@ func _physics_process(_delta: float) -> void:
 	#engine_force_emitter.set_parameter("engine_force", engine_force)
 	
 	if Input.is_action_just_pressed("bump"):
+		if not bump_animator.is_playing():
+			Nodes.cum_bar.value += 10.0
 		bump_animator.play("bump")
 	
 	# Collect people
@@ -103,6 +106,8 @@ func _physics_process(_delta: float) -> void:
 					sitting_fem.visible = false
 					sitting_masc.visible = false
 					Nodes.main.spawn_hotel()
+					Nodes.cum_bar.visible = true
+					Nodes.cum_bar.value = 0.0
 					if collected_people[0] == Person.Gender.MALE and collected_people[1] == Person.Gender.MALE:
 						fucking_masc.visible = true
 						fucking_masc.animation_player.play("MM TOP")
@@ -118,6 +123,17 @@ func _physics_process(_delta: float) -> void:
 						fucking_fem.animation_player.play("FF TOP")
 						fucking_fem_2.visible = true
 						fucking_fem_2.animation_player.play("FF BOT")
+	
+	var found_collision := false
+	for ray: RayCast3D in collision_rays:
+		if ray.is_colliding():
+			found_collision = true
+			if not is_colliding:
+				is_colliding = true
+				Nodes.cum_bar.value -= 5.0
+				break
+	if not found_collision:
+		is_colliding = false
 
 
 func _process(delta: float) -> void:
@@ -131,7 +147,11 @@ func _process(delta: float) -> void:
 			fucking_fem_2.visible = false
 			car_back_half_hideable.visible = true
 			hotel_bar.visible = false
-
+			collected_people.clear()
+			Nodes.main.time_left += Nodes.cum_bar.value + 10.0
+			Nodes.cum_bar.visible = false
+	else:
+		hotel_progress_bar.value = 0.0
 
 
 func _on_collect_area_body_entered(body: Node3D) -> void:

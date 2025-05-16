@@ -1348,5 +1348,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="CollisionRays" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42883, 0)
+
+[node name="Ray" type="RayCast3D" parent="CollisionRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.18334, 0, 0)
+target_position = Vector3(1, 0, 0)
+
+[node name="Ray2" type="RayCast3D" parent="CollisionRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.17365, 0, 0)
+target_position = Vector3(-1, 0, 0)
+
+[node name="Ray3" type="RayCast3D" parent="CollisionRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.039, 0, -2.24483)
+target_position = Vector3(0, 0, -1)
+
+[node name="Ray4" type="RayCast3D" parent="CollisionRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.039, 0, 2.24383)
+target_position = Vector3(0, 0, 1)
+
 [connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]
 [connection signal="body_entered" from="HeyArea" to="." method="_on_hey_area_body_entered"]

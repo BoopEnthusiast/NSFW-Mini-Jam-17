@@ -1,15 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://1cxo47ls7w87"]
+[gd_scene load_steps=5 format=3 uid="uid://1cxo47ls7w87"]
 
 [ext_resource type="Script" uid="uid://dc6lul1ubrh3y" path="res://level/hotel.gd" id="1_1g74x"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wtadh"]
-radius = 2.0019
+radius = 8.0
+
+[sub_resource type="Gradient" id="Gradient_y728p"]
+colors = PackedColorArray(0.808575, 0.415606, 0.774176, 1, 0.703919, 0.674455, 0.926288, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xccf5"]
+gradient = SubResource("Gradient_y728p")
+fill_to = Vector2(1, 1)
 
 [node name="Hotel" type="Area3D" groups=["hotel"]]
 script = ExtResource("1_1g74x")
 
 [node name="Collider" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_wtadh")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.16523, 0)
+billboard = 2
+texture = SubResource("GradientTexture2D_xccf5")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
