@@ -43,15 +43,17 @@ func _physics_process(_delta: float) -> void:
 	engine_force = ENGINE_FORCE * Input.get_action_strength("forward")
 	steering = Input.get_axis("right", "left")
 	
+	# If stopped moving and trying to reverse, start reversing
+	if linear_velocity.length_squared() < 1 and Input.is_action_pressed("backward"):
+		reversing = true
+	
 	# If not reversing, brake
 	if not reversing:
 		brake = BRAKE_FORCE * Input.get_action_strength("backward")
 	else:
 		brake = 0
 	
-	# If stopped moving and trying to reverse, start reversing
-	if linear_velocity.length_squared() < 0.01 and Input.is_action_pressed("backward"):
-		reversing = true
+	
 	
 	
 	# If reversing, move backward
