@@ -457,7 +457,6 @@ shadow_mesh = SubResource("ArrayMesh_8m154")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xxqe1"]
 resource_name = "Road"
-cull_mode = 2
 albedo_texture = ExtResource("1_xxqe1")
 metallic = 1.0
 

@@ -92,6 +92,7 @@ func _physics_process(_delta: float) -> void:
 					car_back_half_hideable.visible = false
 					sitting_fem.visible = false
 					sitting_masc.visible = false
+					Nodes.main.spawn_hotel()
 					if collected_people[0] == Person.Gender.MALE and collected_people[1] == Person.Gender.MALE:
 						fucking_masc.visible = true
 						fucking_masc.animation_player.play("MM TOP")
@@ -123,3 +124,11 @@ func _on_hey_area_body_entered(body: Node3D) -> void:
 	if body is Person:
 		if collected_people.size() < 2:
 			body.say_hey()
+
+
+func entered_hotel() -> void:
+	pass
+
+
+func exited_hotel() -> void:
+	pass
