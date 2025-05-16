@@ -4,7 +4,6 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1e0qd"]
 resource_name = "Road"
-cull_mode = 2
 albedo_texture = ExtResource("1_xxqe1")
 metallic = 1.0
 
@@ -44,7 +43,6 @@ shadow_mesh = SubResource("ArrayMesh_j8vyc")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_510js"]
 resource_name = "Road"
-cull_mode = 2
 albedo_texture = ExtResource("1_xxqe1")
 metallic = 1.0
 
@@ -352,7 +350,6 @@ shadow_mesh = SubResource("ArrayMesh_2ku2s")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xhu5d"]
 resource_name = "Road"
-cull_mode = 2
 albedo_texture = ExtResource("1_xxqe1")
 metallic = 1.0
 
