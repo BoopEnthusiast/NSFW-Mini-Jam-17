@@ -124,7 +124,7 @@ camera_attributes = ExtResource("5_xa854")
 generate_probes_subdiv = 3
 light_data = ExtResource("6_kagtj")
 
-[node name="GridMap" type="GridMap" parent="."]
+[node name="BuildingsGridMap" type="GridMap" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
 mesh_library = ExtResource("6_cus2n")
 cell_size = Vector3(20, 10, 20)
