@@ -78,6 +78,8 @@ func _physics_process(_delta: float) -> void:
 	#engine_force_emitter.set_parameter("engine_force", engine_force)
 	
 	if Input.is_action_just_pressed("bump"):
+		if not bump_animator.is_playing():
+			Nodes.cum_bar.value += 20.0
 		bump_animator.play("bump")
 	
 	# Collect people
@@ -103,6 +105,7 @@ func _physics_process(_delta: float) -> void:
 					sitting_fem.visible = false
 					sitting_masc.visible = false
 					Nodes.main.spawn_hotel()
+					Nodes.cum_bar.visible = true
 					if collected_people[0] == Person.Gender.MALE and collected_people[1] == Person.Gender.MALE:
 						fucking_masc.visible = true
 						fucking_masc.animation_player.play("MM TOP")
@@ -131,6 +134,9 @@ func _process(delta: float) -> void:
 			fucking_fem_2.visible = false
 			car_back_half_hideable.visible = true
 			hotel_bar.visible = false
+			collected_people.clear()
+			Nodes.main.time_left += Nodes.cum_bar.value
+			Nodes.cum_bar.visible = false
 
 
 
