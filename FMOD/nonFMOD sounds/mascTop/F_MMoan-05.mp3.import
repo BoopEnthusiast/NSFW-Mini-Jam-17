@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://70uitodr2d0c"
+path="res://.godot/imported/F_MMoan-05.mp3-94c96169d02a2d387a6a6399da3794d9.mp3str"
+
+[deps]
+
+source_file="res://FMOD/nonFMOD sounds/mascTop/F_MMoan-05.mp3"
+dest_files=["res://.godot/imported/F_MMoan-05.mp3-94c96169d02a2d387a6a6399da3794d9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

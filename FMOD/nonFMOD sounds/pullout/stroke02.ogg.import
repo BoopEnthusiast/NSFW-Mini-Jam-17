@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dm6hv65vsh5xo"
+path="res://.godot/imported/stroke02.ogg-ef43514d32c42a63908c6e976c005d3f.oggvorbisstr"
+
+[deps]
+
+source_file="res://FMOD/nonFMOD sounds/pullout/stroke02.ogg"
+dest_files=["res://.godot/imported/stroke02.ogg-ef43514d32c42a63908c6e976c005d3f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

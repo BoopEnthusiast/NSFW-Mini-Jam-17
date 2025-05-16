@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cxesg5a5l4snf"
+path="res://.godot/imported/plapwet01.ogg-2428f478aba14c673749b6cf3d26e6f5.oggvorbisstr"
+
+[deps]
+
+source_file="res://FMOD/nonFMOD sounds/plap/plapwet01.ogg"
+dest_files=["res://.godot/imported/plapwet01.ogg-2428f478aba14c673749b6cf3d26e6f5.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
