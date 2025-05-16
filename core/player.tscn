@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://c6hw8imjbic3"]
+[gd_scene load_steps=41 format=4 uid="uid://c6hw8imjbic3"]
 
 [ext_resource type="Script" uid="uid://bojv5u257jpkw" path="res://core/player.gd" id="1_3x74s"]
 [ext_resource type="PackedScene" uid="uid://brr0w0o7xtiyp" path="res://art/human/fem_base_model.tscn" id="2_4ae0v"]
@@ -1153,15 +1153,10 @@ _data = {
 [sub_resource type="ViewportTexture" id="ViewportTexture_4ae0v"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4ae0v"]
-radius = 2.47033
-height = 9.35112
-
 [node name="Player" type="VehicleBody3D"]
 physics_material_override = SubResource("PhysicsMaterial_3x74s")
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -0.1, 0)
-contact_monitor = true
 script = ExtResource("1_3x74s")
 
 [node name="Cat Car2" type="Node3D" parent="."]
@@ -1353,12 +1348,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HitArea" type="Area3D" parent="."]
+[node name="CollisionRays" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42883, 0)
 
-[node name="Collider" type="CollisionShape3D" parent="HitArea"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 1.3646, 0)
-shape = SubResource("CapsuleShape3D_4ae0v")
+[node name="Ray" type="RayCast3D" parent="CollisionRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.18334, 0, 0)
+target_position = Vector3(1, 0, 0)
+
+[node name="Ray2" type="RayCast3D" parent="CollisionRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.17365, 0, 0)
+target_position = Vector3(-1, 0, 0)
+
+[node name="Ray3" type="RayCast3D" parent="CollisionRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.039, 0, -2.24483)
+target_position = Vector3(0, 0, -1)
+
+[node name="Ray4" type="RayCast3D" parent="CollisionRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.039, 0, 2.24383)
+target_position = Vector3(0, 0, 1)
 
 [connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]
 [connection signal="body_entered" from="HeyArea" to="." method="_on_hey_area_body_entered"]
-[connection signal="body_entered" from="HitArea" to="." method="_on_hit_area_body_entered"]

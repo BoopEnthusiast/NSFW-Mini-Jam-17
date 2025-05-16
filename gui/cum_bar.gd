@@ -6,5 +6,5 @@ func _enter_tree() -> void:
 	Nodes.cum_bar = self
 
 
-func _process(delta: float) -> void:
-	value -= delta
+#func _process(delta: float) -> void:
+	#value -= delta

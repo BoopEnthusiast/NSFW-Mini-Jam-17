@@ -12,6 +12,8 @@ var collected_people: Array[Person.Gender] = []
 
 var hotel_inside: Hotel
 
+var is_colliding: bool = false
+
 @onready var camera: Camera3D = $Camera
 @onready var camera_animator: AnimationPlayer = $CameraAnimator
 
@@ -34,6 +36,7 @@ var hotel_inside: Hotel
 @onready var hotel_bar: Sprite3D = $HotelBar
 @onready var hotel_progress_bar: ProgressBar = $SubViewport/HotelBar
 
+@onready var collision_rays: Array[RayCast3D] = [$CollisionRays/Ray, $CollisionRays/Ray2, $CollisionRays/Ray3, $CollisionRays/Ray4]
 
 func _enter_tree() -> void:
 	Nodes.player = self
@@ -50,7 +53,7 @@ func _physics_process(_delta: float) -> void:
 	
 	# Calculate engine force and steering
 	engine_force = ENGINE_FORCE * Input.get_action_strength("forward")
-	steering = Input.get_axis("right", "left") * 0.3
+	steering = Input.get_axis("right", "left") * 0.2
 	
 	# If stopped moving and trying to reverse, start reversing
 	if linear_velocity.length_squared() < 25 and Input.is_action_pressed("backward"):
@@ -77,7 +80,7 @@ func _physics_process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("bump"):
 		if not bump_animator.is_playing():
-			Nodes.cum_bar.value += 5.0
+			Nodes.cum_bar.value += 10.0
 		bump_animator.play("bump")
 	
 	# Collect people
@@ -120,6 +123,17 @@ func _physics_process(_delta: float) -> void:
 						fucking_fem.animation_player.play("FF TOP")
 						fucking_fem_2.visible = true
 						fucking_fem_2.animation_player.play("FF BOT")
+	
+	var found_collision := false
+	for ray: RayCast3D in collision_rays:
+		if ray.is_colliding():
+			found_collision = true
+			if not is_colliding:
+				is_colliding = true
+				Nodes.cum_bar.value -= 5.0
+				break
+	if not found_collision:
+		is_colliding = false
 
 
 func _process(delta: float) -> void:
@@ -164,9 +178,3 @@ func entered_hotel(hotel: Hotel) -> void:
 func exited_hotel(hotel: Hotel) -> void:
 	hotel_bar.visible = false
 	hotel_inside = hotel
-
-
-func _on_hit_area_body_entered(body: Node3D) -> void:
-	if body is GridMap:
-		print("Hit wall")
-		Nodes.cum_bar.value -= 5.0
