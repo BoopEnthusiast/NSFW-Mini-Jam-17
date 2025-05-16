@@ -140,7 +140,6 @@ func _process(delta: float) -> void:
 		hotel_progress_bar.value = 0.0
 
 
-
 func _on_collect_area_body_entered(body: Node3D) -> void:
 	if body is Person:
 		if collected_people.size() < 2:
