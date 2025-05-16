@@ -58,7 +58,7 @@ func _process(_delta: float) -> void:
 		hostel_child.position = Vector2(position_to_player.x, position_to_player.z) + size / 2
 		i += 1
 	
-	while i > get_child_count() - 1:
+	while i > get_child_count():
 		remove_child(get_child(i))
 
 
