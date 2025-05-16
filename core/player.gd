@@ -53,10 +53,6 @@ func _physics_process(_delta: float) -> void:
 	else:
 		brake = 0
 	
-	print("Brake: %f" % brake)
-	print("Force: %f" % engine_force)
-	print("Speed: %f" % linear_velocity.length_squared())
-	
 	# If reversing, move backward
 	if reversing:
 		engine_force = -ENGINE_FORCE * Input.get_action_strength("backward")
