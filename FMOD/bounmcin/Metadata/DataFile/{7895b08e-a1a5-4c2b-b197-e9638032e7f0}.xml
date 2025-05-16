@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="DataFile" id="{7895b08e-a1a5-4c2b-b197-e9638032e7f0}">
+		<property name="assetPath">
+			<value>mascBot/KitzuVPCumMed 5.wav.import</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{61aa199f-c11f-4e91-b1bc-878ec5559422}</destination>
+		</relationship>
+	</object>
+</objects>

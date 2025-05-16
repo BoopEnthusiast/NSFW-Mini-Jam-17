@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{32258311-6608-4473-9e24-8996ba615333}">
+		<property name="assetPath">
+			<value>mascBot/KitzuVPCumMed 1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.79922902494331061</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{61aa199f-c11f-4e91-b1bc-878ec5559422}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{58c8955d-452d-42a8-af5b-38cf3ac8da7a}">
+		<property name="assetPath">
+			<value>mascTop/F_MMoan-04.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.69599999999999995</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{61aa199f-c11f-4e91-b1bc-878ec5559422}</destination>
+		</relationship>
+	</object>
+</objects>

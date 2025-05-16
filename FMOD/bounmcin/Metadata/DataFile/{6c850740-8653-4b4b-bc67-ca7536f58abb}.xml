@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="DataFile" id="{6c850740-8653-4b4b-bc67-ca7536f58abb}">
+		<property name="assetPath">
+			<value>femBot/Moans Mouth Closed Medium Intensity (Slow) 1.wav.import</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{61aa199f-c11f-4e91-b1bc-878ec5559422}</destination>
+		</relationship>
+	</object>
+</objects>
