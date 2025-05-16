@@ -1217,7 +1217,7 @@ current = true
 [node name="FmodListener3D" type="FmodListener3D" parent="Camera"]
 
 [node name="WheelFL" type="VehicleWheel3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.39129, -0.00127193, -2)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.39129, 0.536747, -2)
 use_as_traction = true
 use_as_steering = true
 wheel_roll_influence = 0.5
@@ -1234,7 +1234,7 @@ mesh = SubResource("ArrayMesh_8gp0t")
 skeleton = NodePath("")
 
 [node name="WheelFR" type="VehicleWheel3D" parent="."]
-transform = Transform3D(7.54979e-08, 0, 1, 0, 1, 0, -1, 0, 7.54979e-08, 2.391, -0.00104094, 2)
+transform = Transform3D(7.54979e-08, 0, 1, 0, 1, 0, -1, 0, 7.54979e-08, 2.391, 0.536978, 2)
 use_as_traction = true
 use_as_steering = true
 wheel_roll_influence = 0.5
@@ -1251,7 +1251,7 @@ mesh = SubResource("ArrayMesh_u814o")
 skeleton = NodePath("")
 
 [node name="WheelBL" type="VehicleWheel3D" parent="."]
-transform = Transform3D(7.54979e-08, 0, 1, 0, 1, 0, -1, 0, 7.54979e-08, -2.391, -0.00104094, -2)
+transform = Transform3D(7.54979e-08, 0, 1, 0, 1, 0, -1, 0, 7.54979e-08, -2.391, 0.536978, -2)
 use_as_traction = true
 wheel_roll_influence = 0.5
 wheel_radius = 0.75
@@ -1267,7 +1267,7 @@ mesh = SubResource("ArrayMesh_riapx")
 skeleton = NodePath("")
 
 [node name="WheelBR" type="VehicleWheel3D" parent="."]
-transform = Transform3D(7.54979e-08, 0, 1, 0, 1, 0, -1, 0, 7.54979e-08, -2.391, -0.00104094, 2)
+transform = Transform3D(7.54979e-08, 0, 1, 0, 1, 0, -1, 0, 7.54979e-08, -2.391, 0.536978, 2)
 use_as_traction = true
 wheel_roll_influence = 0.5
 wheel_radius = 0.75
