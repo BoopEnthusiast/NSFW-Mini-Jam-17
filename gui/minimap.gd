@@ -55,7 +55,8 @@ func _process(_delta: float) -> void:
 			hostel_child = make_new_marker()
 		hostel_child.color = Color.YELLOW
 		position_to_player = Nodes.player.to_local(hotel.global_position).rotated(Vector3.UP, PI / 2) / MAP_SCALE
-		hostel_child.position = 
+		hostel_child.position = Vector2(position_to_player.x, position_to_player.z) + size / 2
+		i += 1
 	
 	while i > get_child_count() - 1:
 		remove_child(get_child(i))
