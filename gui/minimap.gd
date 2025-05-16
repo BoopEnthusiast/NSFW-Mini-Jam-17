@@ -2,12 +2,16 @@ class_name Minimap
 extends TextureRect
 
 
-const MAP_SCALE = 3
+const MAP_SCALE = 2.0
 
 const MARKER = preload("res://gui/marker.tscn")
 
+@onready var minimap_camera: Camera3D = $SubViewportContainer/SubViewport/MinimapCamera
+
 
 func _process(_delta: float) -> void:
+	minimap_camera.scale = Vector3(MAP_SCALE, MAP_SCALE, MAP_SCALE)
+	
 	# Child going through right now
 	var i: int = 1
 	
