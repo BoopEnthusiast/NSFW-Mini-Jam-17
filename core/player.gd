@@ -23,6 +23,9 @@ var is_colliding: bool = false
 
 @onready var masc_greeting: FmodEventEmitter3D = $MascGreeting
 @onready var fem_greeting: FmodEventEmitter3D = $FemGreeting
+@onready var bumpin: FmodEventEmitter3D = $Bumpin
+@onready var bump_masc: FmodEventEmitter3D = $BumpMasc
+@onready var bump_fem: FmodEventEmitter3D = $BumpFem
 
 @onready var sitting_fem: FemBaseModel = $"Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Passenger Seat 1 Pos/SittingFem"
 @onready var sitting_masc: MascBaseModel = $"Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Passenger Seat 2 Pos/SittingMasc"
@@ -82,6 +85,13 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("bump"):
 		if not bump_animator.is_playing():
 			Nodes.cum_bar.value += 10.0
+			bumpin.play_one_shot()
+			for person: Person.Gender in collected_people:
+				match person:
+					Person.Gender.MALE:
+						bump_masc.play_one_shot()
+					Person.Gender.FEMALE:
+						bump_fem.play_one_shot()
 		bump_animator.play("bump")
 	
 	# Collect people
