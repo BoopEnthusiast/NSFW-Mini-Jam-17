@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://crnkdmqoe8em1"
+path="res://.godot/imported/Moans B-7 CLIMAX 6.wav-eb0f59b7b45c0567b8150e6f4fba9d4e.sample"
+
+[deps]
+
+source_file="res://FMOD/Build/femBounce/Moans B-7 CLIMAX 6.wav"
+dest_files=["res://.godot/imported/Moans B-7 CLIMAX 6.wav-eb0f59b7b45c0567b8150e6f4fba9d4e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -63,7 +63,9 @@ bones/48/rotation = Quaternion(-0.0149738, 8.42907e-10, -1.34345e-07, 0.999888)
 [node name="mascBotSFX" type="FmodEventEmitter3D" parent="AnimationPlayer" index="0"]
 event_name = "event:/mmBot"
 event_guid = "{018096eb-e4d9-468b-abd9-d5ab698d635e}"
+volume = 0.25
 
 [node name="mascTopSFX" type="FmodEventEmitter3D" parent="AnimationPlayer" index="1"]
 event_name = "event:/mfTop"
 event_guid = "{2127c757-2c6c-40bf-8e05-2045a0ad471b}"
+volume = 0.25

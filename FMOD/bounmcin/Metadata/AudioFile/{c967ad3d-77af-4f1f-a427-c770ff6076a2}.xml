@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{c967ad3d-77af-4f1f-a427-c770ff6076a2}">
+		<property name="assetPath">
+			<value>femBounce/Moans B-7 CLIMAX 2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.7304761904761905</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{61aa199f-c11f-4e91-b1bc-878ec5559422}</destination>
+		</relationship>
+	</object>
+</objects>
