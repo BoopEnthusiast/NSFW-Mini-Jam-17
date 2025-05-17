@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://urntlnquup3n"]
+[gd_scene load_steps=12 format=3 uid="uid://urntlnquup3n"]
 
 [ext_resource type="Shader" uid="uid://wc1p5p4lggyo" path="res://gui/minimap.gdshader" id="1_0suk4"]
 [ext_resource type="Texture2D" uid="uid://cx3tb3fr7e0t6" path="res://art/circle.png" id="2_d71s4"]
 [ext_resource type="Script" uid="uid://cjp7mdc76b5ql" path="res://gui/minimap.gd" id="3_6fvle"]
 [ext_resource type="FontFile" uid="uid://b6amb6wxmgaqe" path="res://art/fonts/Designer.otf" id="4_6s6ta"]
+[ext_resource type="Texture2D" uid="uid://kad0ywwqjchk" path="res://art/ui/timer.png" id="4_cc2vs"]
 [ext_resource type="Script" uid="uid://d4akjs2sva7b7" path="res://gui/time_left_bar.gd" id="4_d71s4"]
 [ext_resource type="Script" uid="uid://8c257veydcm3" path="res://gui/cum_bar.gd" id="5_6fvle"]
 
@@ -20,6 +21,19 @@ script/source = "extends Camera3D
 func _process(_delta: float) -> void:
 	global_position = Nodes.player.global_position + Vector3.UP * 200
 	global_rotation.y = Nodes.player.global_rotation.y - PI / 2
+"
+
+[sub_resource type="GDScript" id="GDScript_cc2vs"]
+script/source = "extends Label
+
+
+func _process(_delta: float) -> void:
+	text = \"%.2f\" % (Nodes.main.time_left - int(Nodes.main.time_left))
+	
+	var char: String
+	while char != \".\":
+		text = text.erase(0)
+		char = text.left(1)
 "
 
 [node name="HUDLayer" type="CanvasLayer"]
@@ -64,19 +78,48 @@ projection = 1
 size = 610.0
 script = SubResource("GDScript_jsmgm")
 
-[node name="TimeLeft" type="Label" parent="Control"]
+[node name="TimeLeftBackdrop" type="TextureRect" parent="Control"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -191.0
-offset_bottom = 84.0
+offset_left = -253.0
+offset_bottom = 110.0
 grow_horizontal = 0
+texture = ExtResource("4_cc2vs")
+expand_mode = 1
+
+[node name="TimeLeftBig" type="Label" parent="Control/TimeLeftBackdrop"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.205534
+anchor_top = 0.3
+anchor_right = 0.719368
+anchor_bottom = 0.736364
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_6s6ta")
-theme_override_font_sizes/font_size = 60
-text = "100.00"
+theme_override_font_sizes/font_size = 50
+text = "100"
 horizontal_alignment = 2
 script = ExtResource("4_d71s4")
+metadata/_edit_use_anchors_ = true
+
+[node name="TimeLeftSmall" type="Label" parent="Control/TimeLeftBackdrop"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -76.0
+offset_top = 52.0
+offset_right = -10.0
+offset_bottom = 76.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_6s6ta")
+theme_override_font_sizes/font_size = 25
+text = ".00"
+script = SubResource("GDScript_cc2vs")
 
 [node name="CumBar" type="ProgressBar" parent="Control"]
 layout_mode = 1

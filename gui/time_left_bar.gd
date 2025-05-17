@@ -3,4 +3,4 @@ extends Label
 
 
 func _process(_delta: float) -> void:
-	text = "%.2f" % Nodes.main.time_left
+	text = "%d" % Nodes.main.time_left
