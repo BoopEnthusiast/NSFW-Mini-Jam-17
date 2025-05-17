@@ -165,9 +165,13 @@ func _process(delta: float) -> void:
 		if hotel_progress_bar.value >= hotel_progress_bar.max_value:
 			hotel_inside.queue_free()
 			fucking_masc.visible = false
+			fucking_masc.animation_player.stop()
 			fucking_masc_2.visible = false
+			fucking_masc_2.animation_player.stop()
 			fucking_fem.visible = false
+			fucking_fem.animation_player.stop()
 			fucking_fem_2.visible = false
+			fucking_fem_2.animation_player.stop()
 			car_back_half_hideable.visible = true
 			hotel_bar.visible = false
 			collected_people.clear()
