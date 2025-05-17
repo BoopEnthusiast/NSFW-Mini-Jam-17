@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://urntlnquup3n"]
+[gd_scene load_steps=10 format=3 uid="uid://urntlnquup3n"]
 
 [ext_resource type="Shader" uid="uid://wc1p5p4lggyo" path="res://gui/minimap.gdshader" id="1_0suk4"]
 [ext_resource type="Texture2D" uid="uid://cx3tb3fr7e0t6" path="res://art/circle.png" id="2_d71s4"]
 [ext_resource type="Script" uid="uid://cjp7mdc76b5ql" path="res://gui/minimap.gd" id="3_6fvle"]
+[ext_resource type="FontFile" uid="uid://b6amb6wxmgaqe" path="res://art/fonts/Designer.otf" id="4_6s6ta"]
 [ext_resource type="Script" uid="uid://d4akjs2sva7b7" path="res://gui/time_left_bar.gd" id="4_d71s4"]
 [ext_resource type="Script" uid="uid://8c257veydcm3" path="res://gui/cum_bar.gd" id="5_6fvle"]
 
@@ -63,31 +64,32 @@ projection = 1
 size = 610.0
 script = SubResource("GDScript_jsmgm")
 
-[node name="TimeLeftBar" type="ProgressBar" parent="Control"]
+[node name="TimeLeft" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -360.0
-offset_bottom = 54.0
+offset_left = -191.0
+offset_bottom = 84.0
 grow_horizontal = 0
-step = 1.0
-value = 100.0
-rounded = true
-allow_greater = true
-show_percentage = false
+theme_override_fonts/font = ExtResource("4_6s6ta")
+theme_override_font_sizes/font_size = 60
+text = "100.00"
+horizontal_alignment = 2
 script = ExtResource("4_d71s4")
 
 [node name="CumBar" type="ProgressBar" parent="Control"]
-visible = false
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -184.0
-offset_top = 18.0
-offset_right = 184.0
-offset_bottom = 55.0
-grow_horizontal = 2
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -171.0
+offset_bottom = 171.0
+grow_horizontal = 0
+grow_vertical = 2
 max_value = 30.0
+fill_mode = 3
 script = ExtResource("5_6fvle")

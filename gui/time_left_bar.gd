@@ -1,8 +1,6 @@
-class_name TimeLeftBar
-extends ProgressBar
+class_name TimeLeft
+extends Label
 
 
 func _process(_delta: float) -> void:
-	if Nodes.main.time_left > max_value:
-		max_value = Nodes.main.time_left
-	value = Nodes.main.time_left
+	text = "%.2f" % Nodes.main.time_left
