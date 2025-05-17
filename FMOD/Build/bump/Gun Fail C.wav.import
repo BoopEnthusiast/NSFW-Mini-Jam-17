@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dv1wcvs7b2s54"
+path="res://.godot/imported/Gun Fail C.wav-625a7f31fbfbef181a636c1e6859d0b7.sample"
+
+[deps]
+
+source_file="res://FMOD/Build/bump/Gun Fail C.wav"
+dest_files=["res://.godot/imported/Gun Fail C.wav-625a7f31fbfbef181a636c1e6859d0b7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
