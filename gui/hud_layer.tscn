@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://urntlnquup3n"]
+[gd_scene load_steps=19 format=3 uid="uid://urntlnquup3n"]
 
 [ext_resource type="Shader" uid="uid://wc1p5p4lggyo" path="res://gui/minimap.gdshader" id="1_0suk4"]
 [ext_resource type="Texture2D" uid="uid://cx3tb3fr7e0t6" path="res://art/circle.png" id="2_d71s4"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://kad0ywwqjchk" path="res://art/ui/timer.png" id="4_cc2vs"]
 [ext_resource type="Script" uid="uid://d4akjs2sva7b7" path="res://gui/time_left_bar.gd" id="4_d71s4"]
 [ext_resource type="Script" uid="uid://8c257veydcm3" path="res://gui/cum_bar.gd" id="5_6fvle"]
+[ext_resource type="Texture2D" uid="uid://c8iuye5e2c3fu" path="res://art/ui/cumtankTOP.png" id="8_e1iu4"]
+[ext_resource type="Shader" uid="uid://d1sgtqjsenmuq" path="res://gui/hud_layer.gdshader" id="8_gsvh6"]
+[ext_resource type="Texture2D" uid="uid://b3t7166x76g2o" path="res://art/ui/cumtankBOT.png" id="8_ytf2f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xhu5d"]
 shader = ExtResource("1_0suk4")
@@ -34,6 +37,43 @@ func _process(_delta: float) -> void:
 	while char != \".\":
 		text = text.erase(0)
 		char = text.left(1)
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vs0p6"]
+shader = ExtResource("8_gsvh6")
+shader_parameter/progress = 0.772
+shader_parameter/bg_color = Color(0, 0, 0, 0)
+shader_parameter/wave_1_color = Color(1, 1, 1, 1)
+shader_parameter/wave_2_color = Color(0.99965, 0.943758, 0.787081, 1)
+shader_parameter/wave_1_speed = -0.5
+shader_parameter/wave_2_speed = 0.5
+
+[sub_resource type="Theme" id="Theme_ytf2f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gsvh6"]
+shader = ExtResource("8_gsvh6")
+shader_parameter/progress = 0.42
+shader_parameter/bg_color = Color(0, 0, 0, 0)
+shader_parameter/wave_1_color = Color(0.99899, 0.967915, 0.921513, 1)
+shader_parameter/wave_2_color = Color(1, 1, 1, 1)
+shader_parameter/wave_1_speed = -1.0
+shader_parameter/wave_2_speed = 1.0
+
+[sub_resource type="GDScript" id="GDScript_gsvh6"]
+script/source = "extends ColorRect
+
+
+@onready var cum_bar: CumBar = $\"../CumBar\"
+@onready var texture_rect: TextureRect = $\"../../TextureRect\"
+@onready var texture_rect_2: TextureRect = $\"..\"
+
+
+func _process(delta: float) -> void:
+	material.set_shader_parameter(\"progress\", cum_bar.value / cum_bar.max_value)
+	
+	visible = cum_bar.visible
+	texture_rect.visible = cum_bar.visible
+	texture_rect_2.visible = cum_bar.visible 
 "
 
 [node name="HUDLayer" type="CanvasLayer"]
@@ -121,18 +161,56 @@ theme_override_font_sizes/font_size = 25
 text = ".00"
 script = SubResource("GDScript_cc2vs")
 
-[node name="CumBar" type="ProgressBar" parent="Control"]
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 1061.0
+offset_top = 348.0
+offset_right = 1153.0
+offset_bottom = 648.0
+texture = ExtResource("8_ytf2f")
+expand_mode = 1
+
+[node name="CumBar" type="ProgressBar" parent="Control/TextureRect2"]
+visible = false
+material = SubResource("ShaderMaterial_vs0p6")
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -171.0
-offset_bottom = 171.0
-grow_horizontal = 0
+anchors_preset = -1
+anchor_left = 0.098
+anchor_top = 0.21
+anchor_right = 0.902
+anchor_bottom = 0.96
+offset_left = -0.0160007
+offset_top = -4.0
+offset_right = 0.0159912
+grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_ytf2f")
 max_value = 30.0
+value = 10.92
 fill_mode = 3
+show_percentage = false
 script = ExtResource("5_6fvle")
+
+[node name="ColorRect" type="ColorRect" parent="Control/TextureRect2"]
+material = SubResource("ShaderMaterial_gsvh6")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0869565
+anchor_top = 0.196667
+anchor_right = 0.913043
+anchor_bottom = 0.963333
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_gsvh6")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 1061.0
+offset_top = 348.0
+offset_right = 1153.0
+offset_bottom = 648.0
+texture = ExtResource("8_e1iu4")
+expand_mode = 1
