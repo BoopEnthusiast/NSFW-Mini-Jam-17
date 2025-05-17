@@ -1179,14 +1179,14 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.302264, 0.307973, -0.449874)
 
 [node name="SittingFem" parent="Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Passenger Seat 1 Pos" instance=ExtResource("2_4ae0v")]
-transform = Transform3D(1.1, 0, 3.93391e-06, 0, 1.1, 0, -3.93391e-06, 0, 1.1, -2.02656e-06, -0.194995, 1.2219e-06)
+transform = Transform3D(1, 0, 3.57628e-06, 0, 1, 0, -3.57628e-06, 0, 1, -2.02656e-06, -0.194995, 1.2219e-06)
 visible = false
 
 [node name="Passenger Seat 2 Pos" type="Node3D" parent="Cat Car2/Cat Car Game Obj Origin/Car Body Origin"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.312045, 0.307973, -0.449874)
 
 [node name="SittingMasc" parent="Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Passenger Seat 2 Pos" instance=ExtResource("3_y0177")]
-transform = Transform3D(1.1, 0, 3.93391e-06, 0, 1.1, 0, -3.93391e-06, 0, 1.1, -1.51992e-06, -0.194995, -1.01328e-06)
+transform = Transform3D(1, 0, 3.57628e-06, 0, 1, 0, -3.57628e-06, 0, 1, -1.51992e-06, -0.194995, -1.01328e-06)
 visible = false
 
 [node name="Passenger Sex Pos" type="Node3D" parent="Cat Car2/Cat Car Game Obj Origin/Car Body Origin"]
@@ -1378,6 +1378,11 @@ event_guid = "{62901927-a26a-4966-9e91-7c8b8ae625aa}"
 [node name="BumpFem" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/femBump"
 event_guid = "{8710717c-c35a-4dd8-8835-669a72b5f4a6}"
+
+[node name="Arrow" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.53219, 0)
+polygon = PackedVector2Array(0.3, 0, 0.8, 0.7, -0.8, 0, 0.8, -0.7)
+depth = 0.25
 
 [connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]
 [connection signal="body_entered" from="HeyArea" to="." method="_on_hey_area_body_entered"]

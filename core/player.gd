@@ -42,6 +42,9 @@ var is_colliding: bool = false
 
 @onready var collision_rays: Array[RayCast3D] = [$CollisionRays/Ray, $CollisionRays/Ray2, $CollisionRays/Ray3, $CollisionRays/Ray4]
 
+@onready var arrow: CSGPolygon3D = $Arrow
+
+
 func _enter_tree() -> void:
 	Nodes.player = self
 
@@ -148,6 +151,15 @@ func _physics_process(_delta: float) -> void:
 
 
 func _process(delta: float) -> void:
+	var i = 0
+	for hotel: Hotel in get_tree().get_nodes_in_group("hotel"):
+		arrow.visible = true
+		arrow.look_at(hotel.global_position)
+		arrow.rotate(Vector3.UP, -PI / 2)
+		i += 1
+	if i == 0:
+		arrow.visible = false
+	
 	if hotel_bar.visible:
 		hotel_progress_bar.value += delta
 		if hotel_progress_bar.value >= hotel_progress_bar.max_value:
