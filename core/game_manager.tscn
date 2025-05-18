@@ -243,10 +243,7 @@ script = SubResource("GDScript_x1aqt")
 [node name="Main" parent="." instance=ExtResource("3_ulge3")]
 process_mode = 1
 
-[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
-bank_paths = ["res://fmodBanks/Desktop/main game.bank", "res://fmodBanks/Desktop//Master.bank"]
-
-[node name="bgm" type="FmodEventEmitter3D" parent="FmodBankLoader"]
+[node name="bgm" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/bgMusic"
 event_guid = "{9b75ae30-ce33-4da8-848a-6f2526305b3a}"
 autoplay = true
@@ -254,6 +251,9 @@ fmod_parameters/bgmIntensity/id = -4640684709411688077
 fmod_parameters/bgmIntensity = "menus"
 fmod_parameters/bgmIntensity/labels = PackedStringArray("menus", "levelEarly", "levelLate")
 fmod_parameters/bgmIntensity/variant_type = 4
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://fmodBanks/Desktop/main game.bank", "res://fmodBanks/Desktop//Master.bank"]
 
 [connection signal="play_game" from="WhenPausedLayer/MainMenu" to="." method="_on_main_menu_play_game"]
 [connection signal="pressed" from="WhenPausedLayer/LoseScreen/Button" to="WhenPausedLayer/LoseScreen/Button" method="_on_pressed"]
