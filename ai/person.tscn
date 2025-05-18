@@ -18,32 +18,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("CapsuleShape3D_cus2n")
 
 [node name="MascHey" type="FmodEventEmitter3D" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
 event_name = "event:/mascHey"
 event_guid = "{a0eec650-147c-4443-80e9-dfb11baeb004}"
-script = null
 
 [node name="FemHey" type="FmodEventEmitter3D" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
 event_name = "event:/femHey"
 event_guid = "{9a2b5604-a5ab-42e4-a0a6-9e39e4524a76}"
-script = null
 
 [node name="Masc Base Model" parent="." instance=ExtResource("2_sxyxf")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
