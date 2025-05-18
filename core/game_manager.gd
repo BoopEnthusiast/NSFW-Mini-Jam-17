@@ -12,7 +12,7 @@ func _ready() -> void:
 	get_tree().paused = true
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Nodes.main.time_left <= 30.0:
 		bgm.set_parameter("bgmIntensity", "levelLate")
 	elif Nodes.main.time_left <= 70.0:
