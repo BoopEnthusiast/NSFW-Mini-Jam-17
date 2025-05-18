@@ -490,12 +490,4 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="BGMusic" type="FmodEventEmitter3D" parent="."]
-event_name = "event:/bgMusic"
-event_guid = "{9b75ae30-ce33-4da8-848a-6f2526305b3a}"
-fmod_parameters/bgmIntensity/id = -4640684709411688077
-fmod_parameters/bgmIntensity = "menus"
-fmod_parameters/bgmIntensity/labels = PackedStringArray("menus", "levelEarly", "levelLate")
-fmod_parameters/bgmIntensity/variant_type = 4
-
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
