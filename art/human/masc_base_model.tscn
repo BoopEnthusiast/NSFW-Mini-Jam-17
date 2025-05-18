@@ -77,6 +77,9 @@ bones/48/rotation = Quaternion(-0.0149738, 8.42907e-10, -1.34345e-07, 0.999888)
 [node name="Male Base Mesh" parent="Male Rig/Skeleton3D" index="0"]
 visible = false
 
+[node name="Masc 1 Nude" parent="Male Rig/Skeleton3D" index="2"]
+visible = false
+
 [node name="AnimationPlayer" parent="." index="1"]
 libraries = {
 &"": SubResource("AnimationLibrary_iq51b")

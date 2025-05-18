@@ -1654,18 +1654,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.296082, -0.468477)
 [node name="FuckingFem2" parent="Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Passenger Sex Pos" instance=ExtResource("2_4ae0v")]
 transform = Transform3D(1, 0, 3.57628e-06, 0, 1, 0, -3.57628e-06, 0, 1, -1.6754e-06, -0.194995, 2.38419e-07)
 visible = false
+which_mesh = 1
 
 [node name="FuckingFem" parent="Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Passenger Sex Pos" instance=ExtResource("2_4ae0v")]
 transform = Transform3D(1, 0, 3.57628e-06, 0, 1, 0, -3.57628e-06, 0, 1, -1.6754e-06, -0.194995, 2.38419e-07)
 visible = false
+which_mesh = 1
 
 [node name="FuckingMasc" parent="Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Passenger Sex Pos" instance=ExtResource("3_y0177")]
 transform = Transform3D(1, 0, 3.57628e-06, 0, 1, 0, -3.57628e-06, 0, 1, -1.6754e-06, -0.194995, 2.38419e-07)
 visible = false
+which_mesh = 1
 
 [node name="FuckingMasc2" parent="Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Passenger Sex Pos" instance=ExtResource("3_y0177")]
 transform = Transform3D(1, 0, 3.57628e-06, 0, 1, 0, -3.57628e-06, 0, 1, -1.6754e-06, -0.194995, 2.38419e-07)
 visible = false
+which_mesh = 1
 
 [node name="Collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.37793, 0)
