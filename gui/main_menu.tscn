@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://culr1068gs7qi"]
+[gd_scene load_steps=8 format=3 uid="uid://culr1068gs7qi"]
 
 [ext_resource type="Script" uid="uid://d3b3er151bqic" path="res://gui/main_menu.gd" id="1_reecx"]
+[ext_resource type="Texture2D" uid="uid://knmjarjpb3y8" path="res://art/graphics/tileNSFW.png" id="2_egs2y"]
+[ext_resource type="FontFile" uid="uid://b6amb6wxmgaqe" path="res://art/fonts/Designer.otf" id="2_laybc"]
 [ext_resource type="Texture2D" uid="uid://bbhcjyoq1vcaw" path="res://art/Dragu Grafit.png" id="2_xkvi0"]
+[ext_resource type="Texture2D" uid="uid://bycki28qryta" path="res://art/ui/vignette.png" id="3_7vpqp"]
+[ext_resource type="Texture2D" uid="uid://cn0c8tay6f0c7" path="res://art/graphics/LOGO2.png" id="4_egs2y"]
 
 [sub_resource type="GDScript" id="GDScript_7vjol"]
 script/source = "extends Button
@@ -20,6 +24,38 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_reecx")
 
+[node name="TileNsfw" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(218, 450)
+scale = Vector2(0.6025, 0.6025)
+texture = ExtResource("2_egs2y")
+
+[node name="TileNsfw2" type="Sprite2D" parent="TileNsfw"]
+position = Vector2(800, 0)
+texture = ExtResource("2_egs2y")
+
+[node name="TileNsfw3" type="Sprite2D" parent="TileNsfw"]
+position = Vector2(1600, 0)
+texture = ExtResource("2_egs2y")
+
+[node name="TileNsfw4" type="Sprite2D" parent="TileNsfw"]
+position = Vector2(0, -800)
+texture = ExtResource("2_egs2y")
+
+[node name="TileNsfw5" type="Sprite2D" parent="TileNsfw"]
+position = Vector2(800, -800)
+texture = ExtResource("2_egs2y")
+
+[node name="TileNsfw6" type="Sprite2D" parent="TileNsfw"]
+position = Vector2(1600, -800)
+texture = ExtResource("2_egs2y")
+
+[node name="Vignette" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(576.5, 326.25)
+scale = Vector2(0.970588, 0.865206)
+texture = ExtResource("3_7vpqp")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -28,29 +64,36 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -140.0
-offset_top = -126.0
+offset_top = -58.0
 offset_right = 140.0
-offset_bottom = 126.0
+offset_bottom = 194.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("2_laybc")
+theme_override_font_sizes/font_size = 80
 text = "Play"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_laybc")
 theme_override_font_sizes/font_size = 50
 text = "Quit"
 script = SubResource("GDScript_7vjol")
 
 [node name="DraguGrafit" type="Sprite2D" parent="."]
-position = Vector2(133, 137)
+position = Vector2(151, 423)
 scale = Vector2(0.347656, 0.347656)
 texture = ExtResource("2_xkvi0")
+
+[node name="Logo2" type="Sprite2D" parent="."]
+position = Vector2(583, 172)
+scale = Vector2(0.290566, 0.290566)
+texture = ExtResource("4_egs2y")
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="VBoxContainer/Quit" method="_on_pressed"]
