@@ -1681,6 +1681,16 @@ doppler_tracking = 1
 current = true
 
 [node name="FmodListener3D" type="FmodListener3D" parent="Camera"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = null
 
 [node name="WheelFL" type="VehicleWheel3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.39129, 0.536747, -2)
@@ -1759,6 +1769,15 @@ libraries = {
 }
 
 [node name="speed_emitter" type="FmodEventEmitter3D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 event_name = "event:/engine 2"
 event_guid = "{c46a5861-4b2b-4df4-a853-784aff898ff8}"
 autoplay = true
@@ -1767,14 +1786,35 @@ volume = 0.185
 fmod_parameters/speed/id = -4529772816331744994
 fmod_parameters/speed = 0.0
 fmod_parameters/speed/variant_type = 3
+script = null
 
 [node name="MascGreeting" type="FmodEventEmitter3D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 event_name = "event:/mascGreeting"
 event_guid = "{d4d68558-e3bb-4525-89c8-e1b3c6655794}"
+script = null
 
 [node name="FemGreeting" type="FmodEventEmitter3D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 event_name = "event:/femGreeting"
 event_guid = "{8dad5bda-c38f-4bec-aa16-7a1d84133612}"
+script = null
 
 [node name="HeadLamps" type="SpotLight3D" parent="."]
 transform = Transform3D(-4.16278e-08, 0.305064, -0.952332, 1.33348e-08, 0.952332, 0.305064, 1, 1.77636e-15, -4.37114e-08, 2.00608, 0.833843, 0)
@@ -1831,19 +1871,49 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.039, 0, 2.24383)
 target_position = Vector3(0, 0, 1)
 
 [node name="Bumpin" type="FmodEventEmitter3D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 event_name = "event:/bumpin"
 event_guid = "{5ae5f27d-c3fb-4a60-82de-f93ceeda965a}"
 volume = 0.3
+script = null
 
 [node name="BumpMasc" type="FmodEventEmitter3D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 event_name = "event:/mascBump"
 event_guid = "{62901927-a26a-4966-9e91-7c8b8ae625aa}"
 volume = 0.2
+script = null
 
 [node name="BumpFem" type="FmodEventEmitter3D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 event_name = "event:/femBump"
 event_guid = "{8710717c-c35a-4dd8-8835-669a72b5f4a6}"
 volume = 0.2
+script = null
 
 [node name="Arrow" type="CSGPolygon3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.53219, 0)
@@ -1851,8 +1921,18 @@ polygon = PackedVector2Array(0.3, 0, 0.8, 0.7, -0.8, 0, 0.8, -0.7)
 depth = 0.25
 
 [node name="DropOffSuccess" type="FmodEventEmitter3D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 event_name = "event:/dropoffSuccess"
 event_guid = "{09acd3ed-5dc0-4cc2-b215-b2394209a2c2}"
+script = null
 
 [connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]
 [connection signal="body_entered" from="HeyArea" to="." method="_on_hey_area_body_entered"]

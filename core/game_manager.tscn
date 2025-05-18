@@ -244,9 +244,28 @@ script = SubResource("GDScript_x1aqt")
 process_mode = 1
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 bank_paths = ["res://fmodBanks/Desktop/main game.bank", "res://fmodBanks/Desktop//Master.bank"]
+script = null
 
 [node name="bgm" type="FmodEventEmitter3D" parent="FmodBankLoader"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 event_name = "event:/bgMusic"
 event_guid = "{9b75ae30-ce33-4da8-848a-6f2526305b3a}"
 autoplay = true
@@ -254,6 +273,7 @@ fmod_parameters/bgmIntensity/id = -4640684709411688077
 fmod_parameters/bgmIntensity = "menus"
 fmod_parameters/bgmIntensity/labels = PackedStringArray("menus", "levelEarly", "levelLate")
 fmod_parameters/bgmIntensity/variant_type = 4
+script = null
 
 [connection signal="play_game" from="WhenPausedLayer/MainMenu" to="." method="_on_main_menu_play_game"]
 [connection signal="pressed" from="WhenPausedLayer/LoseScreen/Button" to="WhenPausedLayer/LoseScreen/Button" method="_on_pressed"]

@@ -434,7 +434,7 @@ patrol_points = [NodePath("../PatrolPoints/PatrolPoint3"), NodePath("../PatrolPo
 
 [node name="Enemy3" parent="Enemies" node_paths=PackedStringArray("patrol_points") instance=ExtResource("4_csopv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 299, 2, -217)
-patrol_points = [NodePath("../PatrolPoints/PatrolPoint7"), NodePath("../PatrolPoints/PatrolPoint8")]
+patrol_points = [NodePath("../PatrolPoints/PatrolPoint7"), NodePath("../PatrolPoints/PatrolPoint7")]
 
 [node name="Enemy4" parent="Enemies" node_paths=PackedStringArray("patrol_points") instance=ExtResource("4_csopv")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 299, 2, -381)

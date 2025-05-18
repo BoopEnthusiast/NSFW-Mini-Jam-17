@@ -98,11 +98,31 @@ libraries = {
 }
 
 [node name="mascBotSFX" type="FmodEventEmitter3D" parent="AnimationPlayer" index="0"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 event_name = "event:/mmBot"
 event_guid = "{018096eb-e4d9-468b-abd9-d5ab698d635e}"
 volume = 0.25
+script = null
 
 [node name="mascTopSFX" type="FmodEventEmitter3D" parent="AnimationPlayer" index="1"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 event_name = "event:/mfTop"
 event_guid = "{2127c757-2c6c-40bf-8e05-2045a0ad471b}"
 volume = 0.25
+script = null

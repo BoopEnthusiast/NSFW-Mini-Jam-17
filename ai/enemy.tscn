@@ -151,12 +151,22 @@ wait_time = 4.0
 one_shot = true
 
 [node name="CopSiren" type="FmodEventEmitter3D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 event_name = "event:/copSiren"
 event_guid = "{c9586dae-d730-4359-92d8-78d776412ff9}"
 fmod_parameters/copAlerted/id = 3833060736543175531
 fmod_parameters/copAlerted = "ture"
 fmod_parameters/copAlerted/labels = PackedStringArray("false", "ture")
 fmod_parameters/copAlerted/variant_type = 4
+script = null
 
 [connection signal="timeout" from="Reset" to="." method="_on_reset_timer_timeout"]
 [connection signal="timeout" from="Brake" to="." method="_on_brake_timeout"]

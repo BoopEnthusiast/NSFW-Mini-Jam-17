@@ -1031,11 +1031,31 @@ libraries = {
 }
 
 [node name="ffSexSFX" type="FmodEventEmitter3D" parent="AnimationPlayer" index="0"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 event_name = "event:/ffBot"
 event_guid = "{05472666-8b2c-4be2-8cda-3a8f303a3d44}"
 volume = 0.26
+script = null
 
 [node name="mfSexSFX" type="FmodEventEmitter3D" parent="AnimationPlayer" index="1"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 event_name = "event:/mfBot"
 event_guid = "{eae74f81-1fdf-4128-b96e-acf20d5fe355}"
 volume = 0.23
+script = null
