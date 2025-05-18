@@ -15,6 +15,8 @@ var hotel_inside: Hotel
 
 var is_colliding: bool = false
 
+var couples_assisted: int = 0
+
 @onready var camera: Camera3D = $Camera
 @onready var camera_animator: AnimationPlayer = $CameraAnimator
 
@@ -179,6 +181,7 @@ func _process(delta: float) -> void:
 			Nodes.main.time_left += Nodes.cum_bar.value + 10.0
 			Nodes.cum_bar.visible = false
 			drop_off_success.play_one_shot()
+			couples_assisted += 1
 	else:
 		hotel_progress_bar.value = 0.0
 

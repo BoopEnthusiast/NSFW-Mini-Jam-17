@@ -10,6 +10,7 @@ const TIME_TO_SPAWN_MULTIPLYER = 8.0
 @export var time_to_spawn: Curve
 
 var time_left: float = 100.0
+var total_time: float = 0.0
 
 var _time_to_spawn_point: int = 0
 
@@ -24,6 +25,7 @@ func _enter_tree() -> void:
 
 func _process(delta: float) -> void:
 	time_left -= delta
+	total_time += delta
 	if time_left <= 0:
 		StateManager.lose_the_game()
 
