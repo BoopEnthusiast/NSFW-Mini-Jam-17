@@ -464,6 +464,7 @@ autostart = true
 
 [node name="OldBuildingsGridMap" type="GridMap" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
+visible = false
 mesh_library = ExtResource("6_cus2n")
 cell_size = Vector3(20, 10, 20)
 data = {
