@@ -1623,12 +1623,12 @@ transform = Transform3D(-7.23998e-06, 0, 2, 0, 2, 0, -2, 0, -7.23998e-06, 0, 0, 
 [node name="Car Body Origin" type="Node3D" parent="Cat Car2/Cat Car Game Obj Origin"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.653036, 0)
 
-[node name="Car Back Half (Hideable)2" type="MeshInstance3D" parent="Cat Car2/Cat Car Game Obj Origin/Car Body Origin"]
+[node name="Car Back Half (Hideable)" type="MeshInstance3D" parent="Cat Car2/Cat Car Game Obj Origin/Car Body Origin"]
 gi_mode = 2
 mesh = SubResource("ArrayMesh_0imru")
 skeleton = NodePath("")
 
-[node name="Car Body2" type="MeshInstance3D" parent="Cat Car2/Cat Car Game Obj Origin/Car Body Origin"]
+[node name="Car Body" type="MeshInstance3D" parent="Cat Car2/Cat Car Game Obj Origin/Car Body Origin"]
 gi_mode = 2
 mesh = SubResource("ArrayMesh_e6cig")
 skeleton = NodePath("")
