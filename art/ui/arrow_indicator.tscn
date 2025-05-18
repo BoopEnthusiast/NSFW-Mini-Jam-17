@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkgviekyt66hw"]
+
+[ext_resource type="PackedScene" uid="uid://bis1fyoutiiri" path="res://art/ui/Arrow Indicator.glb" id="1_fx8x2"]
+
+[node name="Arrow Indicator2" instance=ExtResource("1_fx8x2")]
+
+[node name="Skeleton3D" parent="Arrow Rig" index="0"]
+bones/1/position = Vector3(0, 4.41772, 0)
+bones/1/rotation = Quaternion(0, 0.966112, 0, 0.258125)
+bones/2/position = Vector3(0, -0.0196305, 0)
+bones/2/scale = Vector3(0.997927, 0.997927, 0.997927)
