@@ -1845,5 +1845,9 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.5
 polygon = PackedVector2Array(0.3, 0, 0.8, 0.7, -0.8, 0, 0.8, -0.7)
 depth = 0.25
 
+[node name="DropOffSuccess" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/dropoffSuccess"
+event_guid = "{09acd3ed-5dc0-4cc2-b215-b2394209a2c2}"
+
 [connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]
 [connection signal="body_entered" from="HeyArea" to="." method="_on_hey_area_body_entered"]

@@ -26,6 +26,7 @@ var is_colliding: bool = false
 @onready var bumpin: FmodEventEmitter3D = $Bumpin
 @onready var bump_masc: FmodEventEmitter3D = $BumpMasc
 @onready var bump_fem: FmodEventEmitter3D = $BumpFem
+@onready var drop_off_success: FmodEventEmitter3D = $DropOffSuccess
 
 @onready var sitting_fem: FemBaseModel = $"Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Passenger Seat 1 Pos/SittingFem"
 @onready var sitting_masc: MascBaseModel = $"Cat Car2/Cat Car Game Obj Origin/Car Body Origin/Passenger Seat 2 Pos/SittingMasc"
@@ -177,6 +178,7 @@ func _process(delta: float) -> void:
 			collected_people.clear()
 			Nodes.main.time_left += Nodes.cum_bar.value + 10.0
 			Nodes.cum_bar.visible = false
+			drop_off_success.play_one_shot()
 	else:
 		hotel_progress_bar.value = 0.0
 
