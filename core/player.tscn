@@ -1370,7 +1370,7 @@ target_position = Vector3(0, 0, 1)
 [node name="Bumpin" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/bumpin"
 event_guid = "{5ae5f27d-c3fb-4a60-82de-f93ceeda965a}"
-volume = 0.25
+volume = 0.4
 
 [node name="BumpMasc" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/mascBump"

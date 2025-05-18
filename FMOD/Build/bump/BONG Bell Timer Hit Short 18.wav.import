@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ddwjv7kyf7ivg"
+path="res://.godot/imported/BONG Bell Timer Hit Short 18.wav-7f59ea79451e0f0df87939c28ef6f06f.sample"
+
+[deps]
+
+source_file="res://FMOD/Build/bump/BONG Bell Timer Hit Short 18.wav"
+dest_files=["res://.godot/imported/BONG Bell Timer Hit Short 18.wav-7f59ea79451e0f0df87939c28ef6f06f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

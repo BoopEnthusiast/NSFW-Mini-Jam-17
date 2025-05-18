@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cb2kq76pwwdov"
+path="res://.godot/imported/Filling A Glass 01.wav-9870dd508457d7dd6e130bec0e5e1c6d.sample"
+
+[deps]
+
+source_file="res://FMOD/Build/Filling A Glass 01.wav"
+dest_files=["res://.godot/imported/Filling A Glass 01.wav-9870dd508457d7dd6e130bec0e5e1c6d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
