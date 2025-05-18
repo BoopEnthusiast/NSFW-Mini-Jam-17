@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0txtfjlifbmx"
 path.s3tc="res://.godot/imported/Fem Base Model_Fem 1 Color.png-4cc5d94e98ed72e156d3adcc9b26ebc0.s3tc.ctex"
+path.etc2="res://.godot/imported/Fem Base Model_Fem 1 Color.png-4cc5d94e98ed72e156d3adcc9b26ebc0.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://art/human/Fem Base Model_Fem 1 Color.png"
-dest_files=["res://.godot/imported/Fem Base Model_Fem 1 Color.png-4cc5d94e98ed72e156d3adcc9b26ebc0.s3tc.ctex"]
+dest_files=["res://.godot/imported/Fem Base Model_Fem 1 Color.png-4cc5d94e98ed72e156d3adcc9b26ebc0.s3tc.ctex", "res://.godot/imported/Fem Base Model_Fem 1 Color.png-4cc5d94e98ed72e156d3adcc9b26ebc0.etc2.ctex"]
 
 [params]
 

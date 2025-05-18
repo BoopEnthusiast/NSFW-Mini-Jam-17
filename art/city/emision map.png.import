@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://r5ic3mnxxvym"
 path.s3tc="res://.godot/imported/emision map.png-2c6696a542c11f3dda97bb43307d48bb.s3tc.ctex"
+path.etc2="res://.godot/imported/emision map.png-2c6696a542c11f3dda97bb43307d48bb.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://art/city/emision map.png"
-dest_files=["res://.godot/imported/emision map.png-2c6696a542c11f3dda97bb43307d48bb.s3tc.ctex"]
+dest_files=["res://.godot/imported/emision map.png-2c6696a542c11f3dda97bb43307d48bb.s3tc.ctex", "res://.godot/imported/emision map.png-2c6696a542c11f3dda97bb43307d48bb.etc2.ctex"]
 
 [params]
 

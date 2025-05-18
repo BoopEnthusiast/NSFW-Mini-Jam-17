@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhpcyqs72yhsu"
 path.s3tc="res://.godot/imported/Masc Base Model_Masc 1 Color.png-0899a939121459cae8c88862ed33fe04.s3tc.ctex"
+path.etc2="res://.godot/imported/Masc Base Model_Masc 1 Color.png-0899a939121459cae8c88862ed33fe04.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://art/human/Masc Base Model_Masc 1 Color.png"
-dest_files=["res://.godot/imported/Masc Base Model_Masc 1 Color.png-0899a939121459cae8c88862ed33fe04.s3tc.ctex"]
+dest_files=["res://.godot/imported/Masc Base Model_Masc 1 Color.png-0899a939121459cae8c88862ed33fe04.s3tc.ctex", "res://.godot/imported/Masc Base Model_Masc 1 Color.png-0899a939121459cae8c88862ed33fe04.etc2.ctex"]
 
 [params]
 
