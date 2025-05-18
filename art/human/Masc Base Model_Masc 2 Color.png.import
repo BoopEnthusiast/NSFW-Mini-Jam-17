@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cls5dtajeiajq"
-path.s3tc="res://.godot/imported/Masc Base Model_Masc 1 Nude Color.png-38cc4e0f0995cf1c1a29b5d538ffcde6.s3tc.ctex"
-path.etc2="res://.godot/imported/Masc Base Model_Masc 1 Nude Color.png-38cc4e0f0995cf1c1a29b5d538ffcde6.etc2.ctex"
+uid="uid://bh6y87x0je1qf"
+path.s3tc="res://.godot/imported/Masc Base Model_Masc 2 Color.png-1d172fbae46b5e07813e1c6c76cf6547.s3tc.ctex"
+path.etc2="res://.godot/imported/Masc Base Model_Masc 2 Color.png-1d172fbae46b5e07813e1c6c76cf6547.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "af0430b3ea921e8ba5c18e3bb2497285"
+"md5": "1bbaff7f292b8f1da0bde9d3ee65258d"
 }
 
 [deps]
 
-source_file="res://art/human/Masc Base Model_Masc 1 Nude Color.png"
-dest_files=["res://.godot/imported/Masc Base Model_Masc 1 Nude Color.png-38cc4e0f0995cf1c1a29b5d538ffcde6.s3tc.ctex", "res://.godot/imported/Masc Base Model_Masc 1 Nude Color.png-38cc4e0f0995cf1c1a29b5d538ffcde6.etc2.ctex"]
+source_file="res://art/human/Masc Base Model_Masc 2 Color.png"
+dest_files=["res://.godot/imported/Masc Base Model_Masc 2 Color.png-1d172fbae46b5e07813e1c6c76cf6547.s3tc.ctex", "res://.godot/imported/Masc Base Model_Masc 2 Color.png-1d172fbae46b5e07813e1c6c76cf6547.etc2.ctex"]
 
 [params]
 

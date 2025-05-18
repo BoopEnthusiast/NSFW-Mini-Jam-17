@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://d0cky7s5sr1e5" path="res://art/human/Fem Base Model.glb" id="1_74xae"]
 [ext_resource type="Script" uid="uid://bot4i73tkns61" path="res://art/human/fem_base_model.gd" id="2_5frte"]
-[ext_resource type="Texture2D" uid="uid://d0txtfjlifbmx" path="res://art/human/Fem Base Model_Fem 1 Color.png" id="3_p88bp"]
-[ext_resource type="Texture2D" uid="uid://cohho43l8fsro" path="res://art/human/Fem Base Model_Fem 1 Nude Color.png" id="4_7qsg6"]
+[ext_resource type="Texture2D" uid="uid://d0txtfjlifbmx" path="res://art/human/textures/Fem Base Model_Fem 1 Color.png" id="3_p88bp"]
+[ext_resource type="Texture2D" uid="uid://cohho43l8fsro" path="res://art/human/textures/Fem Base Model_Fem 1 Nude Color.png" id="4_7qsg6"]
 [ext_resource type="Animation" uid="uid://ljmqq2xq0dk1" path="res://art/human/animations/F Sit Custom.res" id="5_3xuso"]
 [ext_resource type="Animation" uid="uid://dpt18rl3qb3yi" path="res://art/human/animations/FF BOT Custom.res" id="6_5s8cv"]
 [ext_resource type="Animation" uid="uid://c16lwau4gf4vh" path="res://art/human/animations/FF TOP Custom.res" id="7_dgdef"]

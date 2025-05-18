@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cls5dtajeiajq"
-path.s3tc="res://.godot/imported/Masc Base Model_Masc 1 Nude Color.png-38cc4e0f0995cf1c1a29b5d538ffcde6.s3tc.ctex"
-path.etc2="res://.godot/imported/Masc Base Model_Masc 1 Nude Color.png-38cc4e0f0995cf1c1a29b5d538ffcde6.etc2.ctex"
+uid="uid://hwmuj24slao8"
+path.s3tc="res://.godot/imported/Arrow Indicator_Arrow Gradient.png-340fb1b41b8f407ae2120c9dcadf2465.s3tc.ctex"
+path.etc2="res://.godot/imported/Arrow Indicator_Arrow Gradient.png-340fb1b41b8f407ae2120c9dcadf2465.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "af0430b3ea921e8ba5c18e3bb2497285"
+"md5": "e172eec203491e97126f7b44059d0dca"
 }
 
 [deps]
 
-source_file="res://art/human/Masc Base Model_Masc 1 Nude Color.png"
-dest_files=["res://.godot/imported/Masc Base Model_Masc 1 Nude Color.png-38cc4e0f0995cf1c1a29b5d538ffcde6.s3tc.ctex", "res://.godot/imported/Masc Base Model_Masc 1 Nude Color.png-38cc4e0f0995cf1c1a29b5d538ffcde6.etc2.ctex"]
+source_file="res://art/ui/Arrow Indicator_Arrow Gradient.png"
+dest_files=["res://.godot/imported/Arrow Indicator_Arrow Gradient.png-340fb1b41b8f407ae2120c9dcadf2465.s3tc.ctex", "res://.godot/imported/Arrow Indicator_Arrow Gradient.png-340fb1b41b8f407ae2120c9dcadf2465.etc2.ctex"]
 
 [params]
 

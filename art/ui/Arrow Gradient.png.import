@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddaxrorwqlvn6"
-path="res://.godot/imported/Fem 1 Nude Color.png-9c74732a26a07211d4ad2238b50aa9c6.ctex"
+uid="uid://du1otlqlyuusb"
+path="res://.godot/imported/Arrow Gradient.png-a0fd612698f26b1aa004a31cd234226a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/human/textures/Fem 1 Nude Color.png"
-dest_files=["res://.godot/imported/Fem 1 Nude Color.png-9c74732a26a07211d4ad2238b50aa9c6.ctex"]
+source_file="res://art/ui/Arrow Gradient.png"
+dest_files=["res://.godot/imported/Arrow Gradient.png-a0fd612698f26b1aa004a31cd234226a.ctex"]
 
 [params]
 
