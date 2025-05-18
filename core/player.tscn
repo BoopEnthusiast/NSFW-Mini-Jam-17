@@ -1829,17 +1829,17 @@ target_position = Vector3(0, 0, 1)
 [node name="Bumpin" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/bumpin"
 event_guid = "{5ae5f27d-c3fb-4a60-82de-f93ceeda965a}"
-volume = 0.4
+volume = 0.3
 
 [node name="BumpMasc" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/mascBump"
 event_guid = "{62901927-a26a-4966-9e91-7c8b8ae625aa}"
-volume = 0.25
+volume = 0.2
 
 [node name="BumpFem" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/femBump"
 event_guid = "{8710717c-c35a-4dd8-8835-669a72b5f4a6}"
-volume = 0.25
+volume = 0.2
 
 [node name="Arrow" type="CSGPolygon3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.53219, 0)
