@@ -1610,6 +1610,7 @@ _data = {
 viewport_path = NodePath("SubViewport")
 
 [node name="Player" type="VehicleBody3D"]
+collision_priority = 2.0
 physics_material_override = SubResource("PhysicsMaterial_3x74s")
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -0.1, 0)
